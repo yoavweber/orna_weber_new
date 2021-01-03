@@ -1,0 +1,14 @@
+* {
+  direction: rtl;
+  box-sizing: border-box;
+  /* font-family: Segoe UI Regular; */
+  font-family: "Assistant", sans-serif;
+  line-height: 24px;
+}
+
+@font-face {
+  font-family: "Segoe UI Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/font/Segoe\ UI.woff") format("woff");
+}

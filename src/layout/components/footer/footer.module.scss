@@ -1,0 +1,27 @@
+.wrapper {
+  height: 60vh;
+}
+.contact {
+  background-color: #f2fcfc;
+  display: flex;
+  justify-content: center;
+  height: 35%;
+}
+
+.contactsIcons {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.socialMediaIcons {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+}

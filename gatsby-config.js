@@ -3,19 +3,19 @@ module.exports = {
     title: "orna weber",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-wordpress-experimental",
-      options: {
-        url: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-wordpress-experimental",
+    //   options: {
+    //     url: "",
+    //   },
+    // },
     "gatsby-plugin-sass",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "",
+    //   },
+    // },
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",

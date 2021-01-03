@@ -1,0 +1,18 @@
+$distence: 15px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: -$distence;
+}
+
+.text {
+  color: #555556;
+  font-size: 2vh;
+  font-weight: 600;
+  width: 70%;
+}
+// how to set distence in flex
+//https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
+.item {
+  margin-left: $distence;
+}
