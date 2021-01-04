@@ -19,7 +19,7 @@ const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
         <div className={styles.content}>
           <H1 bold>{headline}</H1>
           <H2 color="white"> {text} </H2>
-          <Button text={buttonText} />
+          <Button>{buttonText}</Button>
           {icon && <img src={icon} width="80" height="80" />}
         </div>
       </div>
