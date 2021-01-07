@@ -3,12 +3,15 @@ module.exports = {
     title: "orna weber",
   },
   plugins: [
-    // {
-    //   resolve: "gatsby-source-wordpress-experimental",
-    //   options: {
-    //     url: "",
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://localhost:1337",
+        contentTypes: ["article", "category", "writer", "tests"],
+        singleTypes: [`homepage`, `global`],
+        queryLimit: 1000,
+      },
+    },
     "gatsby-plugin-sass",
     // {
     //   resolve: "gatsby-plugin-google-analytics",
@@ -19,13 +22,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
+    // "gatsby-plugin-offline",
+    // {
+    //   resolve: "gatsby-plugin-manifest",
+    //   options: {
+    //     icon: "src/images/icon.png",
+    //   },
+    // },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     {
