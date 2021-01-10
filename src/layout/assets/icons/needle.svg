@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="459.243" height="459.243" viewBox="0 0 459.243 459.243">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#85b240;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px}
+        </style>
+    </defs>
+    <g id="Group_792" transform="translate(2.121 2.121)">
+        <path id="Path_656" d="M354.87 67.191c0-10.53 27.065-19.059 60.459-19.059s60.458 8.529 60.458 19.059-27.075 19.059-60.458 19.059c-3.5 0-6.925-.095-10.255-.275" class="cls-1" transform="translate(-47.392 132.668)"/>
+        <path id="Path_657" d="M354.87 50.141v48.192c0 10.521 27.065 19.059 60.459 19.059s60.458-8.538 60.458-19.059V50.141" class="cls-1" transform="translate(-47.392 149.718)"/>
+        <path id="Path_658" d="M480.468 56.426l22.123 22.132a20.11 20.11 0 0 1 5.9 14.1l-.057 114.808.057-.057c0 13.594-34.959 24.609-78.075 24.609s-77.326-10.957-77.326-24.552l-.057-114.808a20.148 20.148 0 0 1 5.9-14.1l22.189-22.2" class="cls-1" transform="translate(-62.982 202.497)"/>
+        <path id="Path_659" d="M338.954 159.148L450.716 47.386a37.955 37.955 0 0 1 37.065-9.7l62.479 17.488 13.158 46.162" class="cls-1" transform="translate(-182.466 32.03)"/>
+        <path id="Path_660" d="M358.089 157.35l-13.414-13.424a56.919 56.919 0 0 1 0-80.495 56.919 56.919 0 0 1 80.495 0l120.746 120.748a56.919 56.919 0 0 1 0 80.495 56.919 56.919 0 0 1-80.494 0L452 251.259" class="cls-1" transform="translate(-275.388 121.039)"/>
+        <path id="Line_1" d="M0 87.205L87.205 0" class="cls-1" transform="translate(367.795)"/>
+        <ellipse id="Ellipse_7" cx="37.947" cy="75.893" class="cls-1" rx="37.947" ry="75.893" transform="rotate(-45 419.676 173.835)"/>
+        <path id="Path_661" d="M420.509 80.673c-29.636-29.636-65.676-41.647-80.494-26.828" class="cls-1" transform="translate(-173.461 127.278)"/>
+        <path id="Path_662" d="M425.46 75.723c-29.637-29.636-65.676-41.647-80.495-26.828" class="cls-1" transform="translate(-131.452 85.269)"/>
+        <path id="Path_663" d="M327.408 118.16l57.025-57.015c12.959-12.968 44.5-2.457 70.429 23.48s36.448 57.47 23.479 70.429l-57.015 57.024" class="cls-1" transform="translate(-280.453 195.966)"/>
+        <path id="Line_2" d="M67.08 0L0 67.08" class="cls-1" transform="translate(107.33 280.59)"/>
+    </g>
+</svg>
