@@ -5,8 +5,14 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-source-strapi",
+      // options: {
+      //   apiURL: "http://localhost:1337",
+      //   contentTypes: ["article", "category", "writer", "tests"],
+      //   singleTypes: [`homepage`, `global`],
+      //   queryLimit: 1000,
+      // },
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: "https://stark-forest-78751.herokuapp.com",
         contentTypes: ["article", "category", "writer", "tests"],
         singleTypes: [`homepage`, `global`],
         queryLimit: 1000,
