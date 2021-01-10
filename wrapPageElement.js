@@ -1,13 +1,13 @@
 import React from "react";
-import Nav from "./src/layout/components/nav/Nav";
-import Footer from "./src/layout/components/footer/Footer";
-import "./src/layout/global.css";
+import { Nav } from "./src/layout/components";
+import { Footer } from "./src/layout/components";
+import "./src/layout/global.scss";
 
 // Pass all props (hence the ...props) to the layout component so it has access to things like pageContext or location
-const wrapPageElement = ({ children, props }) => (
+// the elements and props are part of the wrapPageElement
+const wrapPageElement = ({ element, props }) => (
   <Nav {...props}>
-    sdfsd
-    {children}
+    {element}
     <Footer />
   </Nav>
 );

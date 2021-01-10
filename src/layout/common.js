@@ -26,12 +26,13 @@ import styled from "@emotion/styled";
 //     </a>
 //   );
 // };
+
+const buttonHight = "40px";
 const ButtonTag = styled.button`
   background: #cae3b1;
   border: 0;
   width: 100%;
-  max-width: 200px;
-  height: 40px;
+  height: ${buttonHight};
 `;
 
 const Atag = styled.a`
@@ -39,10 +40,11 @@ const Atag = styled.a`
   max-width: 200px;
   margin: 10px 0;
 `;
-export const Button = ({ length, link, text }) => {
+export const Button = ({ children, ...props }) => {
+  console.log(props);
   return (
-    <Atag>
-      <ButtonTag> {text}</ButtonTag>
+    <Atag {...props}>
+      <ButtonTag> {children}</ButtonTag>
     </Atag>
   );
 };
@@ -58,11 +60,33 @@ export const H1 = styled.h1((props) => ({
   color: H1Colors[props.color],
   fontWeight: props.bold ? "600" : "300",
   fontSize: "2rem",
+  margin: "20px 0",
 }));
 
 export const H2 = styled.h2((props) => ({
   color: H1Colors[props.color],
   fontWeight: props.bold ? "600" : "300",
   fontSize: "1.5rem",
-  margin: "20px 0",
+  margin: "10px 0",
 }));
+
+export const ColoredH1 = ({ firstPart, secondPart, spanSize }) => {
+  return (
+    <H1 style={{ lineHeight: "1.25" }}>
+      {" "}
+      <span>{firstPart}</span>
+      <br />{" "}
+      <span style={{ color: "#9fc975", marginTop: "10px" }}>{secondPart}</span>
+    </H1>
+  );
+};
+//--------------------Input----------------------
+export const Input = styled.input`
+  height: ${buttonHight};
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  &::placeholder {
+    color: white;
+    padding: 5px;
+  }
+`;

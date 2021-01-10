@@ -12,7 +12,7 @@ const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
     <BackgroundImage
       fluid={fluid}
       Tag="section"
-      style={{ width: "100%", height: "40vh" }}
+      style={{ width: "100%", height: "60%" }}
       className={styles.wrapper}
     >
       <div className={styles.contentWrapper}>
