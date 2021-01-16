@@ -18,6 +18,29 @@ const Homepage = () => {
     "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80",
     "https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80",
   ];
+  const content = [
+    {
+      headline: "הכתמים לא עוזבים?",
+      text: "טיפולי פיגמנטציה בהתאמה מלאה לעור המיוחד שלך ",
+      img: "pigmentation.png",
+      buttonText: "לטיפול מוכח ויעיל",
+      icon: pigmentation,
+    },
+    {
+      headline: "המרכז לקוסמטיקת פיוז'ן",
+      text: "שילוב מיוחד לכל אחת ",
+      img: "beautyFusion.png",
+      buttonText: "לשילוב המיוחד שלך",
+      icon: pigmentation,
+    },
+    {
+      headline: "מעיין הנעורים הפרטי שלך",
+      text: "השילובים שיאפשרו לך להיראות ולהרגיש צעירה ",
+      img: "antiaging.png",
+      buttonText: "קחו אותי למעיין הנעורים",
+      icon: pigmentation,
+    },
+  ];
   return (
     <>
       <Banner
@@ -28,7 +51,7 @@ const Homepage = () => {
         buttonText="לטיפול מוכח ויעיל"
         icon={pigmentation}
       />
-      <Slider slides={images} />
+      <Slider content={content} />
       <Treatments />
       <Form />
       {/* <Test /> */}

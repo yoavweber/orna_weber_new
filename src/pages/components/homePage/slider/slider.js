@@ -2,16 +2,21 @@ import React, { useState } from "react";
 // import styled from "@emotion/styled";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
+import { Banner } from "../../../../layout/components";
 import SliderContent from "./sliderContent";
 import Slide from "./slide";
 import Arrow from "./arrow";
+import Dots from "./dots";
 //https://medium.com/better-programming/build-an-image-slider-with-react-es6-264368de68e4
 /**
  * @function Slider
  */
 const Slider = (props) => {
-  const getWidth = () => window.innerWidth;
+  if (typeof window === "undefined") {
+    global.window = {};
+  }
 
+  const getWidth = () => (window ? window.innerWidth : "1000");
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
@@ -20,7 +25,7 @@ const Slider = (props) => {
   const { translate, transition, activeIndex } = state;
 
   const nextSlide = () => {
-    if (activeIndex === props.slides.length - 1) {
+    if (activeIndex === props.content?.length - 1) {
       return setState({
         ...state,
         translate: 0,
@@ -39,8 +44,8 @@ const Slider = (props) => {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translate: (props.slides.length - 1) * getWidth(),
-        activeIndex: props.slides.length - 1,
+        translate: (props.content.length - 1) * getWidth(),
+        activeIndex: props.content.length - 1,
       });
     }
 
@@ -51,20 +56,26 @@ const Slider = (props) => {
     });
   };
 
-  console.log(activeIndex);
-
   return (
     <div css={SliderCSS}>
       <SliderContent
         translate={translate}
         transition={transition}
-        width={getWidth() * props.slides.length}
-        // width={getWidth()}
+        width={getWidth() * props.content?.length}
       >
-        {props.slides.map((slide, i) => (
-          <Slide key={slide + i} content={slide} />
+        {props.content?.map((content, i) => (
+          <Slide key={i} content={content}>
+            <Banner
+              headline={content.headline}
+              text={content.text}
+              img={content.img}
+              textStyle={{ display: "flex", color: "green" }}
+              buttonText={content.buttonText}
+            />
+          </Slide>
         ))}
       </SliderContent>
+      <Dots />
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
     </div>

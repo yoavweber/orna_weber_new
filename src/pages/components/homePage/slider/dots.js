@@ -1,4 +1,6 @@
 import React from "react";
 
-export const Dots = () => <div>!!!!!!!!!!!!!!!!!!!!!1</div>;
+const Dots = () => <div>!!!!!!!!!!!!!!!!!!!!!1</div>;
+export default Dots;
+
 console.log("test");
