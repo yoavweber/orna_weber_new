@@ -1,0 +1,39 @@
+.section {
+  height: calc(50vw * (9 / 16));
+  min-height: 400px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 100px;
+  img {
+    height: 100%;
+    margin-left: 20px;
+  }
+  // change this to be global
+  p {
+    font-size: calc(0.8rem + 0.5vw);
+    line-height: calc(1.1em + 0.5vw);
+  }
+  .wrapper {
+    width: 40%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+  }
+  .textWrapper {
+    width: 60%;
+    height: 100%;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // width: 50%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .section {
+    padding: 0 20px;
+  }
+}

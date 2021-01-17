@@ -6,10 +6,10 @@ import pigmentation from "../layout/assets/icons/pigmentation.svg";
 // import Test from "../layout/components/BackgroundImage";
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
-// import IntroText from "./components/homePage/introText/introText";
+import IntroText from "./components/homePage/introText/introText";
+import About from "./components/homePage/about/about";
 
 const Homepage = () => {
-  console.log(BackgroundImage);
   // const images = [pigmentation, pigmentation, pigmentation];
 
   const images = [
@@ -43,19 +43,12 @@ const Homepage = () => {
   ];
   return (
     <>
-      <Banner
-        headline="הכתמים לא עוזבים?"
-        text="טיפולי פיגמנטציה בהתאמה מלאה לעור המיוחד שלך "
-        img="pigmentation.png"
-        textStyle={{ display: "flex", color: "green" }}
-        buttonText="לטיפול מוכח ויעיל"
-        icon={pigmentation}
-      />
       <Slider content={content} />
+      <IntroText />
       <Treatments />
+      <About />
       <Form />
       {/* <Test /> */}
-      {/* <IntroText /> */}
     </>
   );
 };

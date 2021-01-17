@@ -1,8 +1,6 @@
 import React, { useMemo } from "react";
 import safeGet from "lodash.get";
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
-import BackgroundImage from "gatsby-background-image";
 
 // based on https://github.com/gatsbyjs/gatsby/issues/10482
 const Image = (name) => {

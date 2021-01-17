@@ -1,3 +1,9 @@
+// const activeEnv =
+//   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development";
+
+// require("dotenv").config({
+//   path: `.env.${activeEnv}`,
+// });
 module.exports = {
   siteMetadata: {
     title: "orna weber",
@@ -12,9 +18,11 @@ module.exports = {
       //   queryLimit: 1000,
       // },
       options: {
-        apiURL: "https://stark-forest-78751.herokuapp.com",
+        // apiURL: "https://stark-forest-78751.herokuapp.com",
+        // apiURL: process.env.API_URL,
+        apiURL: "http://localhost:1337",
         contentTypes: ["article", "category", "writer", "tests"],
-        singleTypes: [`homepage`, `global`],
+        singleTypes: [`global`, "home-page"],
         queryLimit: 1000,
       },
     },

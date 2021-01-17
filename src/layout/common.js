@@ -27,24 +27,25 @@ import styled from "@emotion/styled";
 //   );
 // };
 
-const buttonHight = "40px";
+const buttonHight = "60px";
 const ButtonTag = styled.button`
   background: #cae3b1;
   border: 0;
   width: 100%;
+  max-width: 300px;
   height: ${buttonHight};
+  cursor: pointer;
+  font-size: 1.5rem;
 `;
 
 const Atag = styled.a`
-  width: 100%;
-  max-width: 200px;
   margin: 10px 0;
+  display: block;
 `;
-export const Button = ({ children, ...props }) => {
-  console.log(props);
+export const Button = ({ children, buttonStyle, ...props }) => {
   return (
     <Atag {...props}>
-      <ButtonTag> {children}</ButtonTag>
+      <ButtonTag style={buttonStyle}> {children}</ButtonTag>
     </Atag>
   );
 };

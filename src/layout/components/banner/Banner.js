@@ -7,13 +7,14 @@ import { Button, H1, H2 } from "../../common";
 import styles from "./banner.module.scss";
 
 const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
-  const fluid = getFluid("pigmentation.png");
+  const fluid = getFluid(img);
   return (
     <BackgroundImage
       fluid={fluid}
       Tag="section"
-      style={{ width: "100%", height: "60%" }}
+      style={{ width: "100%", height: "100%" }}
       className={styles.wrapper}
+      alt="banner picture"
     >
       <div className={styles.contentWrapper}>
         <div className={styles.content}>

@@ -92,9 +92,9 @@ const Slider = (props) => {
 
 const SliderCSS = css`
   position: relative;
-  height: 100vh;
+  height: 25vw;
+  min-height: 300px;
   width: 100vw;
-  margin: 0 auto;
   overflow: hidden;
 `;
 
