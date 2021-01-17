@@ -20,7 +20,7 @@ module.exports = {
       options: {
         // apiURL: "https://stark-forest-78751.herokuapp.com",
         // apiURL: process.env.API_URL,
-        apiURL: "http://localhost:1337",
+        apiURL: "https://stark-forest-78751.herokuapp.com",
         contentTypes: ["article", "category", "writer", "tests"],
         singleTypes: [`global`, "home-page"],
         queryLimit: 1000,
