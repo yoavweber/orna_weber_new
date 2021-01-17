@@ -1,6 +1,5 @@
 .section {
   display: flex;
-  //   flex-direction: column;
   position: relative;
   justify-self: center;
   height: 35vw;
@@ -24,16 +23,14 @@
 
 .wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
-  width: 70%;
+  width: 30%;
 }
 .content {
   display: flex;
   //   width: 50%;
   .text {
-    width: 30%;
+    // width: 30%;
   }
 }
 
