@@ -1,0 +1,11 @@
+.wrapper {
+  margin-bottom: calc(5px + 2vw);
+}
+
+.text {
+  display: flex;
+  align-items: flex-end;
+  img {
+    margin-left: calc(10px + 3vw);
+  }
+}

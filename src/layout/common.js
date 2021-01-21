@@ -62,6 +62,7 @@ export const H1 = styled.h1((props) => ({
   fontWeight: props.bold ? "600" : "300",
   fontSize: "2.3rem",
   margin: "20px 0",
+  lineHeight: "calc(1.1em + 0.5vw)",
 }));
 
 export const H2 = styled.h2((props) => ({
@@ -91,3 +92,9 @@ export const Input = styled.input`
     padding: 5px;
   }
 `;
+
+// other
+
+export const Space = styled.div((props) => ({
+  margin: "calc(10px + 3vw)",
+}));
