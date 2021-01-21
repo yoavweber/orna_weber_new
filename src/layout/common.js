@@ -60,7 +60,7 @@ const H1Colors = {
 export const H1 = styled.h1((props) => ({
   color: H1Colors[props.color],
   fontWeight: props.bold ? "600" : "300",
-  fontSize: "2rem",
+  fontSize: "2.3rem",
   margin: "20px 0",
 }));
 
