@@ -11,7 +11,6 @@ import styles from "./about.module.scss";
 
 const About = () => {
   const data = useStaticQuery(query);
-  console.log(data);
   const {
     text,
     title,
@@ -20,15 +19,16 @@ const About = () => {
   } = data.allStrapiHomePage.edges[0].node.about;
   const background = getFluid("backgroundSmall.png");
   const fluid = ornaPicture.childImageSharp.fluid;
-  console.log(ornaPicture);
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <div className={styles.imgWrapper}>
+        {/* <div className={styles.imgWrapper}>
           <H1 className={styles.headline}>{title} </H1>
           <Img fluid={fluid} className={styles.img} />
-        </div>
+        </div> */}
+        <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
+          <Img fluid={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
@@ -63,7 +63,7 @@ const query = graphql`
             button
             ornaPicture {
               childImageSharp {
-                fluid(maxWidth: 200) {
+                fluid(maxWidth: 400) {
                   ...GatsbyImageSharpFluid
                 }
               }
