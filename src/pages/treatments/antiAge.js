@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Banner, Form, IconText } from "../../layout/components";
+import { Banner, Form, IconText, List } from "../../layout/components";
 import bag from "../../layout/assets/icons/bag.svg";
 import antiBottle from "../../layout/assets/icons/antiBottle.svg";
 import { H1 } from "../../layout/common";
@@ -67,6 +67,32 @@ const AntiAge = () => {
     );
   };
 
+  // ------- list data
+  const listHeadline = "?איך נסייע לך להצעיר את המראה";
+  const listData = [
+    {
+      boldText: `הצערת העור ומקסום האפקט הטיפולי –`,
+      text: `שילובים טיפוליים בלתי שגרתיים המותאמים
+      .לעורך, בשיטת ביוטי פיוז'ן`,
+    },
+    {
+      boldText: `!קיצור זמני הטיפול בעשרות אחוזים – `,
+      text: `מתחילות לראות תוצאות מהטיפול הראשון`,
+    },
+    {
+      boldText: `טכנולוגיות חדשניות - `,
+      text: `ששפועלת בעומק העור ומבוילות לתוצאות הטובות ביותר. שימוש במכשור המתקדם בעולם, המבוסס על מחקרים קלייים ועל הצלחות בינ"ל`,
+    },
+    {
+      boldText: `הטוב ביותר עבורך –`,
+      text: `שימוש בתכשירים של המותגים הידועים בעולם`,
+    },
+    {
+      boldText: `35 שנות ניסיון –`,
+      text: `בשירות העור שלך!`,
+    },
+  ];
+
   return (
     <>
       <Banner
@@ -93,6 +119,7 @@ const AntiAge = () => {
           </H1>
         </div>
         <SecondText />
+        <List headline={listHeadline} data={listData} />
       </main>
     </>
   );
