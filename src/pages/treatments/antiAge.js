@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Banner, Form, IconText, List } from "../../layout/components";
+import {
+  Banner,
+  Form,
+  IconText,
+  List,
+  TextBlocks,
+} from "../../layout/components";
 import bag from "../../layout/assets/icons/bag.svg";
 import antiBottle from "../../layout/assets/icons/antiBottle.svg";
 import { H1 } from "../../layout/common";
@@ -93,6 +99,31 @@ const AntiAge = () => {
     },
   ];
 
+  const blockList = [
+    {
+      headline: "מיצוק העור",
+      text: ` בניית תכנית טיפול מותאמת אישית המבוססת על מכשור מתקדם המגיע לשכבות העור העמוקות
+    ומפעיל את שרירי הפנים, ועל תכשירים בעלי ריכוז גבוה של חומרים פעילים. שילובים אלו של
+    טכנולוגיות ותכשירים מעודדים יצירת קולגן, משפרים באופן דרמטי  את מרקם העור ומאפשרים לך
+   .ליהנות מעור מתוח וגמיש`,
+    },
+    {
+      headline: "פילינג לטיפול בקמטים וצלקות",
+      text: ` ישנם טיפולי פילינג מגוונים, חלקם (כמו פילינג כימי) כרוכים בתופעות לוואי ובזמן החלמה ארוך. כדי
+    ליהנות מכל יתרונות הפילינג במינימום תופעות לוואי, תוכלי ליהנות אצלנו בקליניקה מפילינג בשיטת
+    פילינג זה מבוצע בעזרת טכנולוגיה שמעבירה אנרגיית חום לעומק העור דרך מחטים- Fractora. ה
+    זעירות, מובילה להיווצרות מוגברת של קולגן ואלסטין ומחישה את תהליך התחדשות העור. שיטה זו
+   .יעילה לצורך טיפול בקמטים, צלקות, קמטוטי עישון ועור נפול`,
+    },
+    {
+      headline: `החדרת חומרים חיוניים לעומק העור`,
+      text: `, שדרוג כל טיפול פנים באמצעות מכשור מתקדם המחדיר לעומק העור חומרים חיוניים דוגמת ויטמינים
+.מינרלים וחומרים פעילים. החדרת חומרים אלו לעומק העור מסייעת לו להתחדש ולהיראות זוהר`,
+    },
+  ];
+
+  const blockListHeadline = "?מה כוללים טיפולי אנטי אייג'ינג בקליניקה";
+
   return (
     <>
       <Banner
@@ -120,6 +151,7 @@ const AntiAge = () => {
         </div>
         <SecondText />
         <List headline={listHeadline} data={listData} />
+        <TextBlocks data={blockList} headline={blockListHeadline} />
       </main>
     </>
   );

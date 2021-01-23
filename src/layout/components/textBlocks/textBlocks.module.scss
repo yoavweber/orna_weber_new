@@ -1,0 +1,11 @@
+.blockWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .blockWrapper {
+    row-gap: 0;
+  }
+}
