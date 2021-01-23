@@ -1,0 +1,36 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #cae3b1;
+  padding: 50px 100px;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 40px 0;
+  img {
+    width: 100%;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.headline {
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .iconWrapper {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    .iconItem {
+      margin-bottom: 40px;
+    }
+  }
+}
