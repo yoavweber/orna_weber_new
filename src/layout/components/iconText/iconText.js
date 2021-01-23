@@ -16,9 +16,10 @@ const IconText = ({
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <img src={icon} width="100px" height="100%" />
+          {/* <div /> */}
           <p>{firstPartText}</p>
         </div>
-        <Space />
+        <Space smallSpace="true" />
         {secondPartText && (
           <div className={styles.secondText}>
             <p>{secondPartText}</p>

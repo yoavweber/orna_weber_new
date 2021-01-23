@@ -3,9 +3,14 @@
 }
 
 .text {
-  display: flex;
+  // display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
   align-items: flex-end;
+  // flex: 5;
   img {
-    margin-left: calc(10px + 3vw);
+    // margin-left: calc(10px + 3vw);
+    align-self: center;
+    width: 70%;
   }
 }
