@@ -8,9 +8,9 @@ import {
 } from "../../layout/components";
 import bag from "../../layout/assets/icons/bag.svg";
 import antiBottle from "../../layout/assets/icons/antiBottle.svg";
-import { H1 } from "../../layout/common";
+import { H1, Space } from "../../layout/common";
 
-import styles from "./antiAge.module.scss";
+import styles from "./antiAge/antiAge.module.scss";
 
 const AntiAge = () => {
   //------------banner data
@@ -20,7 +20,7 @@ const AntiAge = () => {
     buttonText: "לעור בריא וחיוני",
   };
 
-  // -------------- icon text data
+  // -------------- icon text data---------------------
   const rawFirstText = `
   לקנות את הטלפון הכי חדש או את הבגד הכי אופנתי זה נחמד. אבל לפעמים, אנחנו פשוט
   רוצות להחזיר עטרה ליושנה – ולהרגיש צעירות יותר בעשר שנים כשאנחנו מביטות במראה. אך ?מה עושים כשלגיל הביולוגי שלנו יש תכניות משלו
@@ -35,13 +35,12 @@ const AntiAge = () => {
       " .הטיפולים שיאפשרו לך להיראות ולהרגיש צעירה, באמצעות שילובים בלתי שגרתיים המותאמים לך – ורק לך",
     icon: bag,
     firstText: rawFirstText,
-    secontText: rawSecondText,
+    secondText: rawSecondText,
   };
-
   const headline = `כאן נכנסים לתמונה
   טיפולי אנטי אייג'ינג שנועדו לעכב את תהליך הזדקנות העור
  ולשפר את בריאותו ומראהו`;
-  // ----------- icon text second part data
+  // ----------- icon text second part data------------
   const SecondText = () => {
     const rawFirstText2 = `
     אין טיפול או תכשיר קסם אחד שפותרים את כל הבעיות ומייצרים תוצאות. יתרה מכך, אותו הטיפול
@@ -73,7 +72,7 @@ const AntiAge = () => {
     );
   };
 
-  // ------- list data
+  // ------- list data------------------------------
   const listHeadline = "?איך נסייע לך להצעיר את המראה";
   const listData = [
     {
@@ -124,6 +123,10 @@ const AntiAge = () => {
 
   const blockListHeadline = "?מה כוללים טיפולי אנטי אייג'ינג בקליניקה";
 
+  // -------- final text
+  const finalText =
+    "אז נכון, עדיין אי אפשר להחזיר את מחוגי השעון לאחור, אבל הטיפולים המתקדמים אצלנו בקליניקה הם הכי קרוב שאפשר לבניית מכונת זמן...";
+
   return (
     <>
       <Banner
@@ -131,14 +134,15 @@ const AntiAge = () => {
         img={content.img}
         buttonText={content.buttonText}
       />
+      <Space />
       <main>
         <div className={styles.text}>
           <IconText
             headline={textContent.headline}
             icon={textContent.icon}
             firstPartText={textContent.firstText}
+            secondPartText={textContent.secondText}
           />
-          <p>{rawSecondText}</p>
           <H1
             style={{
               textAlign: "center",
@@ -151,8 +155,15 @@ const AntiAge = () => {
         </div>
         <SecondText />
         <List headline={listHeadline} data={listData} />
+        <Space />
         <TextBlocks data={blockList} headline={blockListHeadline} />
+        <Space />
+        <H1 style={{ width: "60%", textAlign: "center", margin: "0 auto" }}>
+          {finalText}
+        </H1>
+        <Space />
       </main>
+      <Form buttonText="להצערת המראה" />
     </>
   );
 };
