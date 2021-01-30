@@ -18,6 +18,7 @@ const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
     >
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
+          {/* chnage the H2 to H3 */}
           <H1 bold>{headline}</H1>
           <H2 color="white"> {text} </H2>
           <Button>{buttonText}</Button>

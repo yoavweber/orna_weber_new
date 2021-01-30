@@ -10,6 +10,8 @@ import getFluid from "../../../../utils/getFluid";
 import styles from "./about.module.scss";
 
 const About = () => {
+  //TODO: make the section bigger
+  //TODO: understand why its not working without importent
   const data = useStaticQuery(query);
   const {
     text,
@@ -32,7 +34,7 @@ const About = () => {
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
-              <Button href="/test" style={{ width: "70%" }}>
+              <Button href="/test" style={{ width: "70%", maxWidth: "300px" }}>
                 {button}
               </Button>
             </div>

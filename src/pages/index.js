@@ -3,7 +3,6 @@ import * as React from "react";
 import { Banner, Form } from "../layout/components";
 import BackgroundImage from "../layout/components/Img";
 import pigmentation from "../layout/assets/icons/pigmentation.svg";
-// import Test from "../layout/components/BackgroundImage";
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
 import IntroText from "./components/homePage/introText/introText";
@@ -47,8 +46,7 @@ const Homepage = () => {
       <IntroText />
       <Treatments />
       <About />
-      <Form />
-      {/* <Test /> */}
+      <Form headline="לעור זורח ופרצוף שמח:" buttonText="ספרו לי עוד" />
     </>
   );
 };

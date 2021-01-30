@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import PhoneIcon from "../phone/Phone";
+import PhoneIcon from "../icon/Icon";
 import { PHONE_NUMBER } from "../../config";
 import logo from "../../assets/logo.svg";
 import phone from "../../assets/phone.svg";

@@ -9,6 +9,7 @@ import styles from "./textBlocks.module.scss";
 const TextBlocks = ({ headline, data }) => {
   const blockColors = ["#ebf1e6", "#dce8d0", "#cae3b1"];
 
+  //TODO: try to create media quary with the styled components
   const StyledBlock = ({ index, children }) => (
     <div
       css={css`
