@@ -5,12 +5,12 @@
   background-color: #f2fcfc;
   display: flex;
   justify-content: center;
-  height: 35%;
+  height: 50%;
 }
 
 .contactsIcons {
   display: flex;
-  width: 40%;
+  width: 50%;
   justify-content: space-around;
 }
 
@@ -24,4 +24,34 @@
   display: flex;
   width: 40%;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1400px) {
+  .contactsIcons {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contactsIcons {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contact {
+    height: 80%;
+  }
+  .contactsIcons {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .icon {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
 }

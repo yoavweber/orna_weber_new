@@ -7,7 +7,7 @@ $distence: 15px;
 
 .text {
   color: #555556;
-  font-size: 2vh;
+  font-size: 1.7rem;
   font-weight: 600;
   width: 70%;
 }
@@ -15,4 +15,10 @@ $distence: 15px;
 //https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
 .item {
   margin-left: $distence;
+}
+
+@media only screen and (max-width: 1800px) {
+  .text {
+    font-size: 1.2rem;
+  }
 }

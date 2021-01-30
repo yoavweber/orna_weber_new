@@ -6,10 +6,11 @@ import phone from "../../assets/phone.svg";
 
 import styles from "./icon.module.scss";
 
-const PhoneIcon = ({ icon, text }) => {
+const PhoneIcon = ({ icon, text, className }) => {
   const textClass = classNames(styles.text, styles.item);
+  const wrapperClass = classNames(styles.wrapper, className);
   return (
-    <div className={styles.wrapper}>
+    <div className={wrapperClass}>
       <img src={icon} className={styles.item} />
       <span className={textClass}>{text}</span>
     </div>
