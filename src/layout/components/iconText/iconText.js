@@ -1,5 +1,5 @@
 import React from "react";
-import { H1, Space } from "../../common";
+import { H1, Space, MobileTextWrapper } from "../../common";
 
 import styles from "./iconText.module.scss";
 
@@ -11,7 +11,7 @@ const IconText = ({
   secondPartText,
 }) => {
   return (
-    <section className={styles.wrapper}>
+    <MobileTextWrapper className={styles.wrapper}>
       <H1 color={headlineColor}>{headline}</H1>
       <div className={styles.textWrapper}>
         <div className={styles.text}>
@@ -26,7 +26,7 @@ const IconText = ({
           </div>
         )}
       </div>
-    </section>
+    </MobileTextWrapper>
   );
 };
 

@@ -30,15 +30,18 @@ import styled from "@emotion/styled";
 const DESKTOP_BUTTON_HEIGHT = "calc(30px + 2vw)";
 const MOBILE_BUTTON_HEIGHT = "calc(60px + 2vw)";
 const FONT_SIZE = "calc(2rem + 1vw)";
+
 const ButtonTag = styled.button`
   background: #cae3b1;
   border: 0;
   width: 100%;
   height: ${DESKTOP_BUTTON_HEIGHT};
   cursor: pointer;
+  font-size: 1.2rem;
   @media (max-width: 800px) {
     height: ${MOBILE_BUTTON_HEIGHT};
   }
+  ${"" /* padding: 25px 50px; */}
 `;
 
 const Atag = styled.a`
@@ -57,23 +60,27 @@ export const Button = ({ children, buttonStyle, ...props }) => {
 // ------------headlines------------------------------
 const H1Colors = {
   white: "#ffffff;",
-  black: "#555556;",
+  grey: "#555556;",
   green: "#9fc975;",
+  black: "#424d37",
 };
 
-export const H1 = styled.h1((props) => ({
-  color: H1Colors[props.color],
-  fontWeight: props.bold ? "600" : "300",
-  fontSize: "2.3rem",
-  margin: "20px 0",
+// make the lineHeight varible
+export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
+  color: H1Colors[color],
+  fontWeight: bold ? "600" : "300",
+  fontSize: " calc(2rem + 1vw)",
+  marginBottom: largeSpace ? "40px" : "20px",
   lineHeight: "calc(1.1em + 0.5vw)",
+  ...style,
 }));
 
 export const H2 = styled.h2((props) => ({
   color: H1Colors[props.color],
   fontWeight: props.bold ? "600" : "300",
-  fontSize: "1.5rem",
-  margin: "10px 0",
+  fontSize: "calc(1.5rem + 0.8vw)",
+  marginBottom: "calc(10px + 2vh) ",
+  lineHeight: "calc(1.1em + 0.5vw)",
 }));
 
 export const ColoredH1 = ({ firstPart, secondPart, spanSize }) => {
@@ -108,6 +115,10 @@ export const Input = styled.input`
 
 // other
 
-export const Space = styled.div((props) => ({
-  margin: "calc(10px + 3vw)",
+export const Space = styled.div(({ smallSpace }) => ({
+  margin: smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)",
 }));
+
+export const MobileTextWrapper = styled.section`
+  padding: 0 25px;
+`;
