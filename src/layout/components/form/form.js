@@ -3,15 +3,16 @@ import { H1, Button, Input } from "../../common";
 
 import styles from "./form.module.scss";
 
-const Form = () => {
+const Form = ({ headline, buttonText }) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <H1 color="white"> לעור זורח ופרצוף שמח: </H1>
+        <H1 color="white"> {headline}</H1>
         <form className={styles.form}>
           <Input
+            className={styles.input}
             type="text"
             placeholder="שם"
             value={name}
@@ -22,6 +23,7 @@ const Form = () => {
             data-aos-once="true"
           />
           <Input
+            className={styles.input}
             type="email"
             placeholder="אימייל"
             value={email}
@@ -33,11 +35,11 @@ const Form = () => {
           />
           <Button
             primary
-            style={{ margin: "0", maxWidth: "150px" }}
+            style={{ margin: "0" }}
             onClick={(e) => alert("submited")}
             className={styles.formButton}
           >
-            שלחי
+            {buttonText}
           </Button>
         </form>
       </div>

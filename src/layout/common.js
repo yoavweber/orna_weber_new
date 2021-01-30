@@ -27,20 +27,24 @@ import styled from "@emotion/styled";
 //   );
 // };
 
-const buttonHight = "60px";
+const DESKTOP_BUTTON_HEIGHT = "calc(30px + 2vw)";
+const MOBILE_BUTTON_HEIGHT = "calc(60px + 2vw)";
+const FONT_SIZE = "calc(2rem + 1vw)";
 const ButtonTag = styled.button`
   background: #cae3b1;
   border: 0;
   width: 100%;
-  max-width: 300px;
-  height: ${buttonHight};
+  height: ${DESKTOP_BUTTON_HEIGHT};
   cursor: pointer;
-  font-size: 1.5rem;
+  @media (max-width: 800px) {
+    height: ${MOBILE_BUTTON_HEIGHT};
+  }
 `;
 
 const Atag = styled.a`
   margin: 10px 0;
   display: block;
+  max-width: none;
 `;
 export const Button = ({ children, buttonStyle, ...props }) => {
   return (
@@ -84,12 +88,21 @@ export const ColoredH1 = ({ firstPart, secondPart, spanSize }) => {
 };
 //--------------------Input----------------------
 export const Input = styled.input`
-  height: ${buttonHight};
+  height: ${DESKTOP_BUTTON_HEIGHT};
   background: rgba(0, 0, 0, 0);
   border: 1px solid white;
+  color: white;
+  padding-right: 10px;
+  font-size: 20px;
   &::placeholder {
     color: white;
-    padding: 5px;
+    padding-right: 10px;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+  @media (max-width: 800px) {
+    height: ${MOBILE_BUTTON_HEIGHT};
   }
 `;
 

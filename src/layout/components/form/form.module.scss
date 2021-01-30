@@ -14,8 +14,41 @@
 }
 .form {
   display: flex;
-  margin-left: -5px;
+  margin-left: -10px;
   & > * {
-    margin-left: 5px;
+    margin-left: 10px;
+  }
+  .input {
+    flex: 1;
+  }
+  .formButton {
+    flex: 1;
+    min-width: 170px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .wrapper {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .section {
+    height: 70vh;
+  }
+  .wrapper {
+    width: 70%;
+  }
+  .form {
+    margin-bottom: -20px;
+    & > * {
+      margin-bottom: 20px;
+      margin-left: 0;
+    }
+    flex-direction: column;
+    .input {
+      flex: auto;
+    }
   }
 }
