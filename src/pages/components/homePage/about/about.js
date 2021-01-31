@@ -20,7 +20,7 @@ const About = () => {
     ornaPicture,
   } = data.allStrapiHomePage.edges[0].node.about;
   const background = getFluid("backgroundSmall.png");
-  const fluid = ornaPicture.childImageSharp.fluid;
+  // const fluid = ornaPicture.childImageSharp.fluid;
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
@@ -30,7 +30,7 @@ const About = () => {
         </div> */}
         <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
-          <Img fluid={fluid} className={styles.img} />
+          {/* <Img fluid={fluid} className={styles.img} /> */}
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
@@ -63,13 +63,13 @@ const query = graphql`
             text
             title
             button
-            ornaPicture {
-              childImageSharp {
-                fluid(maxWidth: 400) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            # ornaPicture {
+            #   # childImageSharp {
+            #   #   fluid(maxWidth: 400) {
+            #   #     ...GatsbyImageSharpFluid
+            #   #   }
+            #   }
+            # }
           }
         }
       }
