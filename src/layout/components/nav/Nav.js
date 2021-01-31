@@ -16,7 +16,7 @@ const Nav = ({ children }) => {
     <div className={styles.wrapper}>
       <nav className={navClassName}>
         <Link to="/">
-          <img src={logo} width="100px" alt="Orna_logo" />
+          <img src={logo} width="200px" alt="Orna_logo" />
         </Link>
         <Link to="/" delay="200">
           ראשי
@@ -33,7 +33,7 @@ const Nav = ({ children }) => {
         <Link to="contact" delay="800">
           צרי קשר
         </Link>
-        <PhoneIcon icon={phone} text={PHONE_NUMBER} />
+        <PhoneIcon icon={phone} text={PHONE_NUMBER} className={styles.icon} />
       </nav>
       {children}
     </div>
