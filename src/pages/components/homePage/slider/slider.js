@@ -17,6 +17,7 @@ import { moveElements } from "../../../../utils/utils";
 // TODO: make the transition effect
 // TODO: fix the design
 // TODO: add the option to prevent autoplay and check if it working fine when hovering
+// TODO: add data handler
 const Slider = ({ content, width, showElements, autoPlay }) => {
   if (typeof window === "undefined") {
     global.window = {};
@@ -36,6 +37,7 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
   });
 
   const { translate, transition, activeIndex, _slides } = state;
+
   const autoPlayRef = useRef();
   const transitionRef = useRef();
 
@@ -96,6 +98,10 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
         activeIndex === 0 ? content?.length - showElements : activeIndex - 1,
     });
   };
+
+  if (!_slides) {
+    return <div>hey</div>;
+  }
   return (
     <div css={SliderCSS}>
       <SliderContent
@@ -104,16 +110,7 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
         width={(getWidth / showElements) * content?.length}
       >
         {_slides.map((Content, i) => (
-          <Slide key={i} content={Content}>
-            {/* <Content /> */}
-            {/* <Banner
-              headline={content.headline}
-              text={content.text}
-              img={content.img}
-              textStyle={{ display: "flex", color: "green" }}
-              buttonText={content.buttonText}
-            /> */}
-          </Slide>
+          <Slide key={i} content={Content} />
         ))}
       </SliderContent>
       <Dots />

@@ -3,6 +3,9 @@ import * as React from "react";
 import { Banner, Form } from "../layout/components";
 import BackgroundImage from "../layout/components/Img";
 import pigmentation from "../layout/assets/icons/banner/pigmentation.svg";
+import face from "../layout/assets/icons/banner/face.svg";
+import twoBottles from "../layout/assets/icons/banner/twoBottles.svg";
+
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
 import IntroText from "./components/homePage/introText/introText";
@@ -19,24 +22,24 @@ const Homepage = () => {
   ];
   const content = [
     {
-      headline: "הכתמים לא עוזבים?",
-      text: "טיפולי פיגמנטציה בהתאמה מלאה לעור המיוחד שלך ",
-      img: "pigmentation.png",
-      buttonText: "לטיפול מוכח ויעיל",
-      icon: pigmentation,
-    },
-    {
       headline: "המרכז לקוסמטיקת פיוז'ן",
       text: "שילוב מיוחד לכל אחת ",
       img: "beautyFusion.png",
       buttonText: "לשילוב המיוחד שלך",
-      icon: pigmentation,
+      icon: face,
     },
     {
       headline: "מעיין הנעורים הפרטי שלך",
       text: "השילובים שיאפשרו לך להיראות ולהרגיש צעירה ",
       img: "antiaging.png",
       buttonText: "קחו אותי למעיין הנעורים",
+      icon: twoBottles,
+    },
+    {
+      headline: "הכתמים לא עוזבים?",
+      text: "טיפולי פיגמנטציה בהתאמה מלאה לעור המיוחד שלך ",
+      img: "pigmentation.png",
+      buttonText: "לטיפול מוכח ויעיל",
       icon: pigmentation,
     },
   ];
