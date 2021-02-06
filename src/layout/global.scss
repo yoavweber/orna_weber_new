@@ -16,6 +16,10 @@ span {
   line-height: calc(1.2em + 0.5vw);
 }
 
+a {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 800px) {
   main {
     width: 100%;

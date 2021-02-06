@@ -4,12 +4,18 @@
   align-items: center;
   height: 40%;
   a {
-    text-decoration: none;
     color: #555556;
+    font-size: 1.2rem;
   }
   .icon {
     span {
       color: #9fc975;
     }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .icon {
+    display: none;
   }
 }
