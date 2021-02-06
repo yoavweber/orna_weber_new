@@ -21,9 +21,9 @@ const Arrow = ({ direction, handleClick }) => (
       cursor: pointer;
       align-items: center;
       transition: transform ease-in 0.1s;
-      &:hover {
+      ${"" /* &:hover {
         transform: scale(1.1);
-      }
+      } */}
       img {
         transform: translateX(${direction === "left" ? "-2" : "2"}px);
         &:focus {

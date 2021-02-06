@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-// import showdown from "showdown";
+import showdown from "showdown";
 import ReactMarkdown from "react-markdown";
 
-import { ColoredH1 } from "../../../../layout/common";
+import { H1, ColoredH1 } from "../../../../layout/common";
 
 import styles from "./introText.module.scss";
 
@@ -32,7 +32,8 @@ const Intro = () => {
         </div>
       </div>
       <img
-        src={`${process.env.API_URL}${backgroundUrl}`}
+        // src={`${process.env.API_URL}${backgroundUrl}`}
+        src={`https://stark-forest-78751.herokuapp.com${backgroundUrl}`}
         className={styles.img}
       />
     </section>

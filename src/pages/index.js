@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Banner, Form } from "../layout/components";
 import BackgroundImage from "../layout/components/Img";
-import pigmentation from "../layout/assets/icons/pigmentation.svg";
+import pigmentation from "../layout/assets/icons/banner/pigmentation.svg";
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
 import IntroText from "./components/homePage/introText/introText";
@@ -40,9 +40,31 @@ const Homepage = () => {
       icon: pigmentation,
     },
   ];
+  const bannerArray = content.map((content) => {
+    return (
+      <Banner
+        headline={content.headline}
+        text={content.text}
+        img={content.img}
+        textStyle={{ display: "flex", color: "green" }}
+        buttonText={content.buttonText}
+        icon={content.icon}
+      />
+    );
+  });
   return (
     <>
-      <Slider content={content} />
+      <div style={{ position: "relative", height: "100%", width: "100vw" }}>
+        <Slider
+          style={{
+            position: "relative",
+            height: "25vw",
+            width: "100vw",
+          }}
+          showElements={1}
+          content={bannerArray}
+        />
+      </div>
       <IntroText />
       <Treatments />
       <About />
