@@ -7,6 +7,7 @@ import List from "./list/list";
 import TextBlocks from "./textBlocks/textBlocks";
 import IconBox from "./iconBox/iconBox";
 import PlainText from "./plainText/plainText";
+import PicText from "./roundPicText/roundPicText";
 
 export {
   Banner,
@@ -18,4 +19,5 @@ export {
   TextBlocks,
   IconBox,
   PlainText,
+  PicText,
 };

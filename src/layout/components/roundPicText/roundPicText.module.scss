@@ -1,0 +1,22 @@
+.img {
+  //   width: 20%;
+  //   height: 20 0px;
+  flex: 2;
+  margin-left: calc(10px + 3vw);
+  align-self: center;
+  align-self: baseline;
+}
+
+.textWrapper {
+  display: flex;
+  p {
+    flex: 6;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .img {
+    flex: 3;
+  }
+}
