@@ -1,8 +1,8 @@
 * {
   direction: rtl;
   box-sizing: border-box;
-  /* font-family: Segoe UI Regular; */
-  font-family: "Assistant", sans-serif;
+  font-family: hebrew;
+  // font-family: "Assistant", sans-serif;
   line-height: 24px;
   margin: 0;
 }
@@ -14,6 +14,7 @@ p,
 span {
   font-size: calc(1.3rem + 0.5vw);
   line-height: calc(1.2em + 0.5vw);
+  color: #424d37;
 }
 
 a {
@@ -26,9 +27,16 @@ a {
   }
 }
 
+// @font-face {
+//   font-family: "Segoe UI Regular";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url("Segoe\ UI.woff") format("woff");
+// }
 @font-face {
-  font-family: "Segoe UI Regular";
+  font-family: "hebrew";
   font-style: normal;
   font-weight: normal;
-  src: url("./assets/font/Segoe\ UI.woff") format("woff");
+  src: local("hebrew"),
+    url("./assets/font/segoe-ui-regular-hebrew.woff") format("woff");
 }
