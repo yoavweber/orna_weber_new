@@ -1,12 +1,19 @@
 import React from "react";
 import styled from "@emotion/styled";
+import ReactMarkdown from "react-markdown";
+
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 
 import { H1, H2 } from "../../common";
 import styles from "./textBlocks.module.scss";
 
-const TextBlocks = ({ headline, data }) => {
+const TextBlocks = ({ content }) => {
+  if (!content) {
+    //TODO: add data handler
+    return <div>loading</div>;
+  }
+  const { data, headline } = content;
   const blockColors = ["#ebf1e6", "#dce8d0", "#cae3b1"];
 
   //TODO: try to create media quary with the styled components
@@ -30,7 +37,7 @@ const TextBlocks = ({ headline, data }) => {
         <H2 color="black" bold="true">
           {data.headline}
         </H2>
-        <p>{data.text}</p>
+        <ReactMarkdown>{data.text}</ReactMarkdown>
       </StyledBlock>
     );
   });
