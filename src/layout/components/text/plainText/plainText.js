@@ -1,5 +1,5 @@
 import React from "react";
-import { H1, MobileTextWrapper } from "../../common";
+import { H1, MobileTextWrapper } from "../../../common";
 
 const PlainText = ({ headline, text }) => (
   <MobileTextWrapper>

@@ -1,6 +1,6 @@
 import BackgroundImage from "gatsby-background-image";
 import React from "react";
-import { H1, Space, MobileTextWrapper } from "../../common";
+import { H1, Space, MobileTextWrapper } from "../../../common";
 
 import styles from "./iconText.module.scss";
 

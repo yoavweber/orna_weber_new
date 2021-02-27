@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 
-import { H1, H2 } from "../../common";
+import { H1, H2 } from "..//../../common";
 import styles from "./textBlocks.module.scss";
 
 const TextBlocks = ({ content }) => {
