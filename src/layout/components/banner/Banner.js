@@ -1,13 +1,13 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
 
-import getFluid from "../../../utils/getFluid";
 import { Button, H1, H2 } from "../../common";
 
 import styles from "./banner.module.scss";
 
-const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
-  const fluid = getFluid(img);
+const Banner = ({ data, textStyle }) => {
+  const { img, title, subTitle, button, icon } = data;
+  const fluid = img.localFile.childImageSharp.fluid;
   return (
     <BackgroundImage
       fluid={fluid}
@@ -19,9 +19,9 @@ const Banner = ({ img, headline, text, textStyle, buttonText, icon }) => {
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
           {/* chnage the H2 to H3 */}
-          <H2 bold>{headline}</H2>
-          <H2 color="white"> {text} </H2>
-          <Button className={styles.button}>{buttonText}</Button>
+          <H2 bold>{title}</H2>
+          {subTitle && <H2 color="white"> {subTitle} </H2>}
+          <Button className={styles.button}>{button}</Button>
           {icon && <img src={icon} width="80" height="80" />}
         </div>
       </div>

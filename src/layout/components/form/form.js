@@ -3,7 +3,8 @@ import { H1, Button, Input } from "../../common";
 
 import styles from "./form.module.scss";
 
-const Form = ({ headline, buttonText }) => {
+const Form = ({ data }) => {
+  const { headline, button } = data;
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   return (
@@ -39,7 +40,7 @@ const Form = ({ headline, buttonText }) => {
             onClick={(e) => alert("submited")}
             className={styles.formButton}
           >
-            {buttonText}
+            {button}
           </Button>
         </form>
       </div>

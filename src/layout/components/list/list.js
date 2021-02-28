@@ -4,14 +4,15 @@ import miniLogo from "../../assets/miniLogo.svg";
 
 import styles from "./list.module.scss";
 
-const List = ({ headline, data }) => {
-  const listComponent = data.map((data) => {
+const List = ({ data }) => {
+  const { headline, listElement } = data;
+  const listComponent = listElement.map((listElement) => {
     return (
       <li className={styles.listItem}>
         <img src={miniLogo} />{" "}
         <p>
-          <span style={{ color: "#85b240" }}>{data.boldText} </span>
-          {data.text}
+          <span style={{ color: "#85b240" }}>{listElement.bold} </span>
+          {listElement.text}
         </p>
       </li>
     );

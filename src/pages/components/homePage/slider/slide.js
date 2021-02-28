@@ -7,9 +7,9 @@ const Slide = ({ content, children }) => (
     css={css`
       ${"" /* height: 100%; */}
       width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+      ${"" /* background-size: cover; */}
+      ${"" /* background-repeat: no-repeat; */}
+      ${"" /* background-position: 50% 50%; */}
       ${"" /* margin: 0 40px; */}
     `}
   >

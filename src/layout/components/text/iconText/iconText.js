@@ -1,5 +1,7 @@
-import BackgroundImage from "gatsby-background-image";
 import React from "react";
+import BackgroundImage from "gatsby-background-image";
+import ReactMarkdown from "react-markdown";
+
 import { H1, Space, MobileTextWrapper } from "../../../common";
 
 import styles from "./iconText.module.scss";
@@ -16,11 +18,15 @@ const IconText = ({ data }) => {
   const styleReverse = reverse && { flexDirection: "row-reverse" };
   return (
     <MobileTextWrapper className={styles.wrapper}>
-      <H1 color={headlineColor}>{headline}</H1>
+      <H1 color={headlineColor}>
+        {headline}
+
+        {/* <ReactMarkdown allowDangerousHtml={true}>{headline} </ReactMarkdown> */}
+      </H1>
       <div className={styles.textWrapper}>
         <div className={styles.text} style={{ ...styleReverse }}>
           <img src={icon.url} width="100px" height="100%" />
-          <p>{firstPartText}</p>
+          <ReactMarkdown>{firstPartText}</ReactMarkdown>
         </div>
         <Space smallSpace="true" />
         {secondPartText && (
