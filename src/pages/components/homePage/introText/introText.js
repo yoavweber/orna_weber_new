@@ -13,9 +13,9 @@ const Intro = () => {
   const data = useStaticQuery(query);
   const {
     introText,
-    introBackground,
+    // introBackground,
   } = data.allStrapiHomePage.edges[0].node.introText;
-  const backgroundUrl = introBackground[0].url;
+  // const backgroundUrl = introBackground[0].url;
   // delete it after you choose which md converter to choose
   // const converter = new showdown.Converter();
   // converter.setOption("noHeaderId", true);
@@ -24,18 +24,18 @@ const Intro = () => {
     <section className={styles.section}>
       <div className={styles.textWrapper}>
         <div className={styles.text}>
-          <ColoredH1
+          {/* <ColoredH1
             firstPart="את מחוגי השעון אי אפשר להחזיר לאחור,"
             secondPart="אבל את המראה שלך אפשר להצעיר!"
-          />
+          /> */}
           <ReactMarkdown allowDangerousHtml={true}>{introText}</ReactMarkdown>
         </div>
       </div>
-      <img
+      {/* <img
         // src={`${process.env.API_URL}${backgroundUrl}`}
         src={`https://stark-forest-78751.herokuapp.com${backgroundUrl}`}
         className={styles.img}
-      />
+      /> */}
     </section>
   );
 };
@@ -48,9 +48,9 @@ const query = graphql`
           id
           introText {
             introText
-            introBackground {
-              url
-            }
+            # introBackground {
+            #   url
+            # }
           }
         }
       }
