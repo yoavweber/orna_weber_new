@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
+
+import { splitText } from "../utils/utils";
 // https://www.dandenney.com/posts/front-end-dev/embracing-emotion-with-gatsby/
 //https://emotion.sh/docs/styled
 
@@ -59,15 +61,15 @@ export const Button = ({ children, buttonStyle, ...props }) => {
 
 // ------------headlines------------------------------
 const H1Colors = {
-  white: "#ffffff;",
-  grey: "#555556;",
-  green: "#9fc975;",
+  white: "#ffffff",
+  grey: "#555556",
+  green: "#9fc975",
   black: "#424d37",
 };
 
 // make the lineHeight varible
 export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
-  color: H1Colors[color],
+  color: color ? H1Colors[color] : H1Colors["grey"],
   fontWeight: bold ? "600" : "300",
   fontSize: " calc(2rem + 1vw)",
   marginBottom: largeSpace ? "40px" : "20px",
@@ -75,22 +77,37 @@ export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
   ...style,
 }));
 
-export const H2 = styled.h2((props) => ({
-  color: H1Colors[props.color],
-  fontWeight: props.bold ? "600" : "300",
+export const H2 = styled.h2(({ bold, color }) => ({
+  color: H1Colors[color],
+  fontWeight: bold ? "600" : "300",
   fontSize: "calc(1.5rem + 0.8vw)",
   marginBottom: "calc(10px + 2vh) ",
   lineHeight: "calc(1.1em + 0.5vw)",
 }));
 
-export const ColoredH1 = ({ firstPart, secondPart, spanSize }) => {
+export const ColoredHeadline = ({ text, spanSize }) => {
+  const textArray = splitText(text);
+  const coloredText = textArray.map((text, index) => {
+    const color = (index + 2) % 2 == 0 ? H1Colors["black"] : H1Colors["green"];
+    return (
+      <span
+        key={index}
+        style={{
+          color: `${color}`,
+          fontSize: "calc(1.5rem + 0.8vw)",
+          fontWeight: "400",
+        }}
+      >
+        {text}
+      </span>
+    );
+  });
+  const div = React.createElement("div", null);
+  coloredText.splice(1, 0, div);
   return (
-    <H1 style={{ lineHeight: "1.25" }}>
-      {" "}
-      <span>{firstPart}</span>
-      <br />{" "}
-      <span style={{ color: "#9fc975", marginTop: "10px" }}>{secondPart}</span>
-    </H1>
+    <H2 style={{ lineHeight: "1.25" }}>
+      <div>{coloredText}</div>
+    </H2>
   );
 };
 //--------------------Input----------------------
@@ -120,5 +137,8 @@ export const Space = styled.div(({ smallSpace }) => ({
 }));
 
 export const MobileTextWrapper = styled.section`
-  padding: 0 25px;
+  padding: 0 100px;
+  @media (max-width: 800px) {
+    padding: 0 25px;
+  }
 `;

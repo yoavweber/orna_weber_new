@@ -13,3 +13,9 @@ export function moveElements(arr, elements) {
   ];
   return newArray;
 }
+
+export const splitText = (text) => {
+  const splitWords = text.split("@");
+  const trimWords = splitWords.map((e) => e.trim());
+  return trimWords;
+};
