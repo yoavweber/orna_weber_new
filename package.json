@@ -35,7 +35,7 @@
     "gatsby-plugin-sharp": "^2.11.2",
     "gatsby-plugin-sitemap": "^2.9.0",
     "gatsby-source-filesystem": "^2.8.1",
-    "gatsby-source-strapi": "^0.0.12",
+    "gatsby-source-strapi": "1.0.0-alpha.0",
     "gatsby-transformer-sharp": "^2.9.0",
     "lodash.get": "^4.4.2",
     "node-sass": "^4.0.0",
@@ -43,6 +43,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-markdown": "^5.0.3",
+    "sharp": "^0.27.1",
     "showdown": "^1.9.1"
   }
 }

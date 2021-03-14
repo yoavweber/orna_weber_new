@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import safeGet from "lodash.get";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -27,7 +27,7 @@ const Image = (name) => {
   const match = useMemo(
     () =>
       data.allFile.nodes.find(
-        (node) => name === node.childImageSharp.fluid.originalName
+        (node) => name === node.childImageSharp?.fluid.originalName
       ),
     [data, name]
   );

@@ -11,6 +11,5 @@ export function moveElements(arr, elements) {
     ...arr.slice(middleArray + elements),
     ...arr.slice(0, middleArray),
   ];
-  console.log(newArray, "new array");
   return newArray;
 }

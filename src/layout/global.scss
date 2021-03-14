@@ -12,8 +12,8 @@ main {
 }
 p,
 span {
-  font-size: calc(1.3rem + 0.5vw);
-  line-height: calc(1.2em + 0.5vw);
+  font-size: calc(1rem + 0.5vw);
+  line-height: calc(1.5em + 0.5vw);
   color: #424d37;
 }
 
@@ -21,22 +21,28 @@ a {
   text-decoration: none;
 }
 
+// li {
+//   list-style-image: url(img/iphone.png);
+// }
+
 @media only screen and (max-width: 800px) {
   main {
     width: 100%;
   }
 }
 
-// @font-face {
-//   font-family: "Segoe UI Regular";
-//   font-style: normal;
-//   font-weight: normal;
-//   src: url("Segoe\ UI.woff") format("woff");
-// }
 @font-face {
   font-family: "hebrew";
   font-style: normal;
   font-weight: normal;
   src: local("hebrew"),
     url("./assets/font/segoe-ui-regular-hebrew.woff") format("woff");
+}
+
+@font-face {
+  font-family: "hebrew";
+  font-style: normal;
+  font-weight: 300;
+  src: local("hebrew"),
+    url("./assets/font/segoe-ui-light-hebrew.woff") format("woff");
 }
