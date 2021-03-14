@@ -9,34 +9,22 @@ import getFluid from "../../../../utils/getFluid";
 
 import styles from "./about.module.scss";
 
-const About = () => {
-  //TODO: make the section bigger
-  //TODO: understand why its not working without importent
-  const data = useStaticQuery(query);
-  const {
-    text,
-    title,
-    button,
-    ornaPicture,
-  } = data.allStrapiHomePage.edges[0].node.about;
+const About = ({ data }) => {
+  const { button, ornaPicture, text, title } = data;
+  //TODO: imprort the background image from the cms
+
+  const fluid = ornaPicture.localFile.childImageSharp.fluid;
   const background = getFluid("backgroundSmall.png");
-  // const fluid = ornaPicture.childImageSharp.fluid;
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        {/* <div className={styles.imgWrapper}>
-          <H1 className={styles.headline}>{title} </H1>
-          <Img fluid={fluid} className={styles.img} />
-        </div> */}
         <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
-          {/* <Img fluid={fluid} className={styles.img} /> */}
+          <Img fluid={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
-              <Button href="/test" style={{ width: "70%", maxWidth: "300px" }}>
-                {button}
-              </Button>
+              <Button href="/test">{button}</Button>
             </div>
           </div>
         </div>
@@ -46,35 +34,11 @@ const About = () => {
           fluid={background}
           Tag="div"
           className={styles.background}
-          //   style={{ position: "absolute" }}
           alt="banner picture"
         />
       </div>
     </section>
   );
 };
-
-const query = graphql`
-  query {
-    allStrapiHomePage {
-      edges {
-        node {
-          about {
-            text
-            title
-            button
-            # ornaPicture {
-            #   # childImageSharp {
-            #   #   fluid(maxWidth: 400) {
-            #   #     ...GatsbyImageSharpFluid
-            #   #   }
-            #   }
-            # }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default About;
