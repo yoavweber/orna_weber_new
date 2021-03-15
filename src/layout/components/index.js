@@ -2,12 +2,14 @@ import Banner from "./banner/Banner";
 import Footer from "./footer/Footer";
 import Nav from "./nav/Nav";
 import Form from "./form/form";
-import IconText from "./iconText/iconText";
+import IconText from "./text/iconText/iconText";
 import List from "./list/list";
-import TextBlocks from "./textBlocks/textBlocks";
+import TextBlocks from "./text/textBlocks/textBlocks";
 import IconBox from "./iconBox/iconBox";
-import PlainText from "./plainText/plainText";
-import PicText from "./roundPicText/roundPicText";
+import PlainText from "./text/plainText/plainText";
+import RoundPicText from "./text/roundPicText/roundPicText";
+import ColoredBgText from "./text/coloredBgText/coloredBgText";
+import SquarePicText from "./text/squarePicText/squarePicText";
 
 export {
   Banner,
@@ -19,5 +21,7 @@ export {
   TextBlocks,
   IconBox,
   PlainText,
-  PicText,
+  RoundPicText,
+  ColoredBgText,
+  SquarePicText,
 };

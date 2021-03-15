@@ -1,13 +1,17 @@
+.wrapper {
+  padding: 0 100px;
+}
+
 .img {
   //   width: 20%;
   //   height: 20 0px;
-  flex: 2;
+  flex: 1;
   margin-left: calc(10px + 3vw);
   align-self: center;
   align-self: baseline;
 }
 
-.textWrapper {
+.contentWrapper {
   display: flex;
   p {
     flex: 6;
@@ -18,5 +22,18 @@
 @media only screen and (max-width: 1100px) {
   .img {
     flex: 3;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .img {
+    margin-left: 0;
+
+    width: 100%;
+    margin-bottom: calc(10px + 3vw);
+  }
+  .contentWrapper {
+    justify-content: center;
+    flex-direction: column;
   }
 }
