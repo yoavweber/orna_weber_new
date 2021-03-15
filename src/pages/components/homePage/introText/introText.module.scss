@@ -1,18 +1,24 @@
 .section {
-  height: calc(50vw * (9 / 16));
+  height: calc(52vw * (9 / 16));
   min-height: 400px;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-start;
   padding: 0 100px;
-  img {
+
+  .img {
     height: 100%;
     margin-left: 20px;
+    width: 30%;
+    img {
+      height: 100%;
+    }
   }
   // change this to be global
   p {
     font-size: calc(0.8rem + 0.5vw);
     line-height: calc(1.1em + 0.5vw);
   }
+
   .wrapper {
     width: 40%;
     background-size: contain;
@@ -28,6 +34,7 @@
     flex-direction: column;
     justify-content: center;
     // width: 50%;
+    // margin: 50px 0;
     height: 100%;
   }
 }
@@ -35,5 +42,30 @@
 @media only screen and (max-width: 1400px) {
   .section {
     padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .coloredHeadline {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .section {
+    padding: 0;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    .coloredHeadline {
+      display: block;
+      font-size: 1px;
+    }
+    .textWrapper {
+      padding: 2rem 20px;
+      // padding-bottom: 2rem;
+      background-color: #ebf1e6;
+      width: 100%;
+    }
   }
 }
