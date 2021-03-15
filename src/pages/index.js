@@ -1,7 +1,7 @@
 import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form } from "../layout/components";
-import BackgroundImage from "../layout/components/Img";
 import pigmentation from "../layout/assets/icons/banner/pigmentation.svg";
 import face from "../layout/assets/icons/banner/face.svg";
 import twoBottles from "../layout/assets/icons/banner/twoBottles.svg";
@@ -12,18 +12,13 @@ import IntroText from "./components/homePage/introText/introText";
 import About from "./components/homePage/about/about";
 
 const Homepage = () => {
-  // const images = [pigmentation, pigmentation, pigmentation];
-
-  const images = [
-    "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-    "https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80",
-    "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80",
-    "https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80",
-  ];
+  const data = useStaticQuery(query);
+  const { strapiHomePage } = data;
+  const { banner, introText, about, form } = strapiHomePage;
   const content = [
     {
       headline: "המרכז לקוסמטיקת פיוז'ן",
-      text: "שילוב מיוחד לכל אחת ",
+      subTitle: "שילוב מיוחד לכל אחת ",
       img: "beautyFusion.png",
       buttonText: "לשילוב המיוחד שלך",
       icon: face,
@@ -43,21 +38,14 @@ const Homepage = () => {
       icon: pigmentation,
     },
   ];
-  const bannerArray = content.map((content) => {
-    return (
-      <Banner
-        headline={content.headline}
-        text={content.text}
-        img={content.img}
-        textStyle={{ display: "flex", color: "green" }}
-        buttonText={content.buttonText}
-        icon={content.icon}
-      />
-    );
+
+  const bannerArray = banner.map((content) => {
+    return <Banner data={content} />;
   });
+
   return (
     <>
-      <div style={{ position: "relative", height: "100%", width: "100vw" }}>
+      <div>
         <Slider
           style={{
             position: "relative",
@@ -68,12 +56,82 @@ const Homepage = () => {
           content={bannerArray}
         />
       </div>
-      <IntroText />
+      <IntroText data={introText} />
       <Treatments />
-      <About />
-      <Form headline="לעור זורח ופרצוף שמח:" buttonText="ספרו לי עוד" />
+      <About data={about} />
+      <Form data={form} />
     </>
   );
 };
+
+const query = graphql`
+  query {
+    strapiHomePage {
+      banner {
+        subTitle
+        headline
+        button
+        desktopBackground {
+          localFile {
+            childImageSharp {
+              fluid {
+                src
+                aspectRatio
+                originalName
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+        }
+        icon {
+          url
+        }
+      }
+      introText {
+        title
+        introText
+        introBackground {
+          localFile {
+            childImageSharp {
+              fluid {
+                src
+                aspectRatio
+                originalName
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+      about {
+        title
+        text
+        button
+        ornaPicture {
+          localFile {
+            childImageSharp {
+              fluid {
+                src
+                aspectRatio
+                originalName
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+      form {
+        headline
+        button
+      }
+    }
+  }
+`;
 
 export default Homepage;
