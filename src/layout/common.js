@@ -85,7 +85,7 @@ export const H2 = styled.h2(({ bold, color }) => ({
   lineHeight: "calc(1.1em + 0.5vw)",
 }));
 
-export const ColoredHeadline = ({ text, spanSize }) => {
+export const ColoredHeadline = ({ text, spanSize, ...props }) => {
   const textArray = splitText(text);
   const coloredText = textArray.map((text, index) => {
     const color = (index + 2) % 2 == 0 ? H1Colors["black"] : H1Colors["green"];
@@ -105,7 +105,7 @@ export const ColoredHeadline = ({ text, spanSize }) => {
   const div = React.createElement("div", null);
   coloredText.splice(1, 0, div);
   return (
-    <H2 style={{ lineHeight: "1.25" }}>
+    <H2 style={{ lineHeight: "1.25" }} {...props}>
       <div>{coloredText}</div>
     </H2>
   );
