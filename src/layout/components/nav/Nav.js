@@ -8,12 +8,46 @@ import logo from "../../assets/logo.svg";
 import phone from "../../assets/phone.svg";
 
 import { classNames } from "../../../utils/classNames";
+import { isMobile } from "../../../utils/isMobile";
+
 import styles from "./nav.module.scss";
 
 const Nav = ({ children }) => {
   const navClassName = classNames(styles.desktopNav, styles.nav);
+  // const Burger = () => {
+  //   return (
+  //     <button className={styles.burgerWrapper}>
+  //       <svg
+  //         width="32"
+  //         height="16"
+  //         viewBox="0 0 32 16"
+  //         fill="none"
+  //         xmlns="http://www.w3.org/2000/svg"
+  //       >
+  //         <rect width="32" height="2" fill="black" />
+  //         <rect y="7" width="32" height="2" fill="black" />
+  //         <rect y="14" width="32" height="2" fill="black" />
+  //       </svg>
+  //     </button>
+  //   );
+  // };
+  const treatments = [
+    { name: "טיפולי אנטי אייג'נג", link: "/antiAging" },
+    { name: "טיפולי פיגמנטציה", link: "/pigmentation" },
+    { name: "טיפולי אקנה", link: "/acne" },
+    { name: "טשטוש צלקות", link: "/scars" },
+    { name: "הסרת שיער", link: "/hair" },
+  ];
+  const treatmentsMenu = treatments.map((node) => {
+    return (
+      <Link link={node.link}>
+        <span color="white">{node.name}</span>
+      </Link>
+    );
+  });
   return (
     <div className={styles.wrapper}>
+      {/* <Burger /> */}
       <nav className={navClassName}>
         <Link to="/">
           <img src={logo} width="200px" alt="Orna_logo" />
@@ -21,8 +55,10 @@ const Nav = ({ children }) => {
         <Link to="/" delay="200">
           ראשי
         </Link>
-        <Link to="hair" delay="400">
+        {/* TODO: send this to the treatment area */}
+        <Link to="#test" className={styles.dropDown} delay="400">
           טיפולים
+          <div className={styles.hiddenDropDown}>{treatmentsMenu}</div>
         </Link>
         <Link to="booking" delay="600">
           קביעת תור

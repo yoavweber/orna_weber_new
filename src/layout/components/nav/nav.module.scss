@@ -1,3 +1,7 @@
+$green :#9fc975;
+// $darkGreen: 
+
+
 .nav {
   display: flex;
   justify-content: space-evenly;
@@ -9,7 +13,38 @@
   }
   .icon {
     span {
-      color: #9fc975;
+      color: $green;
+    }
+  }
+   .hiddenDropDown{
+    display: none;    
+  }
+
+  .dropDown{
+
+    // position: relative;
+    &:hover {
+      border-bottom: 1px $green solid ;
+    }
+    &:hover > *{
+      span {
+        font-size:20px ;
+        color: white;
+        &:hover {
+          font-weight: 600;
+          border-bottom: 1px white solid ;
+        }
+      }
+      display: block;
+      bottom: 68.5%;
+      position: absolute;
+      display: flex;
+      margin-top: -10px;
+      flex-direction: column;
+      padding: 1rem 1.3rem 1.5rem;
+      background-color: $green;
+      z-index: 1000;
+
     }
   }
 }
