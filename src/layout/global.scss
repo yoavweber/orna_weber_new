@@ -2,7 +2,6 @@
   direction: rtl;
   box-sizing: border-box;
   font-family: hebrew;
-  // font-family: "Assistant", sans-serif;
   line-height: 24px;
   margin: 0;
 }
@@ -14,7 +13,6 @@ p,
 span {
   font-size: calc(1rem + 0.5vw);
   line-height: calc(1.5em + 0.5vw);
-  color: #424d37;
 }
 
 a {
@@ -45,4 +43,12 @@ a {
   font-weight: 300;
   src: local("hebrew"),
     url("./assets/font/segoe-ui-light-hebrew.woff") format("woff");
+}
+
+@font-face {
+  font-family: "hebrew";
+  font-style: normal;
+  font-weight: 600;
+  src: local("hebrew"),
+    url("./assets/font/segoe-ui-semibold-hebrew.woff") format("woff");
 }

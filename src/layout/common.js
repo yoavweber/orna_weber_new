@@ -71,7 +71,7 @@ const H1Colors = {
 export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
   color: color ? H1Colors[color] : H1Colors["grey"],
   fontWeight: bold ? "600" : "300",
-  fontSize: " calc(2rem + 1vw)",
+  fontSize: " calc(1.6rem + 1vw)",
   marginBottom: largeSpace ? "40px" : "20px",
   lineHeight: "calc(1.1em + 0.5vw)",
   ...style,

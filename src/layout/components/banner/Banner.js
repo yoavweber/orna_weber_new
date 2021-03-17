@@ -12,9 +12,12 @@ import styles from "./banner.module.scss";
 const Banner = ({ data, textStyle }) => {
   const { desktopBackground, headline, subTitle, button, icon } = data;
   const fluid = desktopBackground.localFile.childImageSharp.fluid;
-  const headlineColor = splitText(subTitle);
-  const isColor = headlineColor.length > 1 ? headlineColor[1] : false;
-  console.log(isColor);
+  let headlineColor;
+  let isColor;
+  if (subTitle) {
+    headlineColor = subTitle ? splitText(subTitle) : undefined;
+    isColor = headlineColor.length > 1 ? headlineColor[1] : false;
+  }
   return (
     <BackgroundImage
       fluid={fluid}

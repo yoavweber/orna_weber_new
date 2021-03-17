@@ -46,29 +46,23 @@ const Treatments = () => {
       <a key={node.key} href={node.href} className={styles.bubblesWrapper}>
         <Img fluid={fluid} Tag="div" className={styles.bubble} />
         <span>{node.name}</span>
-        {/* <div className={styles.bubbleWrapper}>
-          <Img fluid={fluid} Tag="div" />
-        </div> */}
       </a>
     );
   });
 
   return (
     <section className={styles.wrapper}>
-      {/* <div className={styles.testing}> */}
       <img src={sink} className={styles.icon} />
       <div className={styles.contentWrapper} ref={sliderWrapperRef}>
         <H1>{headline}</H1>
         <Slider
           content={treatmentBubble}
           width={sliderWrapperWidth}
-          showElements={5}
-          autoPlay={200}
+          showElements={4}
+          autoPlay={2000}
         />
-        {/* <div className={styles.content}>{treatmentBubble}</div> */}
       </div>
       <img src={needle} className={styles.icon} />
-      {/* </div> */}
     </section>
   );
 };

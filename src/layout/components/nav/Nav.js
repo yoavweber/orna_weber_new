@@ -32,16 +32,16 @@ const Nav = ({ children }) => {
   //   );
   // };
   const treatments = [
-    { name: "טיפולי אנטי אייג'נג", link: "/antiAging" },
-    { name: "טיפולי פיגמנטציה", link: "/pigmentation" },
-    { name: "טיפולי אקנה", link: "/acne" },
-    { name: "טשטוש צלקות", link: "/scars" },
-    { name: "הסרת שיער", link: "/hair" },
+    { name: "טיפולי אנטי אייג'נג", link: "/treatments/antiAge" },
+    { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation" },
+    { name: "טיפולי אקנה", link: "/treatments/acne" },
+    { name: "טשטוש צלקות", link: "/treatments/scars" },
+    { name: "הסרת שיער", link: "/treatments/hair" },
   ];
   const treatmentsMenu = treatments.map((node) => {
     return (
-      <Link link={node.link}>
-        <span color="white">{node.name}</span>
+      <Link to={node.link}>
+        <span>{node.name}</span>
       </Link>
     );
   });
@@ -56,14 +56,14 @@ const Nav = ({ children }) => {
           ראשי
         </Link>
         {/* TODO: send this to the treatment area */}
-        <Link to="#test" className={styles.dropDown} delay="400">
+        <Link className={styles.dropDown} delay="400">
           טיפולים
           <div className={styles.hiddenDropDown}>{treatmentsMenu}</div>
         </Link>
         <Link to="booking" delay="600">
           קביעת תור
         </Link>
-        <Link to="whyUs" delay="600">
+        <Link to="about" delay="600">
           עלינו
         </Link>
         <Link to="contact" delay="800">

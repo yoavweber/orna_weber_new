@@ -15,13 +15,6 @@ import { H1, Space } from "../../layout/common";
 import styles from "./antiAge/antiAge.module.scss";
 
 const AntiAge = () => {
-  //------------banner data
-  const content = {
-    headline: "מעיין הנעורים הפרטי שלך",
-    img: "antiaging.png",
-    buttonText: "לעור בריא וחיוני",
-  };
-
   const data = useStaticQuery(query);
   const { strapiAntiAging } = data;
   const {
@@ -37,15 +30,9 @@ const AntiAge = () => {
   if (!strapiAntiAging) {
     return <div>loading.....</div>;
   }
-  console.log(list, "icon text");
   return (
     <>
       <Banner data={banner} />
-      {/* <Banner
-        headline={content.headline}
-        img={content.img}
-        buttonText={content.buttonText}
-      /> */}
       <Space />
       <main>
         <div className={styles.text}>
@@ -56,6 +43,7 @@ const AntiAge = () => {
               width: "50%",
               margin: "calc(10px + 3vw) auto",
             }}
+            bold={true}
           >
             {midText}
           </H1>
@@ -79,9 +67,9 @@ const query = graphql`
   query {
     strapiAntiAging {
       banner {
-        title
+        headline
         button
-        img {
+        desktopBackground {
           localFile {
             childImageSharp {
               fluid {

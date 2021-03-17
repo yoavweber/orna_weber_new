@@ -18,11 +18,7 @@ const IconText = ({ data }) => {
   const styleReverse = reverse && { flexDirection: "row-reverse" };
   return (
     <MobileTextWrapper className={styles.wrapper}>
-      <H1 color={headlineColor}>
-        {headline}
-
-        {/* <ReactMarkdown allowDangerousHtml={true}>{headline} </ReactMarkdown> */}
-      </H1>
+      <H1 color={headlineColor}>{headline}</H1>
       <div className={styles.textWrapper}>
         <div className={styles.text} style={{ ...styleReverse }}>
           <img src={icon.url} width="100px" height="100%" />
