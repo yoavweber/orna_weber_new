@@ -37,7 +37,7 @@ const TextBlocks = ({ content }) => {
         <H2 color="black" bold="true">
           {data.headline}
         </H2>
-        <ReactMarkdown>{data.text}</ReactMarkdown>
+        <ReactMarkdown allowDangerousHtml={true}>{data.text}</ReactMarkdown>
       </StyledBlock>
     );
   });
