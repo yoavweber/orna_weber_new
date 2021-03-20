@@ -5,15 +5,15 @@ import { css, jsx } from "@emotion/react";
 import leftArrow from "../../../../layout/assets/left-arrow.svg";
 import rightArrow from "../../../../layout/assets/right-arrow.svg";
 
-const Arrow = ({ direction, handleClick }) => (
+const Arrow = ({ direction, handleClick, notFullWidth }) => (
   <div
     onClick={handleClick}
     css={css`
       display: flex;
       position: absolute;
-      top: 50%;
       ${direction === "right" ? `right: 20px` : `left: 20px`};
       height: 50px;
+      ${notFullWidth ? `top:30%` : `top:50%`};
       width: 50px;
       justify-content: center;
       background: white;
@@ -36,5 +36,4 @@ const Arrow = ({ direction, handleClick }) => (
     {direction === "right" ? <img src={rightArrow} /> : <img src={leftArrow} />}
   </div>
 );
-
 export default Arrow;

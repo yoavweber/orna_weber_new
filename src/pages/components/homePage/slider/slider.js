@@ -66,7 +66,6 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
 
   const smoothTransition = () => {
     let movedSlides = moveElements(_slides, showElements);
-    console.log(movedSlides, "slides from the smoth transition!!!");
     setState({
       ...state,
       _slides: movedSlides,
@@ -114,8 +113,8 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
         ))}
       </SliderContent>
       <Dots />
-      <Arrow direction="left" handleClick={prevSlide} />
-      <Arrow direction="right" handleClick={nextSlide} />
+      <Arrow direction="left" notFullWidth={width} handleClick={prevSlide} />
+      <Arrow direction="right" notFullWidth={width} handleClick={nextSlide} />
     </div>
   );
 };
@@ -123,12 +122,6 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
 const SliderCSS = css`
   position: relative;
   overflow: hidden;
-  ${
-    "" /* height: 25vw;
-  min-height: 300px;
-  width: 100vw;
-  overflow: hidden; */
-  }
 `;
 
 export default Slider;
