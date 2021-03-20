@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import getFluid from "../../../../utils/getFluid";
 
 import { H1 } from "../../../../layout/common";
+import { isMobile } from "../.././../../utils/isMobile";
 import sink from "../../../../layout/assets/icons/sink.svg";
 import needle from "../../../../layout/assets/icons/needle.svg";
 
@@ -16,7 +17,7 @@ const Treatments = () => {
   const [sliderWrapperWidth, setSliderWrapperWidth] = useState();
   const imageNames = [
     { key: 1, href: "#", imgName: "acne.png", name: "אקנה" },
-    { key: 2, href: "#", imgName: "antiAging.png", name: "אנטי-אייג'ינג" },
+    { key: 2, href: "#", imgName: "antiAge.png", name: "אנטי-אייג'ינג" },
     { key: 3, href: "#", imgName: "hairRemoval.png", name: "הסרת שיער" },
     { key: 4, href: "#", imgName: "scars.png", name: "טשטוש צלקות" },
     {
@@ -55,12 +56,16 @@ const Treatments = () => {
       <img src={sink} className={styles.icon} />
       <div className={styles.contentWrapper} ref={sliderWrapperRef}>
         <H1>{headline}</H1>
-        <Slider
-          content={treatmentBubble}
-          width={sliderWrapperWidth}
-          showElements={4}
-          autoPlay={2000}
-        />
+        {isMobile ? (
+          treatmentBubble
+        ) : (
+          <Slider
+            content={treatmentBubble}
+            width={sliderWrapperWidth}
+            showElements={4}
+            autoPlay={2000}
+          />
+        )}
       </div>
       <img src={needle} className={styles.icon} />
     </section>

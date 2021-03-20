@@ -45,22 +45,23 @@
 }
 
 .bubble {
+  border-radius: 50px;
   width: 6rem;
   height: 6rem;
   padding: 0;
 }
 
-// .wrapper {
-//     //   height: 25vw;
-//     height: 40vh;
-//     width: 100%;
-//     background-color: #cae3b1;
-
-//     padding: 30px 20px;
-//   }
-//   .testing {
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-around;
-//     height: 20vw;
-//   }
+@media only screen and (max-width: 800px) {
+  .contentWrapper {
+    width: 75%;
+  }
+  .bubble {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    margin: 30px;
+  }
+  .icon {
+    display: none;
+  }
+}
