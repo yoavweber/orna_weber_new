@@ -1,11 +1,14 @@
 import React from "react";
-import { H1, MobileTextWrapper } from "../../../common";
+import { H2, MobileTextWrapper } from "../../../common";
 
-const PlainText = ({ headline, text }) => (
-  <MobileTextWrapper>
-    <H1>{headline}</H1>
-    <p>{text}</p>
-  </MobileTextWrapper>
-);
+const PlainText = ({ data, headlineColor }) => {
+  const { text, headline } = data;
+  return (
+    <MobileTextWrapper>
+      <H2 color={headlineColor}>{headline}</H2>
+      <p>{text}</p>
+    </MobileTextWrapper>
+  );
+};
 
 export default PlainText;
