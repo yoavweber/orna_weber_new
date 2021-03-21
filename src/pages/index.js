@@ -74,13 +74,8 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid {
-                src
-                aspectRatio
-                originalName
-                sizes
-                src
-                srcSet
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -96,12 +91,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               fluid {
-                src
-                aspectRatio
-                originalName
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -115,12 +105,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               fluid {
-                src
-                aspectRatio
-                originalName
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }

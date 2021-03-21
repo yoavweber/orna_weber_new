@@ -15,7 +15,7 @@ const Image = (name) => {
               quality: 90
               srcSetBreakpoints: [600, 800, 1280, 1600]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
               originalName
             }
           }

@@ -73,12 +73,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }

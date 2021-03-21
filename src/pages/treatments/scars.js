@@ -9,7 +9,7 @@ import {
   TextBlocks,
   RoundPicText,
 } from "../../layout/components";
-import { H1, Space } from "../../layout/common";
+import { Space } from "../../layout/common";
 
 const Scars = () => {
   const data = useStaticQuery(query);
