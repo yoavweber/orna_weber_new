@@ -22,27 +22,23 @@ module.exports = {
         // apiURL: process.env.API_URL,
         // apiURL: "http://localhost:1337",
         contentTypes: ["article", "category", "writer", "tests"],
-        singleTypes: [`global`, "home-page", "acne", "about", "anti-aging"],
+        singleTypes: [
+          `global`,
+          "home-page",
+          "acne",
+          "about",
+          "anti-aging",
+          "scars",
+          "hair-removal",
+        ],
         queryLimit: 1000,
       },
     },
     "gatsby-plugin-sass",
-    // {
-    //   resolve: "gatsby-plugin-google-analytics",
-    //   options: {
-    //     trackingId: "",
-    //   },
-    // },
+
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
-    // "gatsby-plugin-sitemap",
-    // "gatsby-plugin-offline",
-    // {
-    //   resolve: "gatsby-plugin-manifest",
-    //   options: {
-    //     icon: "src/images/icon.png",
-    //   },
-    // },
+
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     {

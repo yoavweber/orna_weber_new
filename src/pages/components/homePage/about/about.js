@@ -9,11 +9,14 @@ import getFluid from "../../../../utils/getFluid";
 
 import styles from "./about.module.scss";
 
-const About = ({ data }) => {
+const AboutSection = ({ data }) => {
+  if (!data) {
+    return <div>loading</div>;
+  }
   const { button, ornaPicture, text, title } = data;
-  //TODO: imprort the background image from the cms
 
   const fluid = ornaPicture.localFile.childImageSharp.fluid;
+  //TODO: add this to the CMS
   const background = getFluid("backgroundSmall.png");
   return (
     <section className={styles.section}>
@@ -41,4 +44,4 @@ const About = ({ data }) => {
   );
 };
 
-export default About;
+export default AboutSection;

@@ -10,7 +10,7 @@ import {
   IconBox,
   PlainText,
 } from "../../layout/components";
-import { H1, Space, MobileTextWrapper } from "../../layout/common";
+import { H1, Space } from "../../layout/common";
 
 const HairRemoval = () => {
   const data = useStaticQuery(query);

@@ -94,13 +94,17 @@ export const H3 = styled.h2(({ bold, color }) => ({
 }));
 
 export const ColoredHeadline = ({ text, spanSize, ...props }) => {
+  if (!text) {
+    return <div>loading...</div>;
+  }
   const textArray = splitText(text);
   const coloredText = textArray.map((text, index) => {
     const isColoredBlack = (index + 2) % 2 == 0 ? true : false;
+    const isMargin = textArray.length > 1 ? { marginBottom: "0" } : {};
     return (
       <>
         {isColoredBlack ? (
-          <H2 color="black" style={{ marginBottom: "0" }}>
+          <H2 color="black" style={isMargin}>
             {text}
           </H2>
         ) : (

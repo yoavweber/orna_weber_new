@@ -9,6 +9,9 @@ import { ColoredHeadline } from "../../../../layout/common";
 import styles from "./introText.module.scss";
 
 const Intro = ({ data }) => {
+  if (!data) {
+    return <div>loading...</div>;
+  }
   const { introText, title, introBackground } = data;
   const fluid = introBackground.localFile.childImageSharp.fluid;
   return (
