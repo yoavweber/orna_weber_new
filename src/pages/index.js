@@ -74,8 +74,9 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+                # ...GatsbyImageSharpFluid
               }
             }
           }
