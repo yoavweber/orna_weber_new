@@ -1,17 +1,14 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
-import Img from "gatsby-image";
-import ReactMarkdown from "react-markdown";
 
 import { Button, H1, H2 } from "../../common";
-import getFluid from "../../../utils/getFluid";
 import { splitText } from "../../../utils/utils";
 
 import styles from "./banner.module.scss";
 
 const Banner = ({ data, textStyle }) => {
   const { desktopBackground, headline, subTitle, button, icon } = data;
-  const fluid = desktopBackground.localFile.childImageSharp.fluid;
+  const fluid = desktopBackground?.localFile.childImageSharp.fluid;
   let headlineColor;
   let isColor;
   if (subTitle) {

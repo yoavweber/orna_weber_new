@@ -8,8 +8,6 @@ import {
   List,
   TextBlocks,
 } from "../../layout/components";
-import bag from "../../layout/assets/icons/bag.svg";
-import antiBottle from "../../layout/assets/icons/antiBottle.svg";
 import { H1, Space } from "../../layout/common";
 
 import styles from "./antiAge/antiAge.module.scss";

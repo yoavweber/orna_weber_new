@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 // import styled from "@emotion/styled";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Banner } from "../../../../layout/components";
 import SliderContent from "./sliderContent";
 import Slide from "./slide";
 import Arrow from "./arrow";

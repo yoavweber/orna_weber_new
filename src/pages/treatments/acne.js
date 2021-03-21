@@ -8,35 +8,11 @@ import { H1, Space } from "../../layout/common";
 const Acne = () => {
   const data = useStaticQuery(query);
   const { strapiAcne } = data;
-  const { BlockText, firstIconText, secondIconText, form } = strapiAcne;
+  const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
 
-  //-----Banner data-------------
-  //TODO: change to CMS and add the second headline here
-  const bannerContent = {
-    headline: `שזה לא יתפוצץ לך בפנים`,
-    img: "acneBanner.png",
-    buttonText: "לטיפול יעיל באקנה",
-  };
-
-  // -------------- plain text
-  const plainTextHeadline = "?כמה טיפולים אצטרך";
-  const plainTextBody = `  התשובה משתנה בהתאם לגודלו של אזור הטיפול, מאפייניו, צפיפות השיער ועוד. טווח הטיפולים נע לרוב בים 8-15
-  .טיפולים, כאשר ניתן לראות תוצאות משמעותיות בין טיפול לטיפול`;
-
-  const FinalTextWrapper = styled.div`
-    @media (max-width: 800px) {
-      background-color: #f8f9f6;
-    }
-  `;
-  const finalText = `באמצעות בניית תכנית  טיפול מותאמת אישית 
-  ויישומה בדיוק מרבי, נאפשר גם לך ליהנות מגוף חלק.`;
   return (
     <div>
-      <Banner
-        headline={bannerContent.headline}
-        img={bannerContent.img}
-        buttonText={bannerContent.buttonText}
-      />
+      <Banner data={banner} />
       <main>
         <Space />
         <IconText data={firstIconText} />
@@ -46,7 +22,7 @@ const Acne = () => {
         <TextBlocks content={BlockText} />
       </main>
       <Space />
-      <Form headline={form.headline} buttonText={form.button} />
+      <Form data={form} />
     </div>
   );
 };
@@ -54,6 +30,23 @@ const Acne = () => {
 const query = graphql`
   query {
     strapiAcne {
+      banner {
+        subTitle
+        headline
+        button
+        desktopBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        icon {
+          url
+        }
+      }
       form {
         button
         headline
@@ -68,6 +61,7 @@ const query = graphql`
         headline
       }
       firstIconText {
+        headline
         firstPartText
         icon {
           id
