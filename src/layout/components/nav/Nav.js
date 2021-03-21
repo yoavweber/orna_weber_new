@@ -36,7 +36,7 @@ const Nav = ({ children }) => {
     { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation" },
     { name: "טיפולי אקנה", link: "/treatments/acne" },
     { name: "טשטוש צלקות", link: "/treatments/scars" },
-    { name: "הסרת שיער", link: "/treatments/hair" },
+    { name: "הסרת שיער", link: "/treatments/hairRemoval" },
   ];
   const treatmentsMenu = treatments.map((node) => {
     return (

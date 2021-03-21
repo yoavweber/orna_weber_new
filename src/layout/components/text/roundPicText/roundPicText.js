@@ -1,9 +1,7 @@
 import React from "react";
-import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 
-import { H3, H2, Space, MobileTextWrapper } from "../../../common";
-import getFluid from "../../../../utils/getFluid";
+import { H2, MobileTextWrapper } from "../../../common";
 import { isMobile } from "../../../../utils/isMobile";
 
 import styles from "./roundPicText.module.scss";
@@ -18,8 +16,8 @@ const PicText = ({ data }) => {
     reverse,
   } = data;
   const styleReverse = reverse && { flexDirection: "row-reverse" };
-  const deskTopFluid = desktopPic.localFile.childImageSharp.fluid;
-  const mobileFluid = mobilePic.localFile.childImageSharp.fluid;
+  const deskTopFluid = desktopPic?.localFile?.childImageSharp.fluid;
+  const mobileFluid = mobilePic?.localFile?.childImageSharp.fluid;
 
   return (
     <MobileTextWrapper className={styles.wrapper}>

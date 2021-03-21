@@ -1,5 +1,5 @@
 import React from "react";
-import { H1 } from "../../common";
+import { H2 } from "../../common";
 import miniLogo from "../../assets/miniLogo.svg";
 
 import styles from "./list.module.scss";
@@ -21,7 +21,9 @@ const List = ({ data }) => {
     <section className={styles.section}>
       <div className={styles.background} />
       <div className={styles.wrapper}>
-        <H1 largeSpace="true">{headline}</H1>
+        <H2 largeSpace="true" styles={{ fontWight: "500" }}>
+          {headline}
+        </H2>
         <ul>{listComponent}</ul>
       </div>
     </section>
