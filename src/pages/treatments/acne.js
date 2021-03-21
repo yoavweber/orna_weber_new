@@ -1,9 +1,8 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form, IconText, TextBlocks } from "../../layout/components";
-import { H1, Space } from "../../layout/common";
+import { Space } from "../../layout/common";
 
 const Acne = () => {
   const data = useStaticQuery(query);
@@ -37,7 +36,7 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

@@ -24,6 +24,9 @@
     flex: 1;
     height: calc(200px + 13vw);
     margin-top: 20px;
+    img {
+      opacity: 1 !important;
+    }
   }
   .text {
     padding-right: 20px;

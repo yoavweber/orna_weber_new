@@ -105,7 +105,7 @@ const query = graphql`
         ornaPicture {
           localFile {
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

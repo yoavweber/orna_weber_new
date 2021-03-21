@@ -16,7 +16,7 @@ const Intro = ({ data }) => {
   const fluid = introBackground.localFile.childImageSharp.fluid;
   return (
     <section className={styles.section}>
-      <Img fluid={fluid} className={styles.img} />
+      <Img fluid={fluid} className={styles.img} style={{ opacity: 1 }} />
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <ColoredHeadline className={styles.coloredHeadline} text={title} />
