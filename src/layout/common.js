@@ -85,30 +85,31 @@ export const H2 = styled.h2(({ bold, color }) => ({
   lineHeight: "calc(1.1em + 0.5vw)",
 }));
 
+export const H3 = styled.h2(({ bold, color }) => ({
+  color: H1Colors[color],
+  fontWeight: bold ? "600" : "300",
+  fontSize: "calc(1rem + 0.8vw)",
+  marginBottom: "calc(10px + 2vh) ",
+  lineHeight: "calc(1.1em + 0.5vw)",
+}));
+
 export const ColoredHeadline = ({ text, spanSize, ...props }) => {
   const textArray = splitText(text);
   const coloredText = textArray.map((text, index) => {
-    const color = (index + 2) % 2 == 0 ? H1Colors["black"] : H1Colors["green"];
+    const isColoredBlack = (index + 2) % 2 == 0 ? true : false;
     return (
-      <span
-        key={index}
-        style={{
-          color: `${color}`,
-          fontSize: "calc(1.5rem + 0.8vw)",
-          fontWeight: "400",
-        }}
-      >
-        {text}
-      </span>
+      <>
+        {isColoredBlack ? (
+          <H2 color="black" style={{ marginBottom: "0" }}>
+            {text}
+          </H2>
+        ) : (
+          <H3 color="green">{text}</H3>
+        )}
+      </>
     );
   });
-  const div = React.createElement("div", null);
-  coloredText.splice(1, 0, div);
-  return (
-    <H2 style={{ lineHeight: "1.25" }} {...props}>
-      <div>{coloredText}</div>
-    </H2>
-  );
+  return <>{coloredText}</>;
 };
 //--------------------Input----------------------
 export const Input = styled.input`
@@ -142,3 +143,37 @@ export const MobileTextWrapper = styled.section`
     padding: 0 25px;
   }
 `;
+
+// TODO: colored headline for more then 2 type of headlines
+
+// export const ColoredHeadline = ({ text, spanSize, ...props }) => {
+//   const textArray = splitText(text);
+//   const coloredText = textArray.map((text, index) => {
+//     const isColoredBlack = (index + 2) % 2 == 0 ? true : false;
+//     return (
+//       <>
+//         {isColoredBlack ? (
+//           <H2 color="black">{text}</H2>
+//         ) : (
+//           <H3 color="green">{text}</H3>
+//         )}
+//       </>
+//     );
+//     const color = isColoredBlack ? H1Colors["black"] : H1Colors["green"];
+//     return (
+//       <span
+//         key={index}
+//         style={{
+//           color: `${color}`,
+//           fontSize: "calc(1.2rem + 0.8vw)",
+//           fontWeight: "400",
+//         }}
+//       >
+//         {text}
+//       </span>
+//     );
+//   });
+//   const div = React.createElement("div", null);
+//   coloredText.splice(1, 0, div);
+//   return <>{coloredText}</>;
+// };
