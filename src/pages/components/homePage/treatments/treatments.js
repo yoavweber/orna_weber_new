@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import getFluid from "../../../../utils/getFluid";
 
 import { H1 } from "../../../../layout/common";
-import { isMobile } from "../.././../../utils/isMobile";
+import { isMobile, customMobile } from "../.././../../utils/isMobile";
 import sink from "../../../../layout/assets/icons/sink.svg";
 import needle from "../../../../layout/assets/icons/needle.svg";
 
@@ -56,13 +56,13 @@ const Treatments = () => {
       <img src={sink} className={styles.icon} />
       <div className={styles.contentWrapper} ref={sliderWrapperRef}>
         <H1>{headline}</H1>
-        {isMobile ? (
+        {customMobile(1000) ? (
           treatmentBubble
         ) : (
           <Slider
             content={treatmentBubble}
             width={sliderWrapperWidth}
-            showElements={4}
+            showElements={3}
             autoPlay={2000}
           />
         )}
