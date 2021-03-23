@@ -15,10 +15,10 @@
     }
   }
   // change this to be global
-  p {
-    font-size: calc(0.8rem + 0.5vw);
-    line-height: calc(1.1em + 0.5vw);
-  }
+  // p {
+  //   font-size: calc(0.8rem + 0.5vw);
+  //   line-height: calc(1.1em + 0.5vw);
+  // }
 
   .wrapper {
     width: 40%;
@@ -80,7 +80,14 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .img {
-    display: none;
+  .section {
+    min-height: auto;
+
+    .img {
+      display: none;
+    }
+    .textWrapper {
+      padding: 4rem 20px;
+    }
   }
 }
