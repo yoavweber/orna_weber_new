@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "gatsby";
 
-// import logo from "../../assets/logo.svg";
 import Icon from "../icon/Icon";
 import phone from "../../assets/phone.svg";
 import location from "../../assets/location.svg";

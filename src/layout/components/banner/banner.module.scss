@@ -35,8 +35,12 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
-  .contentWrapper {
-    width: 95%;
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    height: 90vh;
+    .content {
+      width: 55%;
+      margin: 80px auto;
+    }
   }
 }

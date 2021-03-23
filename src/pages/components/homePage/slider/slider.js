@@ -121,6 +121,7 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
 const SliderCSS = css`
   position: relative;
   overflow: hidden;
+  height: 100%;
 `;
 
 export default Slider;
