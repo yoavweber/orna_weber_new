@@ -15,6 +15,7 @@ $distence: 15px;
 //https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
 .item {
   margin-left: $distence;
+  width: auto;
 }
 
 @media only screen and (max-width: 1800px) {

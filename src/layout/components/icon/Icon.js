@@ -1,8 +1,6 @@
-// import React, { useEffect, useState } from 'react'
 import React from "react";
 
 import { classNames } from "../../../utils/classNames";
-import phone from "../../assets/phone.svg";
 
 import styles from "./icon.module.scss";
 
