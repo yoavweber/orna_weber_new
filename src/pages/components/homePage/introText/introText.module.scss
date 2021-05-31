@@ -1,5 +1,5 @@
 .section {
-  height: calc(52vw * (9 / 16));
+  // height: calc(52vw * (9 / 16));
   min-height: 400px;
   display: flex;
   justify-content: flex-start;
@@ -35,14 +35,17 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    margin: 40px 0;
   }
 }
 
 @media only screen and (max-width: 1450px) {
   .section {
     height: calc(70vw * (9 / 16));
-
     padding: 0 20px;
+    .text {
+      margin: 0;
+    }
     .img {
       width: 35%;
     }
@@ -51,9 +54,12 @@
 
 @media only screen and (max-width: 1100px) {
   .section {
-    height: calc(85vw * (9 / 16));
+    height: auto;
     .img {
       width: 45%;
+    }
+    .text {
+      margin-top: 40px;
     }
   }
   .coloredHeadline {
