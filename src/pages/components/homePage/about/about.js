@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+
 import ReactMarkdown from "react-markdown";
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
@@ -23,7 +24,7 @@ const AboutSection = ({ data }) => {
       <div className={styles.wrapper}>
         <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
-          <Img fluid={fluid} className={styles.img} />
+          <BackgroundImage fluid={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
