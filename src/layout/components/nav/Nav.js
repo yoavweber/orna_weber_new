@@ -113,7 +113,7 @@ const Nav = ({ children }) => {
 
   return (
     <nav className={styles.wrapper}>
-      {isMobile(900) ? (
+      {isMobile ? (
         <div className={styles.mobileWrapper}>
           <div className={styles.burger}>
             <Burger open={open} setOpen={setOpen} />

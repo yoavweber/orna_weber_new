@@ -4,10 +4,10 @@ $green: #9fc975;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 20px 0;
+  padding: 40px 0;
   a {
     color: #555556;
-    font-size: 1.2rem;
+    font-size: calc(0.8rem + 0.6vw);
   }
   .icon {
     span {
