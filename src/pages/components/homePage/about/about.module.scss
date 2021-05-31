@@ -83,12 +83,16 @@ $imgHight: calc(200px + 13vw);
 }
 
 @media only screen and (max-width: 1200px) {
+  .wrapper {
+    padding: 0;
+    margin: 0;
+  }
   .background {
     width: 550px;
     height: 350px;
   }
   .text {
-    padding-left: 100px;
+    padding-left: 50px;
     p {
       width: 80%;
     }
