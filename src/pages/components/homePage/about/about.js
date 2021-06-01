@@ -24,7 +24,7 @@ const AboutSection = ({ data }) => {
       <div className={styles.wrapper}>
         <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
-          <BackgroundImage fluid={fluid} className={styles.img} />
+          <Img fluid={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <div className={styles.button}>
