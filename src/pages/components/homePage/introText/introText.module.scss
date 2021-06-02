@@ -1,5 +1,5 @@
 .section {
-  // height: calc(52vw * (9 / 16));
+  height: calc(52vw * (9 / 16));
   min-height: 400px;
   display: flex;
   justify-content: flex-start;
@@ -14,11 +14,6 @@
       opacity: 1 !important;
     }
   }
-  // change this to be global
-  // p {
-  //   font-size: calc(0.8rem + 0.5vw);
-  //   line-height: calc(1.1em + 0.5vw);
-  // }
 
   .wrapper {
     width: 40%;
@@ -35,14 +30,13 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin: 40px 0;
   }
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 2050px) {
   .section {
-    height: calc(70vw * (9 / 16));
-    padding: 0 20px;
+    height: calc(60vw * (9 / 16));
+    padding: 0 40px;
     .text {
       margin: 0;
     }
@@ -52,22 +46,41 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1750px) {
   .section {
-    height: auto;
-    .img {
-      width: 45%;
-    }
+    height: calc(65vw * (9 / 16));
+    padding: 0 20px;
     .text {
-      margin-top: 40px;
+      margin: 0;
     }
-  }
-  .coloredHeadline {
-    display: none;
+    .img {
+      width: 30%;
+    }
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1550px) {
+  .section {
+    height: calc(80vw * (9 / 16));
+    .text {
+      margin: 0;
+    }
+    .img {
+      width: 40%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .section {
+    height: calc(85vw * (9 / 16));
+    .text {
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
   .section {
     padding: 0;
     height: auto;
@@ -85,7 +98,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   .section {
     min-height: auto;
 

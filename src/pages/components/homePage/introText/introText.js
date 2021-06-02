@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import BackgroundImage from "gatsby-image";
 
 import showdown from "showdown";
 import ReactMarkdown from "react-markdown";
@@ -16,7 +16,11 @@ const Intro = ({ data }) => {
   const fluid = introBackground.localFile.childImageSharp.fluid;
   return (
     <section className={styles.section}>
-      <Img fluid={fluid} className={styles.img} style={{ opacity: 1 }} />
+      <BackgroundImage
+        fluid={fluid}
+        className={styles.img}
+        style={{ opacity: 1 }}
+      />
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <ColoredHeadline className={styles.coloredHeadline} text={title} />
