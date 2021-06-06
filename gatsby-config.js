@@ -30,6 +30,7 @@ module.exports = {
           "anti-aging",
           "scars",
           "hair-removal",
+          "beauty-fusion",
         ],
         queryLimit: 1000,
       },
@@ -38,6 +39,7 @@ module.exports = {
 
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-nprogress",
 
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",

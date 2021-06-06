@@ -57,6 +57,7 @@ const HairRemoval = () => {
               width: "60%",
               textAlign: "center",
               margin: "0 auto",
+              padding: "50px 0",
             }}
           >
             {lastText}
@@ -64,7 +65,7 @@ const HairRemoval = () => {
         </FinalTextWrapper>
       </main>
 
-      <Space />
+      {/* <Space /> */}
       <Form data={form} />
     </div>
   );

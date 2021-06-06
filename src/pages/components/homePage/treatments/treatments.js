@@ -31,7 +31,6 @@ const Treatments = () => {
   const headline = "הטיפולים שלנו";
 
   const sliderWrapperRef = useRef(null);
-  // let sliderWidth;
   useEffect(() => {
     if (sliderWrapperRef.current) {
       let sliderWidth = sliderWrapperRef.current.offsetWidth;
@@ -62,7 +61,7 @@ const Treatments = () => {
           <Slider
             content={treatmentBubble}
             width={sliderWrapperWidth}
-            showElements={3}
+            showElements={4}
             autoPlay={2000}
           />
         )}

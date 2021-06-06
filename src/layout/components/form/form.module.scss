@@ -20,6 +20,9 @@
   }
   .input {
     flex: 1;
+    &::placeholder {
+      opacity: 1 !important;
+    }
   }
   .formButton {
     flex: 1;
@@ -35,7 +38,7 @@
 
 @media only screen and (max-width: 800px) {
   .section {
-    height: 70vh;
+    height: 50vh;
   }
   .wrapper {
     width: 70%;
