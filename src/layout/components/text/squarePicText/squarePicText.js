@@ -1,6 +1,8 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
+import Img from "gatsby-image";
+
 import { H1, Button, MobileTextWrapper } from "../../../common";
 import getFluid from "../../../../utils/getFluid";
 
@@ -10,22 +12,14 @@ const squarePicText = ({ data }) => {
   console.log(data, "squer pic");
   const { headline, text, buttonText, desktopPic } = data;
   const background = getFluid("backgroundSmall.png");
-  // const fluid = ornaPicture.childImageSharp.fluid;
+  const fluid = desktopPic.localFile.childImageSharp.fluid;
   return (
     <MobileTextWrapper className={styles.section}>
       <div className={styles.wrapper}>
-        <H1 className={styles.headline}>{headline} </H1>
+        {/* <H1 className={styles.headline}>{headline} </H1> */}
         <div className={styles.content}>
-          {/* <div className={styles.imgWrapper}> */}
-          {/* <Img fluid={fluid} className={styles.img} /> */}
-          <img
-            src={desktopPic.url}
-            className={styles.img}
-            alt={desktopPic.alternativeText}
-          />
-          {/* </div> */}
-          {/* <div className={styles.test} /> */}
-          {/* <Img fluid={fluid} className={styles.img} /> */}
+          <Img fluid={fluid} className={styles.img} />
+
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             {buttonText && (

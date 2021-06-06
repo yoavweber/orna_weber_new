@@ -2,7 +2,6 @@
   display: flex;
   position: relative;
   justify-self: center;
-  // max-height: 600px;
 
   .wrapper {
     display: flex;
@@ -10,7 +9,7 @@
     margin: 0 auto;
     width: 80%;
     height: 50%;
-    padding: 20px 0;
+    padding: 60px 0;
   }
   .headline {
     font-size: 3rem;
@@ -23,52 +22,60 @@
 
   .img {
     object-fit: cover;
-    height: calc(200px + 13vw);
+    flex: 2;
   }
   .text {
     flex: 4;
-    padding-right: 20px;
-  }
-  p {
-    font-size: calc(0.8rem + 0.5vw);
-    line-height: calc(1.1em + 0.5vw);
-    width: 90%;
+    padding-right: 50px;
+    width: 60%;
   }
 }
 
-@media only screen and (max-width: 1400px) {
-  .wrapper {
-    width: 90%;
+@media only screen and (max-width: 2000px) {
+  .section {
+    .wrapper {
+      width: 90%;
+    }
+    .text {
+      p {
+        width: 100%;
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .background {
-    width: 550px;
-    height: 350px;
+  .section {
+    .img {
+      flex: 3;
+    }
   }
 }
 
 @media only screen and (max-width: 1000px) {
-  .wrapper {
-    padding: 0;
-    margin: 0;
+  .section {
+    padding: 0 !important;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .section {
+    .wrapper {
+      width: 100%;
+    }
     .content {
       flex-direction: column;
+      align-items: center;
     }
     .img {
+      width: 60vw;
       object-fit: contain;
     }
     .text {
       padding-top: 20px;
       padding-right: 0;
       p {
-        text-align: center;
+        // text-align: center;
         width: 100%;
       }
     }

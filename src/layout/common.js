@@ -99,7 +99,7 @@ export const ColoredHeadline = ({ text, spanSize, ...props }) => {
   }
   const textArray = splitText(text);
   const coloredText = textArray.map((text, index) => {
-    const isColoredBlack = (index + 2) % 2 == 0 ? true : false;
+    const isColoredBlack = (index + 2) % 2 === 0 ? true : false;
     const isMargin = textArray.length > 1 ? { marginBottom: "0" } : {};
     return (
       <>
@@ -142,7 +142,12 @@ export const Space = styled.div(({ smallSpace }) => ({
 }));
 
 export const MobileTextWrapper = styled.section`
-  padding: 0 100px;
+  padding: 0 10%;
+
+  @media (max-width: 1200px) {
+    padding: 0 80px;
+  }
+
   @media (max-width: 800px) {
     padding: 0 25px;
   }
