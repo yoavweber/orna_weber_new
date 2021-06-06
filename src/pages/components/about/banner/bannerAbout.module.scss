@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  display: flex;
+  height: 100%;
+  width: 60%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+  //   align-items: center;
+  width: 80%;
+  //   text-align: center;
+  p {
+    color: #555556;
+  }
+}
+
+.button {
+  width: 80%;
+  max-width: 300px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .contentWrapper {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .contentWrapper {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    height: 90vh;
+    .content {
+      width: 55%;
+      margin: 80px auto;
+    }
+  }
+}
