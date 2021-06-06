@@ -80,13 +80,13 @@ const Menu = ({ open, children }) => {
           <StyledSpan> טיפולים</StyledSpan>
           <MobileDropDown data-click={showSubMenu}>{children}</MobileDropDown>
         </a>
-        <Link to="booking" delay="600">
-          <StyledSpan> קביעת תור</StyledSpan>
+        <Link to="/beautyFuison/" delay="600">
+          <StyledSpan> על השיטה</StyledSpan>
         </Link>
-        <Link to="about" delay="600">
+        <Link to="/about/" delay="600">
           <StyledSpan> עלינו </StyledSpan>
         </Link>
-        <Link to="contact" delay="800">
+        <Link to="/contact/" delay="800">
           <StyledSpan> צרי קשר </StyledSpan>
         </Link>
         {/* </div> */}

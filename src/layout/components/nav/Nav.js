@@ -69,11 +69,11 @@ const Nav = ({ children }) => {
   const navClassName = classNames(styles.desktopNav, styles.nav);
 
   const treatments = [
-    { name: "טיפולי אנטי אייג'נג", link: "/treatments/antiAge" },
-    { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation" },
-    { name: "טיפולי אקנה", link: "/treatments/acne" },
-    { name: "טשטוש צלקות", link: "/treatments/scars" },
-    { name: "הסרת שיער", link: "/treatments/hairRemoval" },
+    { name: "טיפולי אנטי אייג'נג", link: "/treatments/antiAge/" },
+    { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation/" },
+    { name: "טיפולי אקנה", link: "/treatments/acne/" },
+    { name: "טשטוש צלקות", link: "/treatments/scars/" },
+    { name: "הסרת שיער", link: "/treatments/hairRemoval/" },
   ];
   const TreatmentMenu = treatments.map((node) => {
     return (
@@ -97,12 +97,13 @@ const Nav = ({ children }) => {
           טיפולים
           <div className={styles.hiddenDropDown}>{children}</div>
         </Link>
-        <Link to="booking" delay="600">
-          קביעת תור
-        </Link>
-        <Link to="about" delay="600">
+        <Link to="/about/" delay="600">
           עלינו
         </Link>
+        <Link to="/beautyFuison/" delay="600">
+          על השיטה
+        </Link>
+        {/* direct to the buttom of the page */}
         <Link to="contact" delay="800">
           צרי קשר
         </Link>
