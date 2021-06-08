@@ -1,23 +1,27 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   overflow: hidden;
-  height: 30vh;
+  // height: 30vh;
+  position: relative;
+}
+.imageWrapper {
+  width: 100%;
+  margin-left: 50px;
 }
 
 .contentWrapper {
   display: flex;
   height: 100%;
-  width: 60%;
+  justify-content: center;
 }
 .content {
   display: flex;
   flex-direction: column;
-  margin: 60px 0;
-  //   align-items: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
   width: 80%;
-  //   text-align: center;
   p {
     color: #555556;
   }
@@ -28,34 +32,36 @@
   max-width: 300px;
 }
 
-@media only screen and (max-width: 1300px) {
-  .contentWrapper {
-    width: 75%;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .wrapper {
-    opacity: 0.6;
-    background-position-x: -450px;
-  }
-}
+// @media only screen and (max-width: 1300px) {
+//   .contentWrapper {
+//     width: 75%;
+//   }
+// }
+// @media only screen and (max-width: 1200px) {
+//   .wrapper {
+//     // opacity: 0.6;
+//     background-position-x: -450px;
+//   }
+// }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1000px) {
   .contentWrapper {
     width: 95%;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .contentWrapper {
-    height: 70vh;
-    background-position-y: -250px;
+  .imageWrapper {
+    margin: 0;
   }
   .wrapper {
-    margin: 50 auto;
+    flex-direction: column;
+    align-items: center;
+
     .content {
       width: 90%;
-      margin: 80px auto;
+      margin: 0 auto;
+      margin-top: 80px;
       align-items: center;
       text-align: center;
     }

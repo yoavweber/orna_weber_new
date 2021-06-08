@@ -65,20 +65,21 @@ const query = graphql`
         subTitle
         headline
         button
-        desktopBackground {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
+        # desktopBackground {
+        #   localFile {
+        #     childImageSharp {
+        #       fluid(maxWidth: 1800, quality: 100) {
+        #         ...GatsbyImageSharpFluid_withWebp_noBase64
+        #       }
+        #     }
+        #   }
+        # }
         mobileBackground {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(maxWidth: 400, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

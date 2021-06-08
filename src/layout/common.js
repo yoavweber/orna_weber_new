@@ -85,10 +85,10 @@ export const H2 = styled.h2(({ bold, color }) => ({
   lineHeight: "calc(1.5em + 0.5vw)",
 }));
 
-export const H3 = styled.h2(({ bold, color }) => ({
+export const H3 = styled.h3(({ bold, color }) => ({
   color: H1Colors[color],
   fontWeight: bold ? "500" : "300",
-  fontSize: "calc(1rem + 0.8vw)",
+  fontSize: "calc(0.8rem + 0.6vw)",
   marginBottom: "calc(10px + 2vh) ",
   lineHeight: "calc(1.1em + 0.5vw)",
 }));
