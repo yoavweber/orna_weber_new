@@ -11,3 +11,13 @@
     align-self: center;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .text {
+    flex-direction: column-reverse;
+  }
+
+  img {
+    margin: 20px 0;
+  }
+}

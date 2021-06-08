@@ -36,8 +36,12 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .contentWrapper {
+    height: 50vh;
+  }
   .wrapper {
     height: 90vh;
+    margin: 50 auto;
     .content {
       width: 55%;
       margin: 80px auto;

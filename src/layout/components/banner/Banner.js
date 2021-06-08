@@ -8,7 +8,7 @@ import { isMobile } from "../../../utils/isMobile";
 
 import styles from "./banner.module.scss";
 
-const Banner = ({ data, textStyle }) => {
+const Banner = ({ data, textStyle, subTitleColor }) => {
   const {
     desktopBackground,
     mobileBackground,
@@ -21,12 +21,6 @@ const Banner = ({ data, textStyle }) => {
   const fluid = isMobile
     ? mobileBackground?.localFile.childImageSharp.fluid
     : desktopBackground?.localFile.childImageSharp.fluid;
-  let headlineColor;
-  let isColor;
-  if (subTitle) {
-    headlineColor = subTitle ? splitText(subTitle) : undefined;
-    isColor = headlineColor.length > 1 ? headlineColor[1] : false;
-  }
   return (
     <BackgroundImage
       fluid={fluid}
@@ -39,7 +33,9 @@ const Banner = ({ data, textStyle }) => {
         <div className={styles.content}>
           <H1 bold>{headline}</H1>
           {subTitle && (
-            <H2 color={isColor ? isColor : "white"}> {headlineColor[0]} </H2>
+            <H2 bold color={subTitleColor ? subTitleColor : "white"}>
+              {subTitle}
+            </H2>
           )}
           <a className={styles.button}>
             <Button>{button}</Button>
