@@ -24,9 +24,11 @@ const Arrow = ({ direction, handleClick, notFullWidth }) => (
       opacity: 0.3;
       &:hover {
         opacity: 1;
+        transform: scale(1.1);
       }
       img {
         transform: translateX(${direction === "left" ? "-2" : "2"}px);
+
         &:focus {
           outline: 0;
         }

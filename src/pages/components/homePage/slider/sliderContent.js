@@ -5,10 +5,8 @@ import { css, jsx } from "@emotion/react";
 const SliderContent = (props) => (
   <div
     css={css`
-      ${"" /* transform: translateX(${props.translate}px); */}
-      ${"" /* transform: translateX(0); */}
-
-      transition: transform ease-out ${props.transition}s;
+      transform: translateX(${props.translate}px);
+      transition: transform ease-out 0.45s;
       height: 100%;
       width: ${props.width}px;
       display: flex;

@@ -5,18 +5,13 @@ import { css, jsx } from "@emotion/react";
 import SliderContent from "./sliderContent";
 import Slide from "./slide";
 import Arrow from "./arrow";
-import Dots from "./dots";
+// import Dots from "./dots";
 import { moveElements } from "../../../../utils/utils";
 //https://medium.com/better-programming/build-an-image-slider-with-react-es6-264368de68e4
 /**
  * @function Slider
  */
-// TODO: adjust the slider to fit the banner as well
-// TODO: change the move elements to move only one element in a time
-// TODO: make the transition effect
-// TODO: fix the design
-// TODO: add the option to prevent autoplay and check if it working fine when hovering
-// TODO: add data handler
+
 const Slider = ({ content, width, showElements, autoPlay }) => {
   if (typeof window === "undefined") {
     global.window = {};
@@ -50,8 +45,10 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
       autoPlayRef.current();
     };
 
-    const smooth = () => {
-      transitionRef.current();
+    const smooth = (e) => {
+      if (e.target.className.includes("SliderContent")) {
+        transitionRef.current();
+      }
     };
 
     const interval = autoPlay ? setInterval(play, autoPlay * 1000) : undefined;
@@ -62,6 +59,10 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
       window.removeEventListener("transitionend", transitionEnd);
     };
   }, []);
+
+  useEffect(() => {
+    if (transition === 0) setState({ ...state, transition: 0.45 });
+  }, [transition]);
 
   const smoothTransition = () => {
     let movedSlides = moveElements(_slides, showElements);
@@ -74,11 +75,8 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
   };
 
   const nextSlide = () => {
-    let movedSlides = moveElements(_slides, showElements);
-
     setState({
       ...state,
-      _slides: movedSlides,
       translate: (activeIndex * getWidth) / showElements,
       activeIndex:
         activeIndex === content?.length - showElements ? 0 : activeIndex + 1,
@@ -86,11 +84,8 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
   };
 
   const prevSlide = () => {
-    let movedSlides = moveElements(_slides, showElements);
-
     setState({
       ...state,
-      _slides: movedSlides,
       translate: (activeIndex * getWidth) / showElements,
       activeIndex:
         activeIndex === 0 ? content?.length - showElements : activeIndex - 1,
@@ -111,7 +106,6 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
           <Slide key={i} content={Content} />
         ))}
       </SliderContent>
-      <Dots />
       <Arrow direction="left" notFullWidth={width} handleClick={prevSlide} />
       <Arrow direction="right" notFullWidth={width} handleClick={nextSlide} />
     </div>
