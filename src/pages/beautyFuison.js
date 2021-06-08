@@ -10,6 +10,8 @@ import {
   RoundPicText,
   ColoredBgText,
 } from "../layout/components";
+
+import ListNumber from "./components/beautyFusion/numList/numList";
 import { Space } from "../layout/common";
 
 const AntiAge = () => {
@@ -19,7 +21,8 @@ const AntiAge = () => {
     banner,
     iconText,
     coloredBackground,
-    roundPic,
+    textPic,
+    enumList,
     list,
     blockText,
     form,
@@ -28,18 +31,21 @@ const AntiAge = () => {
     return <div>loading.....</div>;
   }
 
-  console.log(roundPic, "!!!");
-
   return (
     <>
       <Banner data={banner} subTitleColor="black" />
+      <Space smallSpace="true" />
       <main>
         <IconText data={iconText} />
-        <ColoredBgText data={coloredBackground} />
-        <RoundPicText data={roundPic} />
-        <List data={list} />
-        <Space />
+      </main>
+
+      <ColoredBgText data={coloredBackground} />
+      <main>
+        <ListNumber data={enumList} />
+        <RoundPicText data={textPic} />
         <TextBlocks content={blockText} />
+        <Space />
+        <List data={list} />
         <Space />
       </main>
       <Form data={form} />
@@ -98,44 +104,39 @@ const query = graphql`
           text
         }
       }
-      # roundPic {
-      #   headline
-      #   firstPartText
-      #   desktopPic {
-      #     localFile {
-      #       childImageSharp {
-      #         fluid {
-      #           ...GatsbyImageSharpFluid_withWebp_noBase64
-      #         }
-      #       }
-      #     }
-      #   }
-      #   mobilePic {
-      #     localFile {
-      #       childImageSharp {
-      #         fluid {
-      #           ...GatsbyImageSharpFluid_withWebp_noBase64
-      #         }
-      #       }
-      #     }
-      #   }
-      # }
-      # roundPic {
-      #   icon {
-      #     localFile {
-      #       id
-      #       childImageSharp {
-      #         fluid {
-      #           ...GatsbyImageSharpFluid_withWebp_noBase64
-      #         }
-      #       }
-      #     }
-      #   }
-      # }
+      textPic {
+        headline
+        text
+        desktopPic {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        mobilePic {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+      }
       blockText {
         data {
           headline
           text
+        }
+      }
+      enumList {
+        headline
+        listElement {
+          text
+          bold
         }
       }
       list {

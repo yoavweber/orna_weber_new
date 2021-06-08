@@ -71,18 +71,19 @@ const H1Colors = {
 export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
   color: color ? H1Colors[color] : H1Colors["grey"],
   fontWeight: bold ? "600" : "300",
-  fontSize: " calc(1.5rem + 1vw)",
+  fontSize: " calc(2rem + 0.5vw)",
   marginBottom: largeSpace ? "40px" : "20px",
-  lineHeight: "calc(1.5em + 0.5vw)",
+  lineHeight: "calc(1.2em + 0.5vw)",
   ...style,
 }));
 
-export const H2 = styled.h2(({ bold, color }) => ({
+export const H2 = styled.h2(({ bold, color, style }) => ({
   color: H1Colors[color],
   fontWeight: bold ? "600" : "300",
-  fontSize: "calc(1rem + 0.8vw)",
+  fontSize: "calc(1.4rem + 0.5vw)",
   marginBottom: "calc(10px + 2vh) ",
-  lineHeight: "calc(1.5em + 0.5vw)",
+  lineHeight: "calc(1.1em + 0.5vw)",
+  ...style,
 }));
 
 export const H3 = styled.h3(({ bold, color }) => ({
@@ -108,7 +109,9 @@ export const ColoredHeadline = ({ text, spanSize, ...props }) => {
             {text}
           </H2>
         ) : (
-          <H3 color="green">{text}</H3>
+          <H2 color="green" bold>
+            {text}
+          </H2>
         )}
       </>
     );
