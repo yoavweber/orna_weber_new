@@ -3,16 +3,14 @@
 }
 
 .img {
-  //   width: 20%;
-  //   height: 20 0px;
-  flex: 1;
+  flex: 2;
   margin-left: calc(10px + 3vw);
   align-self: center;
   align-self: baseline;
 }
 
 .contentWrapper {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 2.5fr;
   p {
     flex: 6;

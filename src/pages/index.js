@@ -13,31 +13,11 @@ import About from "./components/homePage/about/about";
 
 const Homepage = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return <div>loading!!!!!!!!!!</div>;
+  }
   const { strapiHomePage } = data;
   const { banner, introText, about, form } = strapiHomePage;
-  const content = [
-    {
-      headline: "המרכז לקוסמטיקת פיוז'ן",
-      subTitle: "שילוב מיוחד לכל אחת ",
-      img: "beautyFusion.png",
-      buttonText: "לשילוב המיוחד שלך",
-      icon: face,
-    },
-    {
-      headline: "מעיין הנעורים הפרטי שלך",
-      text: "השילובים שיאפשרו לך להיראות ולהרגיש צעירה ",
-      img: "antiaging.png",
-      buttonText: "קחו אותי למעיין הנעורים",
-      icon: twoBottles,
-    },
-    {
-      headline: "הכתמים לא עוזבים?",
-      text: "טיפולי פיגמנטציה בהתאמה מלאה לעור המיוחד שלך ",
-      img: "pigmentation.png",
-      buttonText: "לטיפול מוכח ויעיל",
-      icon: pigmentation,
-    },
-  ];
 
   const bannerArray = banner.map((content) => {
     return <Banner data={content} />;
@@ -45,7 +25,7 @@ const Homepage = () => {
 
   return (
     <>
-      <div>
+      <div style={{ height: "70vh", maxHeight: "550px" }}>
         <Slider
           style={{
             position: "relative",
@@ -76,7 +56,15 @@ const query = graphql`
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
-                # ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        mobileBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1800, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -93,6 +81,7 @@ const query = graphql`
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }
@@ -107,6 +96,7 @@ const query = graphql`
             childImageSharp {
               fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

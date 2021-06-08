@@ -16,7 +16,7 @@ const PicText = ({ data }) => {
     reverse,
   } = data;
   const styleReverse = reverse && { flexDirection: "row-reverse" };
-  const deskTopFluid = desktopPic?.localFile?.childImageSharp.fluid;
+  const desktopFluid = desktopPic?.localFile?.childImageSharp.fluid;
   const mobileFluid = mobilePic?.localFile?.childImageSharp.fluid;
 
   return (
@@ -25,11 +25,7 @@ const PicText = ({ data }) => {
         {headline}
       </H2>
       <div className={styles.contentWrapper} style={{ ...styleReverse }}>
-        {isMobile ? (
-          <Img fluid={mobileFluid} className={styles.img} />
-        ) : (
-          <Img fluid={deskTopFluid} className={styles.img} />
-        )}
+        <Img fluid={desktopFluid} className={styles.img} />
 
         <p>{text}</p>
       </div>

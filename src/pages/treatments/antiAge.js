@@ -10,8 +10,6 @@ import {
 } from "../../layout/components";
 import { H1, Space } from "../../layout/common";
 
-import styles from "./antiAge/antiAge.module.scss";
-
 const AntiAge = () => {
   const data = useStaticQuery(query);
   const { strapiAntiAging } = data;
@@ -33,7 +31,7 @@ const AntiAge = () => {
       <Banner data={banner} />
       <Space />
       <main>
-        <div className={styles.text}>
+        <div>
           <IconText data={iconText} />
           <H1
             style={{
@@ -70,7 +68,7 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
