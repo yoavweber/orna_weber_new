@@ -7,17 +7,14 @@ import styles from "./coloredBgText.module.scss";
 
 //https://erikmartinjordan.com/parent-child-height-width-react-hooks
 const ColoredBgText = ({ data }) => {
-  const { icon, headline, text } = data;
-  // const { rightIcon, leftIcon, headline, firstPartText } = data;
-
+  const { icon, headline, firstPartText } = data;
   return (
-    <section className={styles.wrapper}>
-      <img src={icon.url} className={styles.icon} width="100%" height="100%" />
+    <section className={styles.section}>
+      <img src={icon.url} className={styles.icon} width="5px" />
       <div className={styles.contentWrapper}>
         <H1>{headline}</H1>
-        <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
+        <ReactMarkdown allowDangerousHtml={true}>{firstPartText}</ReactMarkdown>
       </div>
-      {/* {leftIcon ? <img src={icon} className={styles.icon} /> : <div />} */}
     </section>
   );
 };

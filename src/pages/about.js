@@ -34,7 +34,6 @@ const About = () => {
   `;
   return (
     <div>
-      {/* <Banner data={banner} /> */}
       <BannerAbout data={banner} />
       <SquarePicText data={squerPic} />
       <ColoredBgText data={greenText} />
@@ -101,12 +100,11 @@ const query = graphql`
       }
       greenText {
         headline
-        text
+        firstPartText
         icon {
           url
         }
       }
-      finalText
       roundPic {
         headline
         text

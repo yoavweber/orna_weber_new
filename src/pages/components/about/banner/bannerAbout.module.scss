@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  height: 30vh;
 }
 
 .contentWrapper {
@@ -32,6 +33,12 @@
     width: 75%;
   }
 }
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    opacity: 0.6;
+    background-position-x: -450px;
+  }
+}
 
 @media only screen and (max-width: 1100px) {
   .contentWrapper {
@@ -40,11 +47,17 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .contentWrapper {
+    height: 70vh;
+    background-position-y: -250px;
+  }
   .wrapper {
-    height: 90vh;
+    margin: 50 auto;
     .content {
-      width: 55%;
+      width: 90%;
       margin: 80px auto;
+      align-items: center;
+      text-align: center;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
 
-import { Button, H1, H2 } from "../../../../layout/common";
+import { Button, H1, H3 } from "../../../../layout/common";
 import { splitText } from "../../../../utils/utils";
 import { isMobile } from "../../../../utils/isMobile";
 
@@ -37,7 +37,9 @@ const Banner = ({ data, textStyle }) => {
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
           <H1 bold>{headline}</H1>
-          <p>{subTitle}</p>
+          <H3 bold color="grey">
+            {subTitle}
+          </H3>
 
           <a className={styles.button}>
             <Button>{button}</Button>
