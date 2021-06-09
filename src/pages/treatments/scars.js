@@ -48,6 +48,15 @@ const query = graphql`
             }
           }
         }
+        mobileBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
       }
       iconText {
         firstPartText

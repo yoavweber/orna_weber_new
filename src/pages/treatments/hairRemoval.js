@@ -65,7 +65,6 @@ const HairRemoval = () => {
         </FinalTextWrapper>
       </main>
 
-      {/* <Space /> */}
       <Form data={form} />
     </div>
   );
@@ -82,6 +81,16 @@ const query = graphql`
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        mobileBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 400, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

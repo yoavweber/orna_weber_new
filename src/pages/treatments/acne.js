@@ -13,14 +13,13 @@ const Acne = () => {
     <div>
       <Banner data={banner} />
       <main>
-        <Space />
         <IconText data={firstIconText} />
         <IconText data={secondIconText} />
         <Space />
         {/* TODO: change the headline color to green */}
         <TextBlocks content={BlockText} />
       </main>
-      <Space />
+      <Space isMobile="true" />
       <Form data={form} />
     </div>
   );
@@ -37,6 +36,15 @@ const query = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        mobileBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
