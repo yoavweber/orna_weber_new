@@ -6,7 +6,7 @@ import { isMobile } from "../../../../utils/isMobile";
 
 import styles from "./bannerAbout.module.scss";
 
-const Banner = ({ data }) => {
+const AboutBanner = ({ data }) => {
   const { mobileBackground, headline, subTitle, button, icon } = data;
 
   const fluid = mobileBackground?.localFile.childImageSharp.fluid;
@@ -43,4 +43,4 @@ const Banner = ({ data }) => {
   );
 };
 
-export default Banner;
+export default AboutBanner;

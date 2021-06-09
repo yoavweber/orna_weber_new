@@ -41,7 +41,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-nprogress",
 
-    "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
