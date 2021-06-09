@@ -3,7 +3,11 @@ import { H1 } from "../../../../layout/common";
 
 import styles from "./numlist.module.scss";
 
-const List = ({ data }) => {
+const NumList = ({ data }) => {
+  if (!data) {
+    // TODO: return 404 page
+    return <div>error</div>;
+  }
   const { headline, listElement } = data;
 
   const listComponent = listElement.map((listElement, index) => {
@@ -32,4 +36,4 @@ const List = ({ data }) => {
   );
 };
 
-export default List;
+export default NumList;

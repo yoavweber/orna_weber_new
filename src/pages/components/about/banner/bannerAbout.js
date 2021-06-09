@@ -7,8 +7,10 @@ import { isMobile } from "../../../../utils/isMobile";
 import styles from "./bannerAbout.module.scss";
 
 const AboutBanner = ({ data }) => {
+  if (!data) {
+    return <div>error</div>;
+  }
   const { mobileBackground, headline, subTitle, button, icon } = data;
-
   const fluid = mobileBackground?.localFile.childImageSharp.fluid;
   let headlineColor;
   let isColor;

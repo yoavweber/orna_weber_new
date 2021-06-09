@@ -11,6 +11,10 @@ import { H1, Space } from "../layout/common";
 
 const About = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    // TODO: return 404 page
+    return <div>error</div>;
+  }
   const { strapiAbout } = data;
   const {
     banner,

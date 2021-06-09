@@ -9,6 +9,10 @@ import { H1 } from "../../../../layout/common";
 import styles from "./experienceText.module.scss";
 
 const ExperienceText = ({ data }) => {
+  if (!data) {
+    // TODO: return 404 page
+    return <div>error</div>;
+  }
   const { headline, text, desktopPic, mobilePic } = data;
   const fluid = customMobile(900)
     ? mobilePic.localFile.childImageSharp.fluid
