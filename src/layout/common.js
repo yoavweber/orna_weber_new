@@ -34,7 +34,7 @@ import { splitText } from "../utils/utils";
 
 const DESKTOP_BUTTON_HEIGHT = "calc(30px + 2vw)";
 const MOBILE_BUTTON_HEIGHT = "calc(60px + 2vw)";
-const FONT_SIZE = "calc(2rem + 1vw)";
+const FONT_SIZE = "calc(1.2rem + 1vw)";
 
 const ButtonTag = styled.button`
   background: #cae3b1;
@@ -42,7 +42,7 @@ const ButtonTag = styled.button`
   width: 100%;
   height: ${DESKTOP_BUTTON_HEIGHT};
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: ${FONT_SIZE};
   @media (max-width: 800px) {
     height: ${MOBILE_BUTTON_HEIGHT};
   }
@@ -92,7 +92,7 @@ export const H2 = styled.h2(({ bold, color, style }) => ({
 export const H3 = styled.h3(({ bold, color }) => ({
   color: H1Colors[color],
   fontWeight: bold ? "500" : "300",
-  fontSize: "calc(0.8rem + 0.6vw)",
+  fontSize: "calc(1.2rem + 0.4vw)",
   marginBottom: "calc(10px + 2vh) ",
   lineHeight: "calc(1.1em + 0.5vw)",
 }));
@@ -148,11 +148,14 @@ export const Space = ({ smallSpace, isMobile }) => (
     css={css`
       margin: ${smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)"};
       @media (max-width: 800px) {
-        margin: ${isMobile && 0};
+        margin: ${isMobile
+          ? 0
+          : smallSpace
+          ? "calc(50px + 2vw)"
+          : "calc(50px + 4vw)"};
       }
     `}
   />
-  // margin: !isMobile && smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)",
 );
 
 export const MobileTextWrapper = styled.section`
@@ -167,36 +170,24 @@ export const MobileTextWrapper = styled.section`
   }
 `;
 
-// TODO: colored headline for more then 2 type of headlines
+const FinalTextWrapper = styled.div`
+  @media (max-width: 800px) {
+    background-color: #f8f9f6;
+  }
+`;
 
-// export const ColoredHeadline = ({ text, spanSize, ...props }) => {
-//   const textArray = splitText(text);
-//   const coloredText = textArray.map((text, index) => {
-//     const isColoredBlack = (index + 2) % 2 == 0 ? true : false;
-//     return (
-//       <>
-//         {isColoredBlack ? (
-//           <H2 color="black">{text}</H2>
-//         ) : (
-//           <H3 color="green">{text}</H3>
-//         )}
-//       </>
-//     );
-//     const color = isColoredBlack ? H1Colors["black"] : H1Colors["green"];
-//     return (
-//       <span
-//         key={index}
-//         style={{
-//           color: `${color}`,
-//           fontSize: "calc(1.2rem + 0.8vw)",
-//           fontWeight: "400",
-//         }}
-//       >
-//         {text}
-//       </span>
-//     );
-//   });
-//   const div = React.createElement("div", null);
-//   coloredText.splice(1, 0, div);
-//   return <>{coloredText}</>;
-// };
+export const Headline = ({ children }) => (
+  <FinalTextWrapper>
+    <H1
+      bold={true}
+      style={{
+        width: "60%",
+        textAlign: "center",
+        margin: "0 auto",
+        paddingBottom: "50px",
+      }}
+    >
+      {children}
+    </H1>
+  </FinalTextWrapper>
+);

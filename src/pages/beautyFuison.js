@@ -34,19 +34,19 @@ const AntiAge = () => {
   return (
     <>
       <Banner data={banner} subTitleColor="black" />
-      <Space smallSpace="true" />
+      <Space smallSpace="true" isMobile="true" />
       <main>
         <IconText data={iconText} />
+        <Space />
       </main>
-
       <ColoredBgText data={coloredBackground} />
       <main>
         <ListNumber data={enumList} />
         <RoundPicText data={textPic} />
+        <Space />
         <TextBlocks content={blockText} />
-        <Space />
         <List data={list} />
-        <Space />
+        <Space isMobile="true" />
       </main>
       <Form data={form} />
     </>
@@ -75,7 +75,7 @@ const query = graphql`
           localFile {
             id
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

@@ -75,10 +75,11 @@
     }
     .headline {
       margin-bottom: 5rem;
+      text-align: center;
     }
     .img {
       width: 100%;
-      width: 80vw;
+      flex: auto;
       object-fit: contain;
     }
     .text {

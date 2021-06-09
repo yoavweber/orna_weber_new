@@ -10,7 +10,10 @@ const Form = ({ data }) => {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <H1 color="white"> {headline}</H1>
+        <H1 color="white" classname={styles.headline}>
+          {" "}
+          {headline}
+        </H1>
         <form className={styles.form}>
           <Input
             className={styles.input}

@@ -7,17 +7,17 @@
   align-items: flex-end;
   flex: 5;
   img {
-    margin-left: calc(10px + 3vw);
+    margin: 0 calc(10px + 3vw);
     align-self: center;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .text {
-    flex-direction: column-reverse;
-  }
+    flex-direction: column-reverse !important;
 
-  img {
-    margin: 20px 0;
+    img {
+      margin: 20px 0;
+    }
   }
 }

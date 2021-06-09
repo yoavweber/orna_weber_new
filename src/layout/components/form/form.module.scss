@@ -38,10 +38,13 @@
 
 @media only screen and (max-width: 800px) {
   .section {
-    height: 50vh;
+    height: 45vh;
   }
   .wrapper {
     width: 70%;
+  }
+  .headline {
+    margin-bottom: 30px;
   }
   .form {
     margin-bottom: -20px;
