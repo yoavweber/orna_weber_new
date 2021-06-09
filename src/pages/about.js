@@ -2,13 +2,7 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
 
-import {
-  Banner,
-  Form,
-  ColoredBgText,
-  RoundPicText,
-  SquarePicText,
-} from "../layout/components";
+import { Form, ColoredBgText, SquarePicText } from "../layout/components";
 
 import ExperienceText from "./components/about/experienceText/experienceText";
 import BannerAbout from "./components/about/banner/bannerAbout";
@@ -65,15 +59,7 @@ const query = graphql`
         subTitle
         headline
         button
-        # desktopBackground {
-        #   localFile {
-        #     childImageSharp {
-        #       fluid(maxWidth: 1800, quality: 100) {
-        #         ...GatsbyImageSharpFluid_withWebp_noBase64
-        #       }
-        #     }
-        #   }
-        # }
+
         mobileBackground {
           localFile {
             childImageSharp {

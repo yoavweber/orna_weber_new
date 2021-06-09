@@ -1,7 +1,6 @@
 import React from "react";
 import BackgroundImage from "gatsby-image";
 
-import showdown from "showdown";
 import ReactMarkdown from "react-markdown";
 
 import { ColoredHeadline } from "../../../../layout/common";

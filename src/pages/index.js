@@ -2,9 +2,6 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form } from "../layout/components";
-import pigmentation from "../layout/assets/icons/banner/pigmentation.svg";
-import face from "../layout/assets/icons/banner/face.svg";
-import twoBottles from "../layout/assets/icons/banner/twoBottles.svg";
 
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";

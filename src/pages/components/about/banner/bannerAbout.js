@@ -1,5 +1,4 @@
 import React from "react";
-import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 import { Button, H1, H3 } from "../../../../layout/common";
 import { splitText } from "../../../../utils/utils";
@@ -8,14 +7,7 @@ import { isMobile } from "../../../../utils/isMobile";
 import styles from "./bannerAbout.module.scss";
 
 const Banner = ({ data }) => {
-  const {
-    desktopBackground,
-    mobileBackground,
-    headline,
-    subTitle,
-    button,
-    icon,
-  } = data;
+  const { mobileBackground, headline, subTitle, button, icon } = data;
 
   const fluid = mobileBackground?.localFile.childImageSharp.fluid;
   let headlineColor;
@@ -46,7 +38,6 @@ const Banner = ({ data }) => {
           className={styles.imageWrapper}
           alt="banner picture"
         />
-        {/* </BackgroundImage> */}
       </div>
     </>
   );

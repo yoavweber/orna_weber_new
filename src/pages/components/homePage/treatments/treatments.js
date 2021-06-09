@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import getFluid from "../../../../utils/getFluid";
 
 import { H1 } from "../../../../layout/common";
-import { isMobile, customMobile } from "../.././../../utils/isMobile";
+import { customMobile } from "../.././../../utils/isMobile";
 import sink from "../../../../layout/assets/icons/sink.svg";
 import needle from "../../../../layout/assets/icons/needle.svg";
 
@@ -35,8 +35,6 @@ const Treatments = () => {
     if (sliderWrapperRef.current) {
       let sliderWidth = sliderWrapperRef.current.offsetWidth;
       setSliderWrapperWidth(sliderWidth);
-    } else {
-      let sliderWidth = "wrong";
     }
   }, [sliderWrapperRef]);
 
@@ -52,7 +50,7 @@ const Treatments = () => {
 
   return (
     <section className={styles.wrapper}>
-      <img src={sink} className={styles.icon} />
+      <img src={sink} alt="treatment icon" className={styles.icon} />
       <div className={styles.contentWrapper} ref={sliderWrapperRef}>
         <H1>{headline}</H1>
         {customMobile(1000) ? (
@@ -66,7 +64,7 @@ const Treatments = () => {
           />
         )}
       </div>
-      <img src={needle} className={styles.icon} />
+      <img src={needle} alt="treatment icon" className={styles.icon} />
     </section>
   );
 };

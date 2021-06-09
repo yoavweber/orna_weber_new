@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/react";
 
 import { splitText } from "../utils/utils";
-import { isMobile } from "../utils/isMobile";
 // https://www.dandenney.com/posts/front-end-dev/embracing-emotion-with-gatsby/
 //https://emotion.sh/docs/styled
 
