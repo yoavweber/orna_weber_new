@@ -3,7 +3,6 @@ $listItemSize: calc(5px + 3vh);
 //https://css-tricks.com/full-width-containers-limited-width-parent/
 .section {
   position: relative;
-  //   padding-top: $sectionPadding;
   padding-bottom: calc(#{$sectionPadding} - #{$listItemSize});
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -13,9 +12,7 @@ $listItemSize: calc(5px + 3vh);
   padding-top: $sectionPadding;
   width: 52%;
   margin: 0 auto;
-  //   margin-right: 200px;
   margin-bottom: 150px;
-  //   padding-right: 240px;
 }
 
 ol {
@@ -24,7 +21,6 @@ ol {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  //   justify-content: center;
   li {
     counter-increment: my-awesome-counter;
     display: flex;
@@ -84,14 +80,6 @@ ol {
 
 @media only screen and (max-width: 800px) {
   .wrapper {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 200px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .wrapper {
     margin: 0 auto;
     margin-bottom: 200px;
   }
@@ -100,6 +88,7 @@ ol {
     align-items: center;
     li {
       flex-direction: column;
+      text-align: center;
     }
   }
 }

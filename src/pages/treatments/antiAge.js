@@ -47,8 +47,11 @@ const AntiAge = () => {
         <IconText data={secondIconText} />
         <List data={list} />
         <Space />
+        <wbr />
+        <Space />
         <TextBlocks content={blockText} />
         <Space />
+
         <H1 style={{ width: "60%", textAlign: "center", margin: "0 auto" }}>
           {endText}
         </H1>
@@ -70,6 +73,16 @@ const query = graphql`
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        mobileBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 400, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

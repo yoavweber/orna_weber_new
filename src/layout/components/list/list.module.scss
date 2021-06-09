@@ -35,3 +35,23 @@ $listItemSize: calc(5px + 3vh);
     margin-left: 20px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .section {
+    padding: 0;
+    // padding-bottom: calc(#{$sectionPadding} - #{$listItemSize});
+  }
+
+  .background {
+    height: 150%;
+  }
+
+  .wrapper {
+    padding-top: $sectionPadding;
+    // padding-bottom: #{$listItemSize};
+
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 200px;
+  }
+}

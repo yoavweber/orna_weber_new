@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
 
 import { splitText } from "../utils/utils";
+import { isMobile } from "../utils/isMobile";
 // https://www.dandenney.com/posts/front-end-dev/embracing-emotion-with-gatsby/
 //https://emotion.sh/docs/styled
 
@@ -105,9 +109,9 @@ export const ColoredHeadline = ({ text, spanSize, ...props }) => {
     return (
       <>
         {isColoredBlack ? (
-          <H2 color="black" style={isMargin}>
+          <H1 color="black" style={isMargin} bold>
             {text}
-          </H2>
+          </H1>
         ) : (
           <H2 color="green" bold>
             {text}
@@ -140,9 +144,17 @@ export const Input = styled.input`
 
 // other
 
-export const Space = styled.div(({ smallSpace }) => ({
-  margin: smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)",
-}));
+export const Space = ({ smallSpace, isMobile }) => (
+  <div
+    css={css`
+      margin: ${smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)"};
+      @media (max-width: 800px) {
+        margin: ${isMobile && 0};
+      }
+    `}
+  />
+  // margin: !isMobile && smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)",
+);
 
 export const MobileTextWrapper = styled.section`
   padding: 0 10%;
