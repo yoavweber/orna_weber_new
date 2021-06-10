@@ -1,67 +1,36 @@
-// import React from "react";
-// import styled from "@emotion/styled";
+import React from "react";
+import { Link } from "gatsby";
 
-// const StyledDesktop = styled.div`
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   height: 40%;
-//   a {
-//     color: #555556;
-//     font-size: 1.2rem;
-//   }
-//   .icon {
-//     span {
-//       color: $green;
-//     }
-//   }
+import PhoneIcon from "../../icon/Icon";
+import { PHONE_NUMBER } from "../../../config";
+import logo from "../../../assets/logo.svg";
+import phone from "../../../assets/phone.svg";
+import { TreatmentMenu } from "../Nav";
 
-//   .dropDown {
-//     position: relative;
-//     .hiddenDropDown {
-//       display: none;
-//     }
-//     &:hover {
-//       border-bottom: 1px $green solid;
-//     }
-//     &:hover > * {
-//       display: block;
-//       position: absolute;
-//       display: flex;
-//       flex-direction: column;
-//       padding: 1rem 1.3rem 1.5rem;
-//       background-color: $green;
-//       z-index: 1000;
-//     }
-//   }
-// `;
+import styles from "../nav.module.scss";
 
-// const DesktopMenu = ({ children }) => {
-//   return (
-//     <StyledDesktop>
-//       <Link to="/">
-//         <img src={logo} width="200px" alt="Orna_logo" />
-//       </Link>
-//       <Link to="/" delay="200">
-//         ראשי
-//       </Link>
-//       {/* TODO: send this to the treatment area */}
-//       <Link className={styles.dropDown} delay="400">
-//         טיפולים
-//         <div className={styles.hiddenDropDown}>{children}</div>
-//       </Link>
-//       <Link to="booking" delay="600">
-//         קביעת תור
-//       </Link>
-//       <Link to="about" delay="600">
-//         עלינו
-//       </Link>
-//       <Link to="contact" delay="800">
-//         צרי קשר
-//       </Link>
-//       <PhoneIcon icon={phone} text={PHONE_NUMBER} className={styles.icon} />
-//     </StyledDesktop>
-//   );
-// };
+const DesktopMenu = ({ links }) => {
+  const LinkMenu = links.map((node) => {
+    if (typeof node.link != "string") {
+      return (
+        <Link className={styles.dropDown}>
+          {node.name}
+          <div className={styles.hiddenDropDown}>{TreatmentMenu}</div>
+        </Link>
+      );
+    }
+    return <Link to={node.link}>{node.name}</Link>;
+  });
 
-// export default DesktopMenu;
+  return (
+    <nav className={styles.desktopNav}>
+      <Link to="/">
+        <img src={logo} width="200px" alt="Orna_logo" />
+      </Link>
+      {LinkMenu}
+      <PhoneIcon icon={phone} text={PHONE_NUMBER} className={styles.icon} />
+    </nav>
+  );
+};
+
+export default DesktopMenu;

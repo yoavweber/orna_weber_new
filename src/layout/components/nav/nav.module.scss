@@ -1,6 +1,6 @@
 $green: #9fc975;
 
-.nav {
+.desktopNav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -9,6 +9,7 @@ $green: #9fc975;
     color: #555556;
     font-size: calc(0.8rem + 0.6vw);
   }
+
   .icon {
     span {
       color: $green;
@@ -37,10 +38,67 @@ $green: #9fc975;
   }
 }
 
+.styledSpan {
+  color: white;
+  margin: 1rem 0;
+  cursor: pointer;
+  &:hover {
+    font-weight: 600;
+    border-bottom: 1px white solid;
+  }
+}
+
+.mobileWrapper {
+  display: none;
+}
+
 @media only screen and (max-width: 799px) {
   .desktopNav {
     display: none;
   }
+  .mobileWrapper {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: #9fc975;
+    height: 100vh;
+    padding-top: 10rem;
+    width: 80vw;
+    position: fixed;
+    align-items: flex-start;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    &[data-showMenu="true"] {
+      transform: translateX(0);
+    }
+    & > * {
+      margin: 20px 0;
+      width: 100%;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s linear;
+      color: white;
+
+      &:hover {
+        background-color: white;
+        & > * {
+          color: #9fc975;
+        }
+      }
+    }
+  }
+
+  .styledSpan {
+    margin-right: 5rem;
+    font-size: 1.2rem;
+  }
+
   .icon {
     flex-direction: row-reverse;
     span {
@@ -52,6 +110,21 @@ $green: #9fc975;
   .mobileWrapper {
     width: 100%;
     position: relative;
+  }
+
+  .mobileDropDown {
+    display: none;
+    &[data-click="true"] {
+      display: flex;
+      flex-direction: column;
+      background-color: #90b76a;
+      color: blue;
+      padding: 1rem 0;
+      padding-right: 4rem;
+    }
+    & > * {
+      margin: 1rem 0;
+    }
   }
   .wrapper {
     width: 100%;
