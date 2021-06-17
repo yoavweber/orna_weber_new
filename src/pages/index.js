@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form } from "../layout/components";
+import { isMobile } from "../utils/isMobile";
 
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
@@ -22,11 +23,15 @@ const Homepage = () => {
 
   return (
     <>
-      <div style={{ height: "70vh", maxHeight: "550px" }}>
+      <div
+        style={{
+          maxHeight: isMobile ? "550px" : "none ",
+        }}
+      >
         <Slider
           style={{
             position: "relative",
-            height: "25vw",
+            // height: "25vw",
             width: "100vw",
           }}
           showElements={1}
@@ -60,7 +65,7 @@ const query = graphql`
         mobileBackground {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

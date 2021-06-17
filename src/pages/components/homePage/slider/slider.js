@@ -12,16 +12,22 @@ import { moveElements } from "../../../../utils/utils";
  * @function Slider
  */
 
-const Slider = ({ content, width, showElements, autoPlay }) => {
+const Slider = ({ content, width, showElements, autoPlay, className }) => {
+  const [getWidth, setWidth] = useState(width);
+
   if (typeof window === "undefined") {
     global.window = {};
   }
-  let getWidth;
-  if (width === undefined) {
-    getWidth = window ? window.innerWidth : "1000";
-  } else {
-    getWidth = width;
-  }
+
+  useEffect(() => {
+    if (getWidth === undefined) {
+      setWidth(window ? window.innerWidth : "1000");
+      console.log(window, window.innerWidth, getWidth);
+    } else {
+      console.log("from else");
+    }
+  }, [width]);
+
   //--------------------------------------------
   const [state, setState] = useState({
     activeIndex: 0,
@@ -93,13 +99,18 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
   };
 
   if (!_slides) {
-    return <div>hey</div>;
+    return <div>loading...</div>;
+  }
+  if (!getWidth) {
+    return <div>loading...</div>;
   }
   return (
-    <div css={SliderCSS}>
+    <div
+      style={{ position: "relative", overflow: "hidden", height: "100%" }}
+      className={className}
+    >
       <SliderContent
         translate={translate}
-        transition={transition}
         width={(getWidth / showElements) * content?.length}
       >
         {_slides.map((Content, i) => (
@@ -111,11 +122,5 @@ const Slider = ({ content, width, showElements, autoPlay }) => {
     </div>
   );
 };
-
-const SliderCSS = css`
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-`;
 
 export default Slider;
