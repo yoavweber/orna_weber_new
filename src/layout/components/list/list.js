@@ -1,5 +1,5 @@
 import React from "react";
-import { H1, H2 } from "../../common";
+import { H2 } from "../../common";
 import miniLogo from "../../assets/miniLogo.svg";
 
 import styles from "./list.module.scss";
@@ -9,7 +9,7 @@ const List = ({ data }) => {
   const listComponent = listElement.map((listElement) => {
     return (
       <li className={styles.listItem}>
-        <img src={miniLogo} />{" "}
+        <img alt="ביוטי פיוזן לוגו" src={miniLogo} />{" "}
         <p>
           <span style={{ color: "#85b240" }}>{listElement.bold} </span>
           {listElement.text}

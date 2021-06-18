@@ -31,7 +31,6 @@ const Homepage = () => {
         <Slider
           style={{
             position: "relative",
-            // height: "25vw",
             width: "100vw",
           }}
           showElements={1}

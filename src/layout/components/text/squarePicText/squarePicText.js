@@ -9,7 +9,6 @@ import getFluid from "../../../../utils/getFluid";
 import styles from "./squarePicText.module.scss";
 
 const squarePicText = ({ data }) => {
-  console.log(data, "squer pic");
   const { headline, text, buttonText, desktopPic } = data;
   const background = getFluid("backgroundSmall.png");
   const fluid = desktopPic.localFile.childImageSharp.fluid;

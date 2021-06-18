@@ -1,5 +1,5 @@
 import React from "react";
-import { H2, Space } from "../../common";
+import { H2 } from "../../common";
 
 import styles from "./iconBox.module.scss";
 

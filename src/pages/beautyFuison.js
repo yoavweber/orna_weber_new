@@ -34,7 +34,7 @@ const AntiAge = () => {
   return (
     <>
       <Banner data={banner} subTitleColor="black" />
-      <Space smallSpace="true" isMobile="true" />
+      <Space smallSpace="true" />
       <main>
         <IconText data={iconText} />
         <Space />

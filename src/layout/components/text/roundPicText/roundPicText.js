@@ -7,17 +7,11 @@ import { isMobile } from "../../../../utils/isMobile";
 import styles from "./roundPicText.module.scss";
 
 const PicText = ({ data }) => {
-  const {
-    headline,
-    headlineColor,
-    desktopPic,
-    mobilePic,
-    text,
-    reverse,
-  } = data;
+  const { headline, desktopPic, mobilePic, text, reverse } = data;
   const styleReverse = reverse && { flexDirection: "row-reverse" };
-  const desktopFluid = desktopPic?.localFile?.childImageSharp.fluid;
-  const mobileFluid = mobilePic?.localFile?.childImageSharp.fluid;
+  const fluid = isMobile
+    ? mobilePic?.localFile.childImageSharp.fluid
+    : desktopPic?.localFile.childImageSharp.fluid;
 
   return (
     <MobileTextWrapper className={styles.wrapper}>
@@ -25,7 +19,7 @@ const PicText = ({ data }) => {
         {headline}
       </H2>
       <div className={styles.contentWrapper} style={{ ...styleReverse }}>
-        <Img fluid={desktopFluid} className={styles.img} />
+        <Img fluid={fluid} className={styles.img} />
 
         <p>{text}</p>
       </div>
