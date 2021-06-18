@@ -4,15 +4,14 @@
   background-color: #cae3b1;
   display: flex;
   justify-content: space-around;
-  padding: 30px 20px;
+  padding: 30px 0;
   //   align-items: center;
 }
 .icon {
-  flex: 1;
-  height: 15vw;
-  min-height: 220px;
-  min-width: 220px;
-  align-self: center;
+  // flex: 1;
+  width: 15vw;
+  margin: 15px;
+  align-self: flex-end;
 }
 
 .contentWrapper {
@@ -21,15 +20,6 @@
   flex-direction: column;
 }
 
-.content {
-  display: flex;
-  margin: 0 auto;
-  height: 100%;
-  justify-content: space-around;
-  flex: 2;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
 .bubblesWrapper {
   text-align: center;
   color: #424d37;
@@ -46,11 +36,39 @@
   width: 6rem;
   height: 6rem;
   padding: 0;
+  img {
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 4px;
+  }
+}
+
+.treatmentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1300px) {
+  .contentWrapper {
+    width: 75%;
+  }
+  .icon {
+    width: 12vw;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
   .contentWrapper {
-    width: 75%;
+    width: 70%;
+  }
+  .treatmentWrapper {
+    flex-direction: column;
+    img {
+      border: 0;
+      border-radius: initial;
+      padding: 0;
+    }
   }
   .bubble {
     border-radius: 0;
