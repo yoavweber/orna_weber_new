@@ -1,19 +1,30 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-import { H1, ColoredHeadline, Space, MobileTextWrapper } from "../../../common";
-
+import {
+  ColoredHeadline,
+  Space,
+  MobileTextWrapper,
+  Headline,
+} from "../../../common";
+import { isMobile } from "../../../../utils/isMobile";
 import styles from "./iconText.module.scss";
 
-const IconText = ({ data }) => {
+const IconText = ({ data, mobileReverse }) => {
   const { headline, icon, firstPartText, secondPartText, reverse } = data;
 
-  const styleReverse = reverse && {
-    flexDirection: "row-reverse",
+  const styleReverse = {
+    flexDirection: isMobile
+      ? mobileReverse
+        ? "column"
+        : "column-reverse"
+      : reverse
+      ? "row-reverse"
+      : "row",
   };
 
   return (
-    <MobileTextWrapper className={styles.wrapper}>
+    <div className={styles.wrapper}>
       {headline && <ColoredHeadline text={headline} />}
       <div className={styles.textWrapper}>
         <div className={styles.text} style={{ ...styleReverse }}>
@@ -32,7 +43,7 @@ const IconText = ({ data }) => {
           </div>
         )}
       </div>
-    </MobileTextWrapper>
+    </div>
   );
 };
 

@@ -15,7 +15,6 @@ const Scars = () => {
   const data = useStaticQuery(query);
   const { strapiScars } = data;
   const { banner, iconText, roundPic, blockText, list, form } = strapiScars;
-
   return (
     <div>
       <Banner data={banner} />
@@ -59,6 +58,7 @@ const query = graphql`
         }
       }
       iconText {
+        headline
         firstPartText
         secondPartText
         icon {

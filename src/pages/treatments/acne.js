@@ -69,7 +69,7 @@ const query = graphql`
       }
       firstIconText {
         headline
-        firstPartText
+        secondPartText
         icon {
           id
           url

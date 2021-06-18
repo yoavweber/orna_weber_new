@@ -41,8 +41,9 @@ const HairRemoval = () => {
       <Space smallSpace={true} />
       <main>
         <PlainText data={introText} />
+        <Space smallSpace={true} isMobile="true" />
+        <IconText data={firstIconText} mobileReverse="true" />
         <Space smallSpace={true} />
-        <IconText data={firstIconText} />
         <List data={list} />
         <Space />
         <IconText data={secondIconText} />
@@ -103,6 +104,7 @@ const query = graphql`
       }
       firstIconText {
         firstPartText
+        secondPartText
         icon {
           url
         }

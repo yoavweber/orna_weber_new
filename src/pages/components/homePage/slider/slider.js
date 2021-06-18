@@ -22,9 +22,6 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
   useEffect(() => {
     if (getWidth === undefined) {
       setWidth(window ? window.innerWidth : "1000");
-      console.log(window, window.innerWidth, getWidth);
-    } else {
-      console.log("from else");
     }
   }, [width]);
 
@@ -104,6 +101,11 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
   if (!getWidth) {
     return <div>loading...</div>;
   }
+
+  console.log(
+    (getWidth, (getWidth / showElements) * content?.length),
+    "show elements"
+  );
   return (
     <div
       style={{ position: "relative", overflow: "hidden", height: "100%" }}
@@ -117,8 +119,12 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
           <Slide key={i} content={Content} />
         ))}
       </SliderContent>
-      <Arrow direction="left" notFullWidth={width} handleClick={prevSlide} />
-      <Arrow direction="right" notFullWidth={width} handleClick={nextSlide} />
+      <Arrow direction="left" notFullWidth={getWidth} handleClick={prevSlide} />
+      <Arrow
+        direction="right"
+        notFullWidth={getWidth}
+        handleClick={nextSlide}
+      />
     </div>
   );
 };

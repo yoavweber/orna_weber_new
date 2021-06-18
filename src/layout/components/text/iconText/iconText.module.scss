@@ -1,4 +1,8 @@
+// @import "../../../../layout//global.scss";
+// @import "mobilMainWidth";
 .wrapper {
+  // change to mobilMainWidth varible
+  margin: 0 5%;
   margin-bottom: calc(5px + 2vw);
 }
 
@@ -14,10 +18,8 @@
 
 @media only screen and (max-width: 800px) {
   .text {
-    flex-direction: column-reverse !important;
-
     img {
-      margin: 20px 0;
+      margin: 40px 0;
     }
   }
 }
