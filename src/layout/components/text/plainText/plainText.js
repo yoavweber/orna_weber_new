@@ -1,13 +1,15 @@
 import React from "react";
-import { H2, MobileTextWrapper } from "../../../common";
+import { isMobile } from "../../../../utils/isMobile";
+
+import { ColoredHeadline } from "../../../common";
 
 const PlainText = ({ data, headlineColor }) => {
   const { text, headline } = data;
   return (
-    <MobileTextWrapper>
-      <H2 color={headlineColor}>{headline}</H2>
+    <div style={{ margin: isMobile && "0 5%" }}>
+      <ColoredHeadline text={headline} />
       <p>{text}</p>
-    </MobileTextWrapper>
+    </div>
   );
 };
 

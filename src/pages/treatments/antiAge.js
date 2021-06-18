@@ -8,7 +8,8 @@ import {
   List,
   TextBlocks,
 } from "../../layout/components";
-import { H1, Space } from "../../layout/common";
+import { isMobile } from "../../utils/isMobile";
+import { H1, Space, Headline } from "../../layout/common";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
@@ -33,25 +34,25 @@ const AntiAge = () => {
       <main>
         <div>
           <IconText data={iconText} />
-          <H1
-            style={{
-              textAlign: "center",
-              width: "50%",
-              margin: "calc(10px + 3vw) auto",
-            }}
-            bold={true}
-          >
-            {midText}
-          </H1>
+          <Headline style={{ paddingTop: "50px" }}>{midText}</Headline>
         </div>
+        <Space />
+        <H1
+          color="green"
+          bold="true"
+          style={{ textAlign: isMobile && "center" }}
+        >
+          {" "}
+          לא כל טיפול אנטי אייג'ינג מתאים לך!
+        </H1>
         <IconText data={secondIconText} />
         <List data={list} />
         <Space />
+        {/* since using twice space with no element in the middle does not work, wbr is an empty element */}
         <wbr />
         <Space />
         <TextBlocks content={blockText} />
         <Space />
-
         <H1 style={{ width: "60%", textAlign: "center", margin: "0 auto" }}>
           {endText}
         </H1>

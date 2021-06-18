@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
-import ReactMarkdown from "react-markdown";
 
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
@@ -44,7 +42,9 @@ const TextBlocks = ({ content }) => {
 
   return (
     <section>
-      <H1>{headline}</H1>
+      <H1 bold="true" className={styles.headline}>
+        {headline}
+      </H1>
       <div className={styles.blockWrapper}>{blockComponent}</div>
     </section>
   );

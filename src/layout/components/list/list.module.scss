@@ -47,11 +47,17 @@ $listItemSize: calc(5px + 3vh);
 
   .wrapper {
     padding-top: $sectionPadding;
+    // this size is decided by the global padding in mobile
 
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
   .listContainer {
     padding: 0;
+  }
+  .listItem {
+    img {
+      align-self: baseline;
+    }
   }
 }

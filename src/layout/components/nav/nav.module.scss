@@ -76,6 +76,7 @@ $green: #9fc975;
     transform: translateX(100%);
     &[data-showMenu="true"] {
       transform: translateX(0);
+      overflow: scroll;
     }
     & > * {
       margin: 20px 0;
