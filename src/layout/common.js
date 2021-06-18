@@ -34,7 +34,7 @@ import { splitText } from "../utils/utils";
 
 const DESKTOP_BUTTON_HEIGHT = "calc(30px + 2vw)";
 const MOBILE_BUTTON_HEIGHT = "calc(60px + 2vw)";
-const FONT_SIZE = "calc(1.2rem + 1vw)";
+const FONT_SIZE = "calc(1rem + 0.5vw)";
 
 const ButtonTag = styled.button`
   background: #cae3b1;
@@ -43,6 +43,7 @@ const ButtonTag = styled.button`
   height: ${DESKTOP_BUTTON_HEIGHT};
   cursor: pointer;
   font-size: ${FONT_SIZE};
+  line-height: calc(1.6em + 0.2vw);
   @media (max-width: 800px) {
     height: ${MOBILE_BUTTON_HEIGHT};
   }
@@ -104,7 +105,7 @@ export const ColoredHeadline = ({ text, spanSize, ...props }) => {
   const textArray = splitText(text);
   const coloredText = textArray.map((text, index) => {
     const isColoredBlack = (index + 2) % 2 === 0 ? true : false;
-    const isMargin = textArray.length > 1 ? { marginBottom: "0" } : {};
+    const isMargin = textArray.length > 1 ? { marginBottom: "10px" } : {};
     return (
       <>
         {isColoredBlack ? (
@@ -176,7 +177,7 @@ const FinalTextWrapper = styled.div`
   }
 `;
 
-export const Headline = ({ children }) => (
+export const Headline = ({ style, children }) => (
   <FinalTextWrapper>
     <H1
       bold={true}
@@ -185,6 +186,7 @@ export const Headline = ({ children }) => (
         textAlign: "center",
         margin: "0 auto",
         paddingBottom: "50px",
+        ...style,
       }}
     >
       {children}
