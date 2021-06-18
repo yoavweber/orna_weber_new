@@ -10,9 +10,11 @@ const ColoredBgText = ({ data }) => {
   const { icon, headline, firstPartText } = data;
   return (
     <section className={styles.section}>
-      <img src={icon.url} className={styles.icon} width="5px" />
+      <div className={styles.iconWrapper}>
+        <img src={icon.url} alt="ביוטי פיוזן" className={styles.icon} />
+      </div>
       <div className={styles.contentWrapper}>
-        <H1>{headline}</H1>
+        <H1 className={styles.headline}>{headline}</H1>
         <ReactMarkdown allowDangerousHtml={true}>{firstPartText}</ReactMarkdown>
       </div>
     </section>
