@@ -37,14 +37,20 @@
 
 @media only screen and (max-width: 800px) {
   .contentWrapper {
-    height: 60vh;
+    height: 100vw;
   }
   .wrapper {
     // height: 90vh;
-    margin: 50 auto;
+    margin: 0 auto;
     .content {
       width: 55%;
-      margin: 130px auto;
+      margin: 50px auto;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contentWrapper {
+    height: 80vh;
   }
 }
