@@ -71,8 +71,19 @@ const H1Colors = {
   black: "#424d37",
 };
 
-// make the lineHeight varible
-export const H1 = styled.h1(({ color, bold, largeSpace, style }) => ({
+export const FirstHeadLine = styled.h1(
+  ({ color, bold, largeSpace, style }) => ({
+    color: color ? H1Colors[color] : H1Colors["grey"],
+    fontWeight: bold ? "600" : "300",
+    fontSize: " calc(2rem + 0.5vw)",
+    marginBottom: largeSpace ? "40px" : "20px",
+    lineHeight: "calc(1.2em + 0.5vw)",
+    ...style,
+  })
+);
+
+// change the name to different H1, since I can only have 1 H1 in a page
+export const H1 = styled.h2(({ color, bold, largeSpace, style }) => ({
   color: color ? H1Colors[color] : H1Colors["grey"],
   fontWeight: bold ? "600" : "300",
   fontSize: " calc(2rem + 0.5vw)",
