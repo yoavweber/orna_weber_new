@@ -20,16 +20,18 @@ const Homepage = () => {
   const { banner, introText, about, form } = strapiHomePage;
 
   const bannerArray = banner.map((content) => {
-    return <Banner data={content} />;
+    return (
+      <Banner
+        data={content}
+        // id number 3 is antiaging, which has green subtitle
+        subTitleColor={content.id === 3 ? "green" : "white"}
+      />
+    );
   });
 
   return (
     <>
-      <div
-        style={{
-          maxHeight: isMobile ? "550px" : "none ",
-        }}
-      >
+      <div>
         <Slider
           style={{
             position: "relative",
@@ -98,10 +100,11 @@ const query = graphql`
         ornaPicture {
           localFile {
             childImageSharp {
-              fluid(quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData
+              # fluid(quality: 100) {
+              #   ...GatsbyImageSharpFluid_withWebp_noBase64
+              #   ...GatsbyImageSharpFluidLimitPresentationSize
+              # }
             }
           }
         }
