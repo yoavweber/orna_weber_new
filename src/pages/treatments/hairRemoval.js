@@ -72,7 +72,7 @@ const HairRemoval = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiHairRemoval {
       banner {
         headline
@@ -80,7 +80,7 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -109,7 +109,6 @@ const query = graphql`
           url
         }
       }
-
       list {
         headline
         listElement {
@@ -134,7 +133,6 @@ const query = graphql`
           }
         }
       }
-
       secondText {
         headline
         text

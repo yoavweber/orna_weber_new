@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Button, H1, H3 } from "../../../../layout/common";
 import { splitText } from "../../../../utils/utils";
 import { isMobile } from "../../../../utils/isMobile";
@@ -11,7 +11,7 @@ const AboutBanner = ({ data }) => {
     return <div>error</div>;
   }
   const { mobileBackground, headline, subTitle, button, icon } = data;
-  const fluid = mobileBackground?.localFile.childImageSharp.fluid;
+  const fluid = mobileBackground?.localFile.childImageSharp.gatsbyImageData;
   let headlineColor;
   let isColor;
   if (subTitle) {
@@ -34,10 +34,10 @@ const AboutBanner = ({ data }) => {
             {icon && !isMobile && <img src={icon.url} width="80" height="80" />}
           </div>
         </div>
-        <Img
-          fluid={fluid}
+        <GatsbyImage
+          image={fluid}
+          placeholder="blurred"
           Tag="div"
-          className={styles.imageWrapper}
           alt="banner picture"
         />
       </div>

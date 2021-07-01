@@ -33,7 +33,7 @@ const Scars = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiScars {
       banner {
         headline
@@ -41,7 +41,7 @@ const query = graphql`
         desktopBackground {
           localFile {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -71,37 +71,30 @@ const query = graphql`
         desktopPic {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
         mobilePic {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
       }
-
       blockText {
         data {
           headline
           text
         }
       }
-
       list {
         headline
         listElement {
           text
         }
       }
-
       form {
         button
         headline

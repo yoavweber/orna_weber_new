@@ -57,20 +57,21 @@ const About = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiAbout {
       banner {
         subTitle
         headline
         button
-
         mobileBackground {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 400, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData(
+                width: 400
+                quality: 100
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
             }
           }
         }
@@ -81,10 +82,12 @@ const query = graphql`
         desktopPic {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData(
+                width: 1800
+                quality: 100
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
             }
           }
         }
@@ -102,20 +105,24 @@ const query = graphql`
         desktopPic {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 400, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                # ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData(
+                width: 400
+                quality: 100
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
             }
           }
         }
         mobilePic {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 200, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                # ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData(
+                width: 200
+                quality: 100
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
             }
           }
         }

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import getFluid from "../../../../utils/getFluid";
 
@@ -44,7 +44,7 @@ const Treatments = () => {
     const fluid = getFluid(node.imgName);
     return (
       <a key={node.key} href={node.href} className={styles.bubblesWrapper}>
-        <Img fluid={fluid} Tag="div" className={styles.bubble} />
+        <GatsbyImage image={fluid} Tag="div" className={styles.bubble} />
         <span>{node.name}</span>
         {/* <div className={styles.bubbleWrapper}>
           <Img fluid={fluid} Tag="div" />

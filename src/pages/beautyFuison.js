@@ -54,7 +54,7 @@ const AntiAge = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiBeautyFusion {
       banner {
         button
@@ -64,20 +64,15 @@ const query = graphql`
           id
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(quality: 100, placeholder: BLURRED)
             }
           }
         }
-
         mobileBackground {
           localFile {
             id
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(quality: 100, placeholder: BLURRED)
             }
           }
         }
@@ -110,18 +105,14 @@ const query = graphql`
         desktopPic {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
         mobilePic {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

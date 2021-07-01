@@ -12,7 +12,6 @@ import styles from "./iconText.module.scss";
 
 const IconText = ({ data, mobileReverse }) => {
   const { headline, icon, firstPartText, secondPartText, reverse } = data;
-
   const styleReverse = {
     flexDirection: isMobile
       ? mobileReverse

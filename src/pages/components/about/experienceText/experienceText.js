@@ -1,8 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { customMobile } from "../../../../utils/isMobile";
-
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { H1 } from "../../../../layout/common";
 
@@ -15,8 +14,8 @@ const ExperienceText = ({ data }) => {
   }
   const { headline, text, desktopPic, mobilePic } = data;
   const fluid = customMobile(900)
-    ? mobilePic.localFile.childImageSharp.fluid
-    : desktopPic.localFile.childImageSharp.fluid;
+    ? mobilePic.localFile.childImageSharp.gatsbyImageData
+    : desktopPic.localFile.childImageSharp.gatsbyImageData;
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
@@ -25,7 +24,7 @@ const ExperienceText = ({ data }) => {
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
           </div>
-          <Img fluid={fluid} className={styles.img} />
+          <GatsbyImage image={fluid} className={styles.img} />
         </div>
       </div>
     </section>

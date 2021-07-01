@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { H2, MobileTextWrapper } from "../../../common";
 import { isMobile } from "../../../../utils/isMobile";
@@ -10,8 +10,8 @@ const PicText = ({ data }) => {
   const { headline, desktopPic, mobilePic, text, reverse } = data;
   const styleReverse = reverse && { flexDirection: "row-reverse" };
   const fluid = isMobile
-    ? mobilePic?.localFile.childImageSharp.fluid
-    : desktopPic?.localFile.childImageSharp.fluid;
+    ? mobilePic?.localFile.childImageSharp?.gatsbyImageData
+    : desktopPic?.localFile.childImageSharp?.gatsbyImageData;
 
   return (
     <MobileTextWrapper className={styles.wrapper}>
@@ -19,7 +19,7 @@ const PicText = ({ data }) => {
         {headline}
       </H2>
       <div className={styles.contentWrapper} style={{ ...styleReverse }}>
-        <Img fluid={fluid} className={styles.img} />
+        <GatsbyImage image={fluid} className={styles.img} />
 
         <p>{text}</p>
       </div>

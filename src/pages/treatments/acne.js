@@ -7,8 +7,9 @@ import { Space } from "../../layout/common";
 const Acne = () => {
   const data = useStaticQuery(query);
   const { strapiAcne } = data;
-  const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
 
+  const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
+  console.log(firstIconText, "first icon text acne");
   return (
     <div>
       <Banner data={banner} />
@@ -26,7 +27,7 @@ const Acne = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiAcne {
       banner {
         subTitle
@@ -69,7 +70,7 @@ const query = graphql`
       }
       firstIconText {
         headline
-        secondPartText
+        firstPartText
         icon {
           id
           url

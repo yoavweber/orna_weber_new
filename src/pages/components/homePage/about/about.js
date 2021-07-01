@@ -4,7 +4,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import ReactMarkdown from "react-markdown";
 import BackgroundImage from "gatsby-background-image";
-import Img from "gatsby-image";
 
 import { H1, Button } from "../../../../layout/common";
 import getFluid from "../../../../utils/getFluid";
@@ -17,7 +16,7 @@ const AboutSection = ({ data }) => {
   }
   const { button, ornaPicture, text, title } = data;
 
-  const fluid = ornaPicture.localFile.childImageSharp.fluid;
+  const fluid = ornaPicture.localFile.childImageSharp.gatsbyImageData;
   //TODO: add this to the CMS
   const background = getFluid("backgroundSmall.png");
   return (
@@ -25,7 +24,7 @@ const AboutSection = ({ data }) => {
       <div className={styles.wrapper}>
         <H1 className={styles.headline}>{title} </H1>
         <div className={styles.content}>
-          <Img fluid={fluid} className={styles.img} />
+          <GatsbyImage image={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
             <Link className={styles.button}>

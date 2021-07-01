@@ -66,7 +66,7 @@ const AntiAge = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiAntiAging {
       banner {
         headline
@@ -100,7 +100,6 @@ const query = graphql`
         firstPartText
         secondPartText
       }
-
       midText
       secondIconText {
         icon {

@@ -20,8 +20,9 @@ const Banner = ({ data, textStyle, subTitleColor, buttonLink }) => {
   } = data;
 
   const fluid = isMobile
-    ? mobileBackground?.localFile.childImageSharp.fluid
-    : desktopBackground?.localFile.childImageSharp.fluid;
+    ? mobileBackground?.localFile.childImageSharp?.fluid
+    : desktopBackground?.localFile.childImageSharp?.fluid;
+
   return (
     <BackgroundImage
       fluid={fluid}
