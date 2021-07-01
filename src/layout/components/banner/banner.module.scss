@@ -43,7 +43,7 @@
     // height: 90vh;
     margin: 0 auto;
     .content {
-      width: 55%;
+      width: 65%;
       margin: 50px auto;
     }
   }
@@ -52,5 +52,6 @@
 @media only screen and (max-width: 600px) {
   .contentWrapper {
     height: 80vh;
+    max-height: 570px;
   }
 }
