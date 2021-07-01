@@ -5,8 +5,10 @@ import styles from "./form.module.scss";
 
 const Form = ({ data }) => {
   const { headline, button } = data;
+  // const [submitted,setSubmitted] = useState(false)
   // const [name, setName] = useState();
   // const [email, setEmail] = useState();
+
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
@@ -18,7 +20,7 @@ const Form = ({ data }) => {
         <form
           className={styles.form}
           name="contact-form"
-          // netlify-honeypot="bot-field"
+          netlify-honeypot="bot-field"
           data-netlify="true"
           method="post"
         >
@@ -51,7 +53,6 @@ const Form = ({ data }) => {
               // data-aos-once="true"
             />
           </label>
-
           <Button
             primary
             type="submit"

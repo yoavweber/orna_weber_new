@@ -18,8 +18,11 @@
   & > * {
     margin-left: 10px;
   }
-  .input {
+  label {
     flex: 1;
+  }
+  .input {
+    width: 100%;
     &::placeholder {
       opacity: 1;
     }

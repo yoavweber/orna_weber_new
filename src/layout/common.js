@@ -53,7 +53,7 @@ const ButtonTag = styled.button`
 const Atag = styled.a`
   margin: 10px 0;
   display: block;
-  max-width: none;
+  max-width: 420px;
 `;
 export const Button = ({ children, buttonStyle, ...props }) => {
   return (
