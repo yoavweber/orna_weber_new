@@ -4,8 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Banner, Form } from "../layout/components";
 import { Space } from "../layout/common";
 
-import { isMobile } from "../utils/isMobile";
-
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
 import IntroText from "./components/homePage/introText/introText";
@@ -17,7 +15,7 @@ const Homepage = () => {
     return <div>loading!!!!!!!!!!</div>;
   }
   const { strapiHomePage } = data;
-  const { banner, introText, about, form } = strapiHomePage;
+  const { banner, introText, about, form, treatment } = strapiHomePage;
 
   const bannerArray = banner.map((content) => {
     return (
@@ -42,7 +40,7 @@ const Homepage = () => {
         />
       </div>
       <IntroText data={introText} />
-      <Treatments />
+      <Treatments data={treatment} />
       <About data={about} />
       <Space />
       <Form data={form} />
@@ -51,7 +49,7 @@ const Homepage = () => {
 };
 
 const query = graphql`
-  query {
+  {
     strapiHomePage {
       banner {
         subTitle
@@ -85,10 +83,7 @@ const query = graphql`
         introBackground {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
             }
           }
         }
@@ -101,10 +96,25 @@ const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData
-              # fluid(quality: 100) {
-              #   ...GatsbyImageSharpFluid_withWebp_noBase64
-              #   ...GatsbyImageSharpFluidLimitPresentationSize
-              # }
+            }
+          }
+        }
+      }
+      treatment {
+        headline
+        bubble {
+          name
+          link
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 100
+                  quality: 100
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
             }
           }
         }

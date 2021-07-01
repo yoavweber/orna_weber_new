@@ -23,30 +23,35 @@ const Form = ({ data }) => {
           method="post"
         >
           {/* <input type="hidden" name="form" value="form" /> */}
-          <Input
-            className={styles.input}
-            type="text"
-            name="name"
-            placeholder="שם"
-            // value={name}
-            // onChange={(e) => setName(e.target.value)}
-            data-aos="zoom-in"
-            // data-aos-duration="200"
-            // data-aos-delay="200"
-            // data-aos-once="true"
-          />
-          <Input
-            className={styles.input}
-            type="text"
-            name="phone"
-            placeholder="טלפון"
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
-            // data-aos="zoom-in"
-            // data-aos-duration="200"
-            // data-aos-delay="400"
-            // data-aos-once="true"
-          />
+          <label>
+            <Input
+              className={styles.input}
+              type="text"
+              name="name"
+              placeholder="שם"
+              // value={name}
+              // onChange={(e) => setName(e.target.value)}
+              data-aos="zoom-in"
+              // data-aos-duration="200"
+              // data-aos-delay="200"
+              // data-aos-once="true"
+            />
+          </label>
+          <label>
+            <Input
+              className={styles.input}
+              type="text"
+              name="phone"
+              placeholder="טלפון"
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
+              // data-aos="zoom-in"
+              // data-aos-duration="200"
+              // data-aos-delay="400"
+              // data-aos-once="true"
+            />
+          </label>
+
           <Button
             primary
             type="submit"
