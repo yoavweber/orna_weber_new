@@ -8,11 +8,11 @@ const NumList = ({ data }) => {
     // TODO: return 404 page
     return <div>error</div>;
   }
-  const { headline, listElement } = data;
+  const { id, headline, listElement } = data;
 
   const listComponent = listElement.map((listElement, index) => {
     return (
-      <li num={index}>
+      <li key={listElement.text} num={index}>
         <p>
           <span style={{ color: "#85b240", fontWeight: "bold" }}>
             {listElement.bold}{" "}

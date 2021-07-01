@@ -44,10 +44,10 @@ const ButtonTag = styled.button`
   cursor: pointer;
   font-size: ${FONT_SIZE};
   line-height: calc(1.6em + 0.2vw);
+
   @media (max-width: 800px) {
     height: ${MOBILE_BUTTON_HEIGHT};
   }
-  ${"" /* padding: 25px 50px; */}
 `;
 
 const Atag = styled.a`
@@ -158,13 +158,13 @@ export const Input = styled.input`
 export const Space = ({ smallSpace, isMobile }) => (
   <div
     css={css`
-      margin: ${smallSpace ? "calc(50px + 2vw)" : "calc(50px + 4vw)"};
+      margin: ${smallSpace ? "calc(25px + 1vw)" : "calc(25px + 2vw)"};
       @media (max-width: 800px) {
         margin: ${isMobile
           ? 0
           : smallSpace
-          ? "calc(50px + 2vw)"
-          : "calc(50px + 4vw)"};
+          ? "calc(50px + 1vw)"
+          : "calc(50px + 2vw)"};
       }
     `}
   />

@@ -2,6 +2,8 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form } from "../layout/components";
+import { Space } from "../layout/common";
+
 import { isMobile } from "../utils/isMobile";
 
 import Treatments from "./components/homePage/treatments/treatments";
@@ -40,6 +42,7 @@ const Homepage = () => {
       <IntroText data={introText} />
       <Treatments />
       <About data={about} />
+      <Space />
       <Form data={form} />
     </>
   );

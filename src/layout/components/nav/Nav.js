@@ -8,7 +8,7 @@ import styles from "./nav.module.scss";
 
 const treatments = [
   { name: "טיפולי אנטי אייג'נג", link: "/treatments/antiAge/" },
-  { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation/" },
+  // { name: "טיפולי פיגמנטציה", link: "/treatments/pigmentation/" },
   { name: "טיפולי אקנה", link: "/treatments/acne/" },
   { name: "טשטוש צלקות", link: "/treatments/scars/" },
   { name: "הסרת שיער", link: "/treatments/hairRemoval/" },

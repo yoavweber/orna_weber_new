@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import ReactMarkdown from "react-markdown";
 import BackgroundImage from "gatsby-background-image";
@@ -26,9 +28,9 @@ const AboutSection = ({ data }) => {
           <Img fluid={fluid} className={styles.img} />
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
-            <div className={styles.button}>
-              <Button href="/test">{button}</Button>
-            </div>
+            <Link className={styles.button}>
+              <Button href="/about/">{button}</Button>
+            </Link>
           </div>
         </div>
       </div>

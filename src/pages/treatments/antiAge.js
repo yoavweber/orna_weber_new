@@ -29,14 +29,14 @@ const AntiAge = () => {
   }
   return (
     <>
-      <Banner data={banner} />
-      <Space />
+      <Banner data={banner} formId="#form" />
+      <Space smallSpace="true" />
       <main>
         <div>
           <IconText data={iconText} />
           <Headline style={{ paddingTop: "50px" }}>{midText}</Headline>
         </div>
-        <Space />
+        {/* <Space /> */}
         <H1
           color="green"
           bold="true"
@@ -50,10 +50,12 @@ const AntiAge = () => {
         <Space />
         {/* since using twice space with no element in the middle does not work, wbr is an empty element */}
         <wbr />
-        <Space />
         <TextBlocks content={blockText} />
         <Space />
-        <H1 style={{ width: "60%", textAlign: "center", margin: "0 auto" }}>
+        <H1
+          bold="true"
+          style={{ width: "60%", textAlign: "center", margin: "0 auto" }}
+        >
           {endText}
         </H1>
         <Space />

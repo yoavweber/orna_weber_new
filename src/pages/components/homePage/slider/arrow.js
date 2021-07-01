@@ -13,7 +13,7 @@ const Arrow = ({ direction, handleClick, notFullWidth }) => (
       position: absolute;
       ${direction === "right" ? `right: 20px` : `left: 20px`};
       height: 50px;
-      ${notFullWidth ? `top:30%` : `top:50%`};
+      ${notFullWidth ? `top:40%` : `top:50%`};
       width: 50px;
       justify-content: center;
       background: white;

@@ -101,11 +101,6 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
   if (!getWidth) {
     return <div>loading...</div>;
   }
-
-  console.log(
-    (getWidth, (getWidth / showElements) * content?.length),
-    "show elements"
-  );
   return (
     <div
       style={{ position: "relative", overflow: "hidden", height: "100%" }}
