@@ -11,17 +11,8 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-source-strapi",
-      // options: {
-      //   apiURL: "http://localhost:1337",
-      //   contentTypes: ["article", "category", "writer", "tests"],
-      //   singleTypes: [`homepage`, `global`],
-      //   queryLimit: 1000,
-      // },
       options: {
         apiURL: "https://ancient-headland-46960.herokuapp.com",
-        // apiURL: process.env.API_URL,
-        // apiURL: "http://localhost:1337",
-        contentTypes: ["article", "category", "writer", "tests"],
         singleTypes: [
           `global`,
           "home-page",
@@ -36,10 +27,10 @@ module.exports = {
       },
     },
     "gatsby-plugin-sass",
-
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-nprogress",
+    "gatsby-plugin-image",
 
     "gatsby-transformer-sharp",
     {
