@@ -17,12 +17,12 @@ const Form = ({ data }) => {
         {/* TODO: change this to env */}
         <form
           className={styles.form}
-          netlify-honeypot="bot-field"
+          name="contact-form"
+          // netlify-honeypot="bot-field"
           data-netlify="true"
           method="post"
-          name="contact-form"
         >
-          <input type="hidden" name="form" value="form" />
+          {/* <input type="hidden" name="form" value="form" /> */}
           <Input
             className={styles.input}
             type="text"
@@ -31,9 +31,9 @@ const Form = ({ data }) => {
             // value={name}
             // onChange={(e) => setName(e.target.value)}
             data-aos="zoom-in"
-            data-aos-duration="200"
-            data-aos-delay="200"
-            data-aos-once="true"
+            // data-aos-duration="200"
+            // data-aos-delay="200"
+            // data-aos-once="true"
           />
           <Input
             className={styles.input}
@@ -42,10 +42,10 @@ const Form = ({ data }) => {
             placeholder="טלפון"
             // value={email}
             // onChange={(e) => setEmail(e.target.value)}
-            data-aos="zoom-in"
-            data-aos-duration="200"
-            data-aos-delay="400"
-            data-aos-once="true"
+            // data-aos="zoom-in"
+            // data-aos-duration="200"
+            // data-aos-delay="400"
+            // data-aos-once="true"
           />
           <Button
             primary
