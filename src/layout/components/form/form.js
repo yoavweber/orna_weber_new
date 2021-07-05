@@ -24,19 +24,13 @@ const Form = ({ data }) => {
           data-netlify="true"
           method="post"
         >
-          {/* <input type="hidden" name="form" value="form" /> */}
           <label>
             <Input
               className={styles.input}
               type="text"
               name="name"
               placeholder="שם"
-              // value={name}
-              // onChange={(e) => setName(e.target.value)}
               data-aos="zoom-in"
-              // data-aos-duration="200"
-              // data-aos-delay="200"
-              // data-aos-once="true"
             />
           </label>
           <label>
@@ -45,12 +39,6 @@ const Form = ({ data }) => {
               type="text"
               name="phone"
               placeholder="טלפון"
-              // value={email}
-              // onChange={(e) => setEmail(e.target.value)}
-              // data-aos="zoom-in"
-              // data-aos-duration="200"
-              // data-aos-delay="400"
-              // data-aos-once="true"
             />
           </label>
           <Button
@@ -58,7 +46,6 @@ const Form = ({ data }) => {
             type="submit"
             form="form"
             style={{ margin: "0" }}
-            // onClick={(e) => alert("submited")}
             className={styles.formButton}
           >
             {button}
