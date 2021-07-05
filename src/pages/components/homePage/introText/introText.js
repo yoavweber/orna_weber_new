@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundImage from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import ReactMarkdown from "react-markdown";
 
@@ -12,14 +12,10 @@ const Intro = ({ data }) => {
     return <div>loading...</div>;
   }
   const { introText, title, introBackground } = data;
-  const fluid = introBackground.localFile.childImageSharp.fluid;
+  const fluid = introBackground.localFile.childImageSharp.gatsbyImageData;
   return (
     <section className={styles.section}>
-      <BackgroundImage
-        fluid={fluid}
-        className={styles.img}
-        style={{ opacity: 1 }}
-      />
+      <GatsbyImage image={fluid} className={styles.img} style={{ opacity: 1 }} />
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <ColoredHeadline className={styles.coloredHeadline} text={title} />
