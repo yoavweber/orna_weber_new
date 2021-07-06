@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Banner, Form } from "../layout/components";
 import { Space } from "../layout/common";
+import SEO from "../utils/seo";
 
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
@@ -31,6 +32,7 @@ const Homepage = () => {
 
   return (
     <>
+      <SEO />
       <div>
         <Slider
           style={{

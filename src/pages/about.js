@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
 
 import { Form, ColoredBgText, SquarePicText } from "../layout/components";
+import SEO from "../utils/seo";
 
 import ExperienceText from "./components/about/experienceText/experienceText";
 import BannerAbout from "./components/about/banner/bannerAbout";
@@ -32,7 +33,8 @@ const About = () => {
     }
   `;
   return (
-    <div>
+    <>
+      <SEO title="עלינו" />
       <BannerAbout data={banner} />
       <SquarePicText data={squerPic} />
       <ColoredBgText data={greenText} />
@@ -53,7 +55,7 @@ const About = () => {
         </H1>
       </FinalTextWrapper>
       <Form data={form} />
-    </div>
+    </>
   );
 };
 

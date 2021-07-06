@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Spinner from "react-spinner-material";
 
 import {
   Banner,
@@ -11,6 +10,7 @@ import {
   RoundPicText,
   ColoredBgText,
 } from "../layout/components";
+import SEO from "../utils/seo";
 
 import ListNumber from "./components/beautyFusion/numList/numList";
 import { Space } from "../layout/common";
@@ -37,6 +37,7 @@ const AntiAge = () => {
 
   return (
     <>
+      <SEO title="- שיטת ביוטי פיוז'ן" />
       <Banner data={banner} subTitleColor="black" />
       <Space smallSpace="true" />
       <main>
@@ -61,22 +62,24 @@ const query = graphql`
   {
     strapiBeautyFusion {
       banner {
-        button
         subTitle
         headline
+        button
         desktopBackground {
-          id
           localFile {
             childImageSharp {
-              gatsbyImageData(quality: 100, placeholder: BLURRED)
+              fluid(maxWidth: 1800, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
             }
           }
         }
         mobileBackground {
           localFile {
-            id
             childImageSharp {
-              gatsbyImageData(quality: 100, placeholder: BLURRED)
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
             }
           }
         }

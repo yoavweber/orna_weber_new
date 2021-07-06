@@ -6,7 +6,11 @@
 // });
 module.exports = {
   siteMetadata: {
-    title: "orna weber",
+    title: "אורנה ובר",
+    titleTemplate:
+      "%s אורנה ובר - המרכז לביוטי פיוז'ן - מרכז טיפוח ואסתטיקה רפואית",
+    url: "https://www.ornaweber.co.il",
+    description: `המרכז לקוסמטיקת פיוז'ן הוקם ע"י אורנה ובר, ומבוסס על 37 שנות ניסיון. העשייה של אורנה כוללת יצירת קומבינציות טיפוליות ייחודיות, פיתוח מוצרים קוסמטיים, הכשרת קוסמטיקאיות והובלת רפורמות שהגיעו עד שולחן הכנסת. כיו"ר ארגון הקוסמטיקאיות בישראל היא הובילה רפורמות שתרמו לעיצוב פני התחום. את הידע והניסיון הרב שנצבר אנחנו בקליניקה רותמים בכל טיפול וטיפול, לצורך התאמתו לעור המיוחד שלך ומקסום האפקט הטיפולי. והתוצאה? כיף להסתכל במראה!`,
   },
   plugins: [
     {
@@ -39,6 +43,19 @@ module.exports = {
     "gatsby-plugin-image",
 
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `אורנה ובר`,
+        short_name: `אורנה`,
+        start_url: `https://www.ornaweber.co.il`,
+        lang: `he`,
+        // background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: "src/layout/assets/logo.svg",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
