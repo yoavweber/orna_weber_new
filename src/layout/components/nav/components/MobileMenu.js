@@ -20,9 +20,7 @@ function useClickOutside(elRef, callback) {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      console.log(e, "thie is event");
       if (!elRef?.current?.contains(e.target) && callbackRef.current) {
-        console.log("contain?");
         callbackRef.current(e);
       }
     };

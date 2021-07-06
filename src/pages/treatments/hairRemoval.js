@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
+import Spinner from "react-spinner-material";
 
 import {
   Banner,
@@ -14,6 +15,12 @@ import { H1, Space } from "../../layout/common";
 
 const HairRemoval = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
+  }
+
   const { strapiHairRemoval } = data;
   const {
     banner,

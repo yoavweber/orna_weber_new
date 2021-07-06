@@ -1,11 +1,17 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import Spinner from "react-spinner-material";
 
 import { Banner, Form, IconText, TextBlocks } from "../../layout/components";
 import { Space } from "../../layout/common";
 
 const Acne = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
+  }
   const { strapiAcne } = data;
 
   const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;

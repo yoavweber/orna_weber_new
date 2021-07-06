@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import Spinner from "react-spinner-material";
 
 import {
   Banner,
@@ -13,6 +14,11 @@ import { Space } from "../../layout/common";
 
 const Scars = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
+  }
   const { strapiScars } = data;
   const { banner, iconText, roundPic, blockText, list, form } = strapiScars;
   return (

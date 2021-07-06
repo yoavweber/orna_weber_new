@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import Spinner from "react-spinner-material";
 
 import {
   Banner,
@@ -16,6 +17,12 @@ import { Space } from "../layout/common";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
+  }
+
   const { strapiBeautyFusion } = data;
   const {
     banner,
@@ -27,9 +34,6 @@ const AntiAge = () => {
     blockText,
     form,
   } = strapiBeautyFusion;
-  if (!strapiBeautyFusion) {
-    return <div>loading.....</div>;
-  }
 
   return (
     <>

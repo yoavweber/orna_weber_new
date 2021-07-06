@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
+import Spinner from "react-spinner-material";
 
 import { Form, ColoredBgText, SquarePicText } from "../layout/components";
 
@@ -12,8 +13,9 @@ import { H1, Space } from "../layout/common";
 const About = () => {
   const data = useStaticQuery(query);
   if (!data) {
-    // TODO: return 404 page
-    return <div>error</div>;
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
   }
   const { strapiAbout } = data;
   const {

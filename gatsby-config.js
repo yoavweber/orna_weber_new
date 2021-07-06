@@ -29,7 +29,13 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-nprogress",
+    {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: "green",
+        showSpinner: true,
+      },
+    },
     "gatsby-plugin-image",
 
     "gatsby-transformer-sharp",

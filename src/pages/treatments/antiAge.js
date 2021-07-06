@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import Spinner from "react-spinner-material";
 
 import {
   Banner,
@@ -13,6 +14,11 @@ import { H1, Space, Headline } from "../../layout/common";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
+  if (!data) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
+    );
+  }
   const { strapiAntiAging } = data;
   const {
     banner,
@@ -24,9 +30,7 @@ const AntiAge = () => {
     endText,
     form,
   } = strapiAntiAging;
-  if (!strapiAntiAging) {
-    return <div>loading.....</div>;
-  }
+
   return (
     <>
       <Banner data={banner} formId="#form" />
