@@ -27,7 +27,6 @@ const HairRemoval = () => {
     form,
   } = strapiHairRemoval;
 
-  console.log(introText.headline, "!!!");
   //TODO: move it to scss
   const FinalTextWrapper = styled.div`
     @media (max-width: 800px) {

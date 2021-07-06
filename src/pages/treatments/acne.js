@@ -9,7 +9,6 @@ const Acne = () => {
   const { strapiAcne } = data;
 
   const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
-  console.log(firstIconText, "first icon text acne");
   return (
     <div>
       <Banner data={banner} />

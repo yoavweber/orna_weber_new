@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { H1, Button, Input } from "../../common";
 
 import styles from "./form.module.scss";
 
 const Form = ({ data }) => {
   const { headline, button } = data;
-  // const [submitted,setSubmitted] = useState(false)
-  // const [name, setName] = useState();
-  // const [email, setEmail] = useState();
 
   return (
     <section className={styles.section}>
@@ -16,13 +13,11 @@ const Form = ({ data }) => {
           {" "}
           {headline}
         </H1>
-        {/* TODO: change this to env */}
         <form
-          className={styles.form}
-          name="contact-form"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
           method="post"
+          name="contact-form"
+          data-netlify="true"
+          className={styles.form}
         >
           <label>
             <Input

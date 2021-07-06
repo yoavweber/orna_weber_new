@@ -83,7 +83,7 @@ const query = graphql`
         introBackground {
           localFile {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
