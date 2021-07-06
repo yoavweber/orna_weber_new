@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Spinner from "react-spinner-material";
 
 import { Banner, Form } from "../layout/components";
 import { Space } from "../layout/common";

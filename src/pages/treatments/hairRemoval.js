@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
-import Spinner from "react-spinner-material";
 
 import {
   Banner,

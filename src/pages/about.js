@@ -1,7 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
-import Spinner from "react-spinner-material";
 
 import { Form, ColoredBgText, SquarePicText } from "../layout/components";
 
