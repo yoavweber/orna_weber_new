@@ -15,7 +15,7 @@ const Form = ({ data }) => {
         </H1>
         <form
           method="post"
-          name="contact-form"
+          name="contact"
           data-netlify="true"
           className={styles.form}
         >
