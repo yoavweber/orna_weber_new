@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import SEO from "../../utils/seo";
 import { Banner, Form, IconText, TextBlocks } from "../../layout/components";
 import { Space } from "../../layout/common";
 
@@ -16,6 +17,7 @@ const Acne = () => {
   const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
   return (
     <div>
+      <SEO title="אקנה" />
       <Banner data={banner} />
       <main>
         <IconText data={firstIconText} />

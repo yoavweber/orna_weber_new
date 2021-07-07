@@ -37,7 +37,7 @@ const AntiAge = () => {
 
   return (
     <>
-      <SEO title="- שיטת ביוטי פיוז'ן" />
+      <SEO title="שיטת ביוטי פיוז'ן" />
       <Banner data={banner} subTitleColor="black" />
       <Space smallSpace="true" />
       <main>

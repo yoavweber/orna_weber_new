@@ -10,6 +10,7 @@ import {
 } from "../../layout/components";
 import { isMobile } from "../../utils/isMobile";
 import { H1, Space, Headline } from "../../layout/common";
+import SEO from "../../utils/seo";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
@@ -32,6 +33,7 @@ const AntiAge = () => {
 
   return (
     <>
+      <SEO title="אנטי איג'ינג" />
       <Banner data={banner} formId="#form" />
       <Space smallSpace="true" />
       <main>
@@ -39,7 +41,6 @@ const AntiAge = () => {
           <IconText data={iconText} />
           <Headline style={{ paddingTop: "50px" }}>{midText}</Headline>
         </div>
-        {/* <Space /> */}
         <H1
           color="green"
           bold="true"

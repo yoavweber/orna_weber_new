@@ -11,6 +11,7 @@ import {
   PlainText,
 } from "../../layout/components";
 import { H1, Space } from "../../layout/common";
+import SEO from "../../utils/seo";
 
 const HairRemoval = () => {
   const data = useStaticQuery(query);
@@ -42,6 +43,7 @@ const HairRemoval = () => {
 
   return (
     <div>
+      <SEO title="הסרת שיער" />
       <Banner data={banner} />
       <Space smallSpace={true} />
       <main>

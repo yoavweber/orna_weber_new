@@ -10,6 +10,7 @@ import {
   RoundPicText,
 } from "../../layout/components";
 import { Space } from "../../layout/common";
+import SEO from "../../utils/seo";
 
 const Scars = () => {
   const data = useStaticQuery(query);
@@ -22,6 +23,7 @@ const Scars = () => {
   const { banner, iconText, roundPic, blockText, list, form } = strapiScars;
   return (
     <div>
+      <SEO title="טשטוש צלקות" />
       <Banner data={banner} />
       <main>
         <Space />
