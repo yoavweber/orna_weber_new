@@ -1,5 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+
 import { Button, H1, H3 } from "../../../../layout/common";
 import { splitText } from "../../../../utils/utils";
 import { isMobile } from "../../../../utils/isMobile";
@@ -28,9 +30,9 @@ const AboutBanner = ({ data }) => {
               {subTitle}
             </H3>
 
-            <a className={styles.button}>
+            <Link href="#form" className={styles.button}>
               <Button>{button}</Button>
-            </a>
+            </Link>
             {icon && !isMobile && <img src={icon.url} width="80" height="80" />}
           </div>
         </div>
