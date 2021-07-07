@@ -20,6 +20,7 @@ function useClickOutside(elRef, callback) {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
+      console.log(elRef, e);
       if (!elRef?.current?.contains(e.target) && callbackRef.current) {
         callbackRef.current(e);
       }
@@ -39,7 +40,7 @@ const Menu = ({ links }) => {
   const hide = () => setOpen(false);
 
   const wrapperMobileNavRef = useRef();
-  const mobileNavRef = useClickOutside(wrapperMobileNavRef, hide);
+  useClickOutside(wrapperMobileNavRef, hide);
 
   const LinkMenu = links.map((node) => {
     if (typeof node.link != "string") {
@@ -71,7 +72,7 @@ const Menu = ({ links }) => {
           <div
             className={styles.mobileMenu}
             data-showMenu={open}
-            ref={mobileNavRef}
+            ref={wrapperMobileNavRef}
           >
             {LinkMenu}
           </div>

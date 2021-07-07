@@ -28,7 +28,7 @@ export const Nav = ({ children }) => {
     { name: "טיפולים", link: TreatmentMenu },
     { name: "על השיטה", link: "/beautyFuison/" },
     { name: "עלינו", link: "/about/" },
-    { name: "צרי קשר", link: "/contact/" },
+    // { name: "צרי קשר", link: "/contact/" },
   ];
 
   return (
