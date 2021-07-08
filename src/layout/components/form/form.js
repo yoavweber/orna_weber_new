@@ -20,7 +20,7 @@ const Form = ({ data }) => {
           className={styles.form}
           id="form"
         >
-          <input class="hidden" />
+          <input class="hidden" type="hidden" />
           <label for="name">
             <Input
               className={styles.input}
