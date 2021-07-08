@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 60%;
+    width: 53%;
     padding-top: 60px;
   }
 
@@ -16,36 +16,42 @@
   }
 
   .img {
-    object-fit: cover;
-    flex: 2;
+    // flex: 1;
+    width: 500px;
+    img {
+      object-fit: contain !important;
+    }
   }
   .text {
-    flex: 4;
-    width: 60%;
+    // flex: 1;
+    width: 75%;
     align-self: center;
     p {
-      width: 80%;
+      width: 90%;
     }
   }
 }
+
+// @media only screen and (max-width: 1400px) {
+//   .section {
+//     .img {
+//       // flex: 3;
+//     }
+//   }
+// }
 
 @media only screen and (max-width: 1400px) {
   .section {
-    .img {
-      flex: 3;
+    .wrapper {
+      width: 70%;
     }
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .section {
     .text {
       padding-right: 0;
     }
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .section {
     padding: 0;
     .wrapper {
