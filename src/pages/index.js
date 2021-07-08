@@ -99,7 +99,7 @@ const query = graphql`
         ornaPicture {
           localFile {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(width: 300)
             }
           }
         }

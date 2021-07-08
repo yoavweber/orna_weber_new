@@ -15,12 +15,13 @@ const Form = ({ data }) => {
         </H1>
         <form
           method="post"
-          name="contact"
+          name="contact-form"
           data-netlify="true"
           className={styles.form}
           id="form"
         >
-          <label>
+          <input class="hidden" />
+          <label for="name">
             <Input
               className={styles.input}
               type="text"
@@ -29,7 +30,7 @@ const Form = ({ data }) => {
               data-aos="zoom-in"
             />
           </label>
-          <label>
+          <label for="text">
             <Input
               className={styles.input}
               type="text"

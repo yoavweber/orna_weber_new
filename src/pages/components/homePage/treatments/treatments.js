@@ -1,8 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import Img from "gatsby-image";
-
-import getFluid from "../../../../utils/getFluid";
 
 import { H1 } from "../../../../layout/common";
 import sink from "../../../../layout/assets/icons/sink.svg";
