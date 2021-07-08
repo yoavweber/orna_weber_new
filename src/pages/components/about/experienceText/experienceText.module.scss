@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 53%;
     padding-top: 60px;
   }
 
@@ -16,14 +15,12 @@
   }
 
   .img {
-    // flex: 1;
     width: 500px;
     img {
       object-fit: contain !important;
     }
   }
   .text {
-    // flex: 1;
     width: 75%;
     align-self: center;
     p {
@@ -43,7 +40,7 @@
 @media only screen and (max-width: 1400px) {
   .section {
     .wrapper {
-      width: 70%;
+      // width: 70%;
     }
     .text {
       padding-right: 0;
@@ -55,7 +52,7 @@
   .section {
     padding: 0;
     .wrapper {
-      width: 80%;
+      // width: 80%;
     }
     .text {
       padding-right: 0;

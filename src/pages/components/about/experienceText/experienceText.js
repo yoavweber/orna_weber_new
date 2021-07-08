@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { customMobile } from "../../../../utils/isMobile";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import { H1 } from "../../../../layout/common";
+import { H1, MobileTextWrapper } from "../../../../layout/common";
 
 import styles from "./experienceText.module.scss";
 
@@ -17,7 +17,7 @@ const ExperienceText = ({ data }) => {
     ? mobilePic.localFile.childImageSharp.gatsbyImageData
     : desktopPic.localFile.childImageSharp.gatsbyImageData;
   return (
-    <section className={styles.section}>
+    <MobileTextWrapper className={styles.section}>
       <div className={styles.wrapper}>
         <H1 className={styles.headline}>{headline} </H1>
         <div className={styles.content}>
@@ -27,7 +27,7 @@ const ExperienceText = ({ data }) => {
           <GatsbyImage image={fluid} className={styles.img} />
         </div>
       </div>
-    </section>
+    </MobileTextWrapper>
   );
 };
 

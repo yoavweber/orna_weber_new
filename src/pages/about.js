@@ -70,7 +70,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 400
+                width: 600
                 quality: 100
                 placeholder: BLURRED
                 layout: CONSTRAINED
@@ -109,7 +109,7 @@ const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                width: 400
+                width: 1000
                 quality: 100
                 placeholder: BLURRED
                 layout: CONSTRAINED
