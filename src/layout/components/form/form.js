@@ -18,6 +18,7 @@ const Form = ({ data }) => {
           name="contact"
           data-netlify="true"
           className={styles.form}
+          id="form"
         >
           <label>
             <Input
@@ -39,7 +40,6 @@ const Form = ({ data }) => {
           <Button
             primary
             type="submit"
-            form="form"
             style={{ margin: "0" }}
             className={styles.formButton}
           >
