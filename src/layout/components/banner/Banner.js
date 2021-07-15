@@ -23,13 +23,17 @@ const Banner = ({ data, textStyle, subTitleColor, buttonLink }) => {
     ? mobileBackground?.localFile.childImageSharp?.fluid
     : desktopBackground?.localFile.childImageSharp?.fluid;
 
+  const altText = isMobile
+    ? mobileBackground?.alternativeText
+    : desktopBackground?.alternativeText;
+
   return (
     <BackgroundImage
       fluid={fluid}
       Tag="div"
       style={{ width: "100%", height: "100%" }}
       className={styles.wrapper}
-      alt="banner picture"
+      alt={altText}
     >
       <div className={styles.contentWrapper}>
         <div className={styles.content}>

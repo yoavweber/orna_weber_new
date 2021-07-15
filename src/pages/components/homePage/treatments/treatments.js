@@ -27,9 +27,10 @@ const Treatments = ({ data }) => {
 
   const treatmentBubble = bubble.map((node) => {
     const fluid = node.image.localFile.childImageSharp?.gatsbyImageData;
+    const altText = node.image.localFile.alternativeText;
     return (
       <a key={node.key} href={node.link} className={styles.bubblesWrapper}>
-        <GatsbyImage image={fluid} className={styles.bubble} />
+        <GatsbyImage image={fluid} className={styles.bubble} alt={altText} />
         <span style={{ fontSize: "1rem" }}>{node.name}</span>
       </a>
     );

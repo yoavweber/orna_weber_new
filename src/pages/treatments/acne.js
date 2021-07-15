@@ -40,6 +40,7 @@ const query = graphql`
         headline
         button
         desktopBackground {
+          alternativeText
           localFile {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
@@ -49,6 +50,7 @@ const query = graphql`
           }
         }
         mobileBackground {
+          alternativeText
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {

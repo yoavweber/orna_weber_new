@@ -56,10 +56,12 @@ const query = graphql`
   {
     strapiHomePage {
       banner {
+        id
         subTitle
         headline
         button
         desktopBackground {
+          alternativeText
           localFile {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
@@ -69,6 +71,7 @@ const query = graphql`
           }
         }
         mobileBackground {
+          alternativeText
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
@@ -85,6 +88,7 @@ const query = graphql`
         title
         introText
         introBackground {
+          alternativeText
           localFile {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED)
@@ -110,6 +114,7 @@ const query = graphql`
           name
           link
           image {
+            alternativeText
             localFile {
               childImageSharp {
                 gatsbyImageData(

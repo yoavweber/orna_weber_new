@@ -13,13 +13,17 @@ const PicText = ({ data }) => {
     ? mobilePic?.localFile.childImageSharp?.gatsbyImageData
     : desktopPic?.localFile.childImageSharp?.gatsbyImageData;
 
+  const altText = isMobile
+    ? mobilePic?.alternativeText
+    : desktopPic?.alternativeText;
+
   return (
     <MobileTextWrapper className={styles.wrapper}>
       <H2 bold={true} color="grey">
         {headline}
       </H2>
       <div className={styles.contentWrapper} style={{ ...styleReverse }}>
-        <GatsbyImage image={fluid} className={styles.img} />
+        <GatsbyImage image={fluid} className={styles.img} alt={altText} />
 
         <p>{text}</p>
       </div>

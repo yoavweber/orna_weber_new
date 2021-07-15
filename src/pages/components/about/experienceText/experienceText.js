@@ -16,6 +16,10 @@ const ExperienceText = ({ data }) => {
   const fluid = customMobile(900)
     ? mobilePic.localFile.childImageSharp.gatsbyImageData
     : desktopPic.localFile.childImageSharp.gatsbyImageData;
+
+  const altText = customMobile(900)
+    ? mobilePic?.alternativeText
+    : desktopPic?.alternativeText;
   return (
     <MobileTextWrapper className={styles.section}>
       <div className={styles.wrapper}>
@@ -24,7 +28,7 @@ const ExperienceText = ({ data }) => {
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>
           </div>
-          <GatsbyImage image={fluid} className={styles.img} />
+          <GatsbyImage image={fluid} className={styles.img} alt={altText} />
         </div>
       </div>
     </MobileTextWrapper>

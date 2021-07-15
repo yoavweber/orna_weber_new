@@ -17,6 +17,7 @@ const AboutSection = ({ data }) => {
   const { button, ornaPicture, text, title } = data;
 
   const fluid = ornaPicture.localFile.childImageSharp.gatsbyImageData;
+  const altText = ornaPicture.localFile.alternativeText;
   //TODO: add this to the CMS
   const background = getFluid("backgroundSmall.png");
   return (
@@ -39,6 +40,7 @@ const AboutSection = ({ data }) => {
           Tag="div"
           className={styles.background}
           alt="banner picture"
+          alt={altText}
         />
       </div>
     </section>

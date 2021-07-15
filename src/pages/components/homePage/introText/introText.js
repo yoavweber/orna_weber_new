@@ -13,9 +13,15 @@ const Intro = ({ data }) => {
   }
   const { introText, title, introBackground } = data;
   const fluid = introBackground.localFile.childImageSharp.gatsbyImageData;
+  const altText = introBackground.localFile.altText;
   return (
     <section className={styles.section}>
-      <GatsbyImage image={fluid} className={styles.img} style={{ opacity: 1 }} />
+      <GatsbyImage
+        image={fluid}
+        className={styles.img}
+        alt={altText}
+        style={{ opacity: 1 }}
+      />
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <ColoredHeadline className={styles.coloredHeadline} text={title} />

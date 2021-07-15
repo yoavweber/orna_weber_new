@@ -10,12 +10,14 @@ import styles from "./squarePicText.module.scss";
 const squarePicText = ({ data }) => {
   const { headline, text, buttonText, desktopPic } = data;
   const fluid = desktopPic.localFile.childImageSharp.gatsbyImageData;
+  const altText = desktopPic.localFile.alternativeText;
+
   return (
     <MobileTextWrapper className={styles.section}>
       <div className={styles.wrapper}>
         {/* <H1 className={styles.headline}>{headline} </H1> */}
         <div className={styles.content}>
-          <GatsbyImage image={fluid} className={styles.img} />
+          <GatsbyImage image={fluid} className={styles.img} alt={altText} />
 
           <div className={styles.text}>
             <ReactMarkdown allowDangerousHtml={true}>{text}</ReactMarkdown>

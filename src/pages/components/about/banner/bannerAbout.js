@@ -14,6 +14,7 @@ const AboutBanner = ({ data }) => {
   }
   const { mobileBackground, headline, subTitle, button, icon } = data;
   const fluid = mobileBackground?.localFile.childImageSharp.gatsbyImageData;
+  const altText = mobileBackground.localFile.alternativeText;
   let headlineColor;
   let isColor;
   if (subTitle) {
@@ -40,7 +41,7 @@ const AboutBanner = ({ data }) => {
           image={fluid}
           placeholder="blurred"
           Tag="div"
-          alt="banner picture"
+          alt={altText}
         />
       </div>
     </>

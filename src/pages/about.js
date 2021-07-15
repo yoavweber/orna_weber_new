@@ -67,6 +67,7 @@ const query = graphql`
         headline
         button
         mobileBackground {
+          alternativeText
           localFile {
             childImageSharp {
               gatsbyImageData(
@@ -83,6 +84,7 @@ const query = graphql`
         id
         text
         desktopPic {
+          alternativeText
           localFile {
             childImageSharp {
               gatsbyImageData(
@@ -106,6 +108,7 @@ const query = graphql`
         headline
         text
         desktopPic {
+          alternativeText
           localFile {
             childImageSharp {
               gatsbyImageData(
@@ -118,6 +121,7 @@ const query = graphql`
           }
         }
         mobilePic {
+          alternativeText
           localFile {
             childImageSharp {
               gatsbyImageData(
