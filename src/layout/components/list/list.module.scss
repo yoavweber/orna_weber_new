@@ -1,4 +1,4 @@
-$sectionPadding: 100px;
+$sectionPadding: 50px;
 $listItemSize: calc(5px + 3vh);
 //https://css-tricks.com/full-width-containers-limited-width-parents/
 .section {
@@ -11,7 +11,7 @@ $listItemSize: calc(5px + 3vh);
 
 .wrapper {
   width: 70%;
-  margin: calc(20px + 7vh) auto;
+  margin: calc(50px) auto;
 }
 
 .background {

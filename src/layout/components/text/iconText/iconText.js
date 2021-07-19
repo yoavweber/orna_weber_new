@@ -38,7 +38,7 @@ const IconText = ({ data, mobileReverse }) => {
         <Space smallSpace="true" isMobile="true" />
         {secondPartText && (
           <div className={styles.secondText}>
-            <p>{secondPartText}</p>
+            <ReactMarkdown>{secondPartText}</ReactMarkdown>
           </div>
         )}
       </div>

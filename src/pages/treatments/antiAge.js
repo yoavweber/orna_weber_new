@@ -51,7 +51,7 @@ const AntiAge = () => {
         </H1>
         <IconText data={secondIconText} />
         <List data={list} />
-        <Space />
+        <Space smallSpace />
         {/* since using twice space with no element in the middle does not work, wbr is an empty element */}
         <wbr />
         <TextBlocks content={blockText} />

@@ -19,6 +19,7 @@ const Acne = () => {
     <div>
       <SEO title="אקנה" />
       <Banner data={banner} />
+      <Space smallSpace="true" />
       <main>
         <IconText data={firstIconText} />
         <IconText data={secondIconText} />

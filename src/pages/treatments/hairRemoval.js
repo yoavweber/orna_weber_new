@@ -55,6 +55,8 @@ const HairRemoval = () => {
         <Space />
         <IconText data={secondIconText} />
         <Space />
+        <wbr />
+        <Space />
         <IconBox data={iconsBlock} />
         <Space />
         <PlainText headlineColor="green" data={secondText} />
