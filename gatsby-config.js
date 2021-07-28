@@ -30,7 +30,9 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-plugin-sass",
+    `gatsby-plugin-preact`,
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     {
