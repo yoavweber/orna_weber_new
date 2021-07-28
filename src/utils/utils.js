@@ -5,8 +5,8 @@ if (typeof window === "undefined") {
 export const getWidth = () => (window ? window.innerWidth : "1000");
 
 export function moveElements(arr, elements) {
-  var middleArray = Math.ceil(arr.length / 2);
-  var newArray = [
+  const middleArray = Math.ceil(arr.length / 2);
+  const newArray = [
     ...arr.slice(middleArray, middleArray + elements),
     ...arr.slice(middleArray + elements),
     ...arr.slice(0, middleArray),

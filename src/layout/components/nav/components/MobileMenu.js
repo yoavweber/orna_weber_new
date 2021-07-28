@@ -20,7 +20,6 @@ function useClickOutside(elRef, callback) {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      console.log(elRef, e);
       if (!elRef?.current?.contains(e.target) && callbackRef.current) {
         callbackRef.current(e);
       }
