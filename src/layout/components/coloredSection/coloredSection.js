@@ -56,7 +56,11 @@ const Treatments = () => {
   return (
     <section className={styles.wrapper}>
       {/* <div className={styles.testing}> */}
-      <img src={sink} className={styles.icon} />
+      <img
+        src={sink}
+        className={styles.icon}
+        alt="אייקון קישוט לקיליניקה של אורנה ובר"
+      />
       <div className={styles.contentWrapper} ref={sliderWrapperRef}>
         <H1>{headline}</H1>
         <Slider
@@ -67,7 +71,11 @@ const Treatments = () => {
         />
         {/* <div className={styles.content}>{treatmentBubble}</div> */}
       </div>
-      <img src={needle} className={styles.icon} />
+      <img
+        src={needle}
+        className={styles.icon}
+        alt="אייקון קישוט לקיליניקה של אורנה ובר"
+      />
       {/* </div> */}
     </section>
   );
