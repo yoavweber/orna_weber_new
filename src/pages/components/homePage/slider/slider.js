@@ -95,12 +95,6 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
     });
   };
 
-  if (!_slides) {
-    return <div>loading...</div>;
-  }
-  if (!getWidth) {
-    return <div>loading...</div>;
-  }
   return (
     <div
       style={{ position: "relative", overflow: "hidden", height: "100%" }}
@@ -110,9 +104,8 @@ const Slider = ({ content, width, showElements, autoPlay, className }) => {
         translate={translate}
         width={(getWidth / showElements) * content?.length}
       >
-        {_slides.map((Content, i) => (
-          <Slide key={i} content={Content} />
-        ))}
+        {_slides &&
+          _slides.map((Content, i) => <Slide key={i} content={Content} />)}
       </SliderContent>
       <Arrow direction="left" notFullWidth={getWidth} handleClick={prevSlide} />
       <Arrow

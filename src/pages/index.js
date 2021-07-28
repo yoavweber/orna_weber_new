@@ -1,9 +1,11 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+// import { Carousel } from "react-bootstrap";
 
 import { Banner, Form } from "../layout/components";
 import { Space } from "../layout/common";
 import SEO from "../utils/seo";
+// import image from "../../src/images/homePage/acneBanner.png";
 
 import Treatments from "./components/homePage/treatments/treatments";
 import Slider from "./components/homePage/slider/slider";
@@ -12,11 +14,6 @@ import About from "./components/homePage/about/about";
 
 const Homepage = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
   const { strapiHomePage } = data;
   const { banner, introText, about, form, treatment } = strapiHomePage;
 
@@ -33,21 +30,58 @@ const Homepage = () => {
   return (
     <>
       <SEO />
-      <div>
-        <Slider
-          style={{
-            position: "relative",
-            width: "100vw",
-          }}
-          showElements={1}
-          content={bannerArray}
-        />
-      </div>
-      <IntroText data={introText} />
-      <Treatments data={treatment} />
-      <About data={about} />
-      <Space />
-      <Form data={form} />
+      {data && (
+        <>
+          <div>
+            <Slider
+              style={{
+                position: "relative",
+                width: "100vw",
+              }}
+              showElements={1}
+              content={bannerArray}
+            />
+          </div>
+          {/* <Carousel>
+        <Carousel.Item>
+          <img src={image} />
+          <div style={{ backgroundColor: "green" }}>sdfd</div>
+          <Banner
+            data={banner[0]}
+            // id number 3 is antiaging, which has green subtitle
+            // subTitleColor={content.id === 3 ? "green" : "white"}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={image} />
+
+          <div style={{ backgroundColor: "red" }}>etst</div>
+          <Banner
+            data={banner[1]}
+            // id number 3 is antiaging, which has green subtitle
+            // subTitleColor={content.id === 3 ? "green" : "white"}
+          />
+        </Carousel.Item>
+      </Carousel>
+      <Carousel>
+        {banner.map((content) => {
+          <Carousel.Item>
+            <Banner
+              data={content}
+              // id number 3 is antiaging, which has green subtitle
+              subTitleColor={content.id === 3 ? "green" : "white"}
+            />
+          </Carousel.Item>;
+        })}
+      </Carousel> */}
+
+          <IntroText data={introText} />
+          <Treatments data={treatment} />
+          <About data={about} />
+          <Space />
+          <Form data={form} />
+        </>
+      )}
     </>
   );
 };
@@ -103,7 +137,7 @@ const query = graphql`
         ornaPicture {
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 300)
+              gatsbyImageData(width: 300, quality: 100)
             }
           }
         }

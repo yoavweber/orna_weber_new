@@ -15,11 +15,6 @@ import SEO from "../../utils/seo";
 
 const HairRemoval = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
 
   const { strapiHairRemoval } = data;
   const {
@@ -43,39 +38,43 @@ const HairRemoval = () => {
 
   return (
     <div>
-      <SEO title="הסרת שיער" />
-      <Banner data={banner} />
-      <Space smallSpace={true} />
-      <main>
-        <PlainText data={introText} />
-        <Space smallSpace={true} isMobile="true" />
-        <IconText data={firstIconText} mobileReverse="true" />
-        <Space smallSpace={true} />
-        <List data={list} />
-        <Space />
-        <IconText data={secondIconText} />
-        <Space />
-        <wbr />
-        <Space />
-        <IconBox data={iconsBlock} />
-        <Space />
-        <PlainText headlineColor="green" data={secondText} />
-        <Space />
-        <FinalTextWrapper>
-          <H1
-            style={{
-              width: "60%",
-              textAlign: "center",
-              margin: "0 auto",
-              padding: "50px 0",
-            }}
-          >
-            {lastText}
-          </H1>
-        </FinalTextWrapper>
-      </main>
+      {data && (
+        <>
+          <SEO title="הסרת שיער" />
+          <Banner data={banner} />
+          <Space smallSpace={true} />
+          <main>
+            <PlainText data={introText} />
+            <Space smallSpace={true} isMobile="true" />
+            <IconText data={firstIconText} mobileReverse="true" />
+            <Space smallSpace={true} />
+            <List data={list} />
+            <Space />
+            <IconText data={secondIconText} />
+            <Space />
+            <wbr />
+            <Space />
+            <IconBox data={iconsBlock} />
+            <Space />
+            <PlainText headlineColor="green" data={secondText} />
+            <Space />
+            <FinalTextWrapper>
+              <H1
+                style={{
+                  width: "60%",
+                  textAlign: "center",
+                  margin: "0 auto",
+                  padding: "50px 0",
+                }}
+              >
+                {lastText}
+              </H1>
+            </FinalTextWrapper>
+          </main>
 
-      <Form data={form} />
+          <Form data={form} />
+        </>
+      )}
     </div>
   );
 };

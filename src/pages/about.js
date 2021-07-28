@@ -12,11 +12,7 @@ import { H1, Space } from "../layout/common";
 
 const About = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
+
   const { strapiAbout } = data;
   const {
     banner,
@@ -35,26 +31,30 @@ const About = () => {
   return (
     <>
       <SEO title="עלינו" />
-      <BannerAbout data={banner} />
-      <SquarePicText data={squerPic} />
-      <ColoredBgText data={greenText} />
-      <Space />
-      <ExperienceText data={roundPic} />
-      <Space />
-      <FinalTextWrapper>
-        <H1
-          bold={true}
-          style={{
-            width: "60%",
-            textAlign: "center",
-            margin: "0 auto",
-            paddingBottom: "50px",
-          }}
-        >
-          {finalText}
-        </H1>
-      </FinalTextWrapper>
-      <Form data={form} />
+      {data && (
+        <>
+          <BannerAbout data={banner} />
+          <SquarePicText data={squerPic} />
+          <ColoredBgText data={greenText} />
+          <Space />
+          <ExperienceText data={roundPic} />
+          <Space />
+          <FinalTextWrapper>
+            <H1
+              bold={true}
+              style={{
+                width: "60%",
+                textAlign: "center",
+                margin: "0 auto",
+                paddingBottom: "50px",
+              }}
+            >
+              {finalText}
+            </H1>
+          </FinalTextWrapper>
+          <Form data={form} />
+        </>
+      )}
     </>
   );
 };

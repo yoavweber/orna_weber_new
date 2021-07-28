@@ -7,28 +7,27 @@ import { Space } from "../../layout/common";
 
 const Acne = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
   const { strapiAcne } = data;
 
   const { banner, BlockText, firstIconText, secondIconText, form } = strapiAcne;
   return (
     <div>
       <SEO title="אקנה" />
-      <Banner data={banner} />
-      <Space smallSpace="true" />
-      <main>
-        <IconText data={firstIconText} />
-        <IconText data={secondIconText} />
-        <Space />
-        {/* TODO: change the headline color to green */}
-        <TextBlocks content={BlockText} />
-      </main>
-      <Space isMobile="true" />
-      <Form data={form} />
+      {data && (
+        <>
+          <Banner data={banner} />
+          <Space smallSpace="true" />
+          <main>
+            <IconText data={firstIconText} />
+            <IconText data={secondIconText} />
+            <Space />
+            {/* TODO: change the headline color to green */}
+            <TextBlocks content={BlockText} />
+          </main>
+          <Space isMobile="true" />
+          <Form data={form} />
+        </>
+      )}
     </div>
   );
 };

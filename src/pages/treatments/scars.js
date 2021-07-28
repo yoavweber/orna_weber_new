@@ -14,27 +14,27 @@ import SEO from "../../utils/seo";
 
 const Scars = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
+
   const { strapiScars } = data;
   const { banner, iconText, roundPic, blockText, list, form } = strapiScars;
   return (
     <div>
       <SEO title="טשטוש צלקות" />
-      <Banner data={banner} />
-      <main>
-        <Space />
-        <IconText data={iconText} />
-        <Space />
-        <RoundPicText data={roundPic} />
-        <Space />
-        <TextBlocks content={blockText} />
-        <List data={list} />
-      </main>
-      <Form data={form} />
+      {data && (
+        <>
+          <Banner data={banner} />
+          <main>
+            <Space />
+            <IconText data={iconText} />
+            <Space />
+            <RoundPicText data={roundPic} />
+            <Space />
+            <TextBlocks content={blockText} />
+            <List data={list} />
+          </main>
+          <Form data={form} />
+        </>
+      )}
     </div>
   );
 };

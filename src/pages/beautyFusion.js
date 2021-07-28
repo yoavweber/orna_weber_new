@@ -17,11 +17,6 @@ import { Space } from "../layout/common";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
 
   const { strapiBeautyFusion } = data;
   const {
@@ -38,22 +33,26 @@ const AntiAge = () => {
   return (
     <>
       <SEO title="שיטת ביוטי פיוז'ן" />
-      <Banner data={banner} subTitleColor="black" />
-      <Space smallSpace="true" />
-      <main>
-        <IconText data={iconText} />
-        <Space />
-      </main>
-      <ColoredBgText data={coloredBackground} />
-      <main>
-        <ListNumber data={enumList} />
-        <RoundPicText data={textPic} />
-        <Space />
-        <TextBlocks content={blockText} />
-        <List data={list} />
-        <Space isMobile="true" />
-      </main>
-      <Form data={form} />
+      {data && (
+        <>
+          <Banner data={banner} subTitleColor="black" />
+          <Space smallSpace="true" />
+          <main>
+            <IconText data={iconText} />
+            <Space />
+          </main>
+          <ColoredBgText data={coloredBackground} />
+          <main>
+            <ListNumber data={enumList} />
+            <RoundPicText data={textPic} />
+            <Space />
+            <TextBlocks content={blockText} />
+            <List data={list} />
+            <Space isMobile="true" />
+          </main>
+          <Form data={form} />
+        </>
+      )}
     </>
   );
 };

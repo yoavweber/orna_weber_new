@@ -14,11 +14,7 @@ import SEO from "../../utils/seo";
 
 const AntiAge = () => {
   const data = useStaticQuery(query);
-  if (!data) {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>loading </div>
-    );
-  }
+
   const { strapiAntiAging } = data;
   const {
     banner,
@@ -34,37 +30,41 @@ const AntiAge = () => {
   return (
     <>
       <SEO title="אנטי איג'ינג" />
-      <Banner data={banner} formId="#form" />
-      <Space smallSpace="true" />
-      <main>
-        <div>
-          <IconText data={iconText} />
-          <Headline style={{ paddingTop: "50px" }}>{midText}</Headline>
-        </div>
-        <H1
-          color="green"
-          bold="true"
-          style={{ textAlign: isMobile && "center" }}
-        >
-          {" "}
-          לא כל טיפול אנטי אייג'ינג מתאים לך!
-        </H1>
-        <IconText data={secondIconText} />
-        <List data={list} />
-        <Space smallSpace />
-        {/* since using twice space with no element in the middle does not work, wbr is an empty element */}
-        <wbr />
-        <TextBlocks content={blockText} />
-        <Space />
-        <H1
-          bold="true"
-          style={{ width: "60%", textAlign: "center", margin: "0 auto" }}
-        >
-          {endText}
-        </H1>
-        <Space />
-      </main>
-      <Form data={form} />
+      {data && (
+        <>
+          <Banner data={banner} formId="#form" />
+          <Space smallSpace="true" />
+          <main>
+            <div>
+              <IconText data={iconText} />
+              <Headline style={{ paddingTop: "50px" }}>{midText}</Headline>
+            </div>
+            <H1
+              color="green"
+              bold="true"
+              style={{ textAlign: isMobile && "center" }}
+            >
+              {" "}
+              לא כל טיפול אנטי אייג'ינג מתאים לך!
+            </H1>
+            <IconText data={secondIconText} />
+            <List data={list} />
+            <Space smallSpace />
+            {/* since using twice space with no element in the middle does not work, wbr is an empty element */}
+            <wbr />
+            <TextBlocks content={blockText} />
+            <Space />
+            <H1
+              bold="true"
+              style={{ width: "60%", textAlign: "center", margin: "0 auto" }}
+            >
+              {endText}
+            </H1>
+            <Space />
+          </main>
+          <Form data={form} />
+        </>
+      )}
     </>
   );
 };

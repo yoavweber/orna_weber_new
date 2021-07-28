@@ -9,7 +9,11 @@ const PhoneIcon = ({ icon, text, className }) => {
   const wrapperClass = classNames(styles.wrapper, className);
   return (
     <div className={wrapperClass}>
-      <img src={icon} className={styles.item} />
+      <img
+        src={icon}
+        className={styles.item}
+        alt="טלפון של קלינקה של אורנה ובר"
+      />
       <span className={textClass}>{text}</span>
     </div>
   );
