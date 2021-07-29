@@ -15,7 +15,7 @@ const Acne = () => {
       <SEO title="אקנה" />
       {data && (
         <>
-          <Banner data={banner} />
+          <Banner data={banner} subTitleColor="black" />
           <Space smallSpace="true" />
           <main>
             <IconText data={firstIconText} />
