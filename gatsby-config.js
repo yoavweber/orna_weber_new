@@ -55,6 +55,12 @@ module.exports = {
         cssPropOptimization: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: ["https://ancient-headland-46960.herokuapp.com"],
+      },
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-nprogress",

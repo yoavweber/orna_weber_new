@@ -31,7 +31,7 @@ const IconText = ({ data, mobileReverse }) => {
             src={icon?.url}
             alt="treatment icon"
             width="100px"
-            height="100%"
+            height="100px"
           />
           <ReactMarkdown>{firstPartText}</ReactMarkdown>
         </div>
