@@ -30,10 +30,31 @@ module.exports = {
         queryLimit: 1000,
       },
     },
-    "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-sass",
+    // "gatsby-plugin-webpack-bundle-analyser-v2",
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
     `gatsby-plugin-preact`,
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+        // The values for each key in this example are the defaults the plugin uses.
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
+      },
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-nprogress",
