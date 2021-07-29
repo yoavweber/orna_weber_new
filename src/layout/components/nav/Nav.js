@@ -26,7 +26,7 @@ export const Nav = ({ children }) => {
   const navLinks = [
     { name: "ראשי", link: "/" },
     { name: "טיפולים", link: TreatmentMenu },
-    { name: "על השיטה", link: "/beautyFuison/" },
+    { name: "על השיטה", link: "/beautyFusion/" },
     { name: "עלינו", link: "/about/" },
     // { name: "צרי קשר", link: "/contact/" },
   ];
