@@ -30,8 +30,8 @@ const IconText = ({ data, mobileReverse }) => {
           <img
             src={icon?.url}
             alt="treatment icon"
-            width="100px"
-            height="100px"
+            // width="100px"
+            // height="100px"
           />
           <ReactMarkdown>{firstPartText}</ReactMarkdown>
         </div>
