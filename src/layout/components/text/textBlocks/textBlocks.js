@@ -8,10 +8,10 @@ import { H1, H2 } from "..//../../common";
 import styles from "./textBlocks.module.scss";
 
 const TextBlocks = ({ content }) => {
-  if (!content) {
-    //TODO: add data handler
-    return <div>loading</div>;
-  }
+  // if (!content) {
+  //   //TODO: add data handler
+  //   return <div>loading</div>;
+  // }
   const { data, headline } = content;
   const blockColors = ["#ebf1e6", "#dce8d0", "#cae3b1"];
 
@@ -36,7 +36,9 @@ const TextBlocks = ({ content }) => {
         <H2 color="black" bold="true">
           {data.headline}
         </H2>
-        <ReactMarkdown allowDangerousHtml={true}>{data.text}</ReactMarkdown>
+        <ReactMarkdown allowDangerousHtml={true} className={styles.test}>
+          {data.text}
+        </ReactMarkdown>
       </StyledBlock>
     );
   });

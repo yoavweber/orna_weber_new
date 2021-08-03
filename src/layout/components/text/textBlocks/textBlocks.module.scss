@@ -4,6 +4,9 @@
   row-gap: 20px;
 }
 
+.test {
+  white-space: pre-wrap;
+}
 @media only screen and (max-width: 800px) {
   .blockWrapper {
     row-gap: 0;
