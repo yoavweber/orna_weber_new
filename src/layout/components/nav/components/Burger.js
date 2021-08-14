@@ -2,9 +2,14 @@ import React from "react";
 import styled from "@emotion/styled";
 
 // TODO: change the type of style
+const FIXED_BUTTON_POISTION = "3.5%";
+const FIXED_BUTTON_POISTION_BUILD = "4.5%";
+
+const ABSOLUTE_BUTTON_POISTION = "20%";
 export const StyledBurger = styled.button`
-  position: absolute;
-  top: 20%;
+  position: ${({ open }) => (open ? "fixed" : "absolute")};
+  top: ${({ open }) =>
+    open ? FIXED_BUTTON_POISTION_BUILD : ABSOLUTE_BUTTON_POISTION};
   right: 2rem;
   display: flex;
   flex-direction: column;
@@ -52,11 +57,10 @@ const Burger = ({ open, setOpen }) => {
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
+        <div onClick={() => setOpen(!open)} />
+        <div onClick={() => setOpen(!open)} />
+        <div onClick={() => setOpen(!open)} />
       </StyledBurger>
-      {/* test! */}
     </>
   );
 };

@@ -12,15 +12,18 @@ import styles from "../nav.module.scss";
 
 // based on: https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
 
-function useClickOutside(elRef, callback) {
+function useClickOutside(buttonDomElement, elRef, callback) {
   // https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
   // https://www.youtube.com/watch?v=J-g9ZJha8FE&t=481s&ab_channel=JSConf
   const callbackRef = useRef();
   callbackRef.current = callback;
-
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!elRef?.current?.contains(e.target) && callbackRef.current) {
+      if (
+        !elRef?.current?.contains(e.target) &&
+        buttonDomElement != e.target &&
+        callbackRef.current
+      ) {
         callbackRef.current(e);
       }
     };
@@ -38,8 +41,12 @@ const Menu = ({ links }) => {
   const toggle = () => setOpen(!open);
   const hide = () => setOpen(false);
 
+  const buttonRef = useRef();
   const wrapperMobileNavRef = useRef();
-  useClickOutside(wrapperMobileNavRef, hide);
+  const buttonDomElement = buttonRef?.current?.base;
+  if (buttonDomElement) {
+    useClickOutside(buttonDomElement, wrapperMobileNavRef, hide);
+  }
 
   const LinkMenu = links.map((node) => {
     if (typeof node.link != "string") {
@@ -62,12 +69,11 @@ const Menu = ({ links }) => {
       </Link>
     );
   });
-
   return (
     <>
       <nav className={styles.mobileWrapper}>
         <div className={styles.burger}>
-          <Burger open={open} setOpen={setOpen} />
+          <Burger open={open} setOpen={setOpen} ref={buttonRef} />
           <div
             className={styles.mobileMenu}
             data-showMenu={open}
