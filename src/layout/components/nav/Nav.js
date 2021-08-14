@@ -14,13 +14,15 @@ const treatments = [
   { name: "הסרת שיער", link: "/treatments/hairRemoval/" },
 ];
 
-export const TreatmentMenu = treatments.map((node) => {
-  return (
-    <Link to={node.link}>
-      <span className={styles.styledSpan}>{node.name}</span>
-    </Link>
-  );
-});
+export const TreatmentMenu = ({ toggle = () => undefined }) => {
+  return treatments.map((node) => {
+    return (
+      <Link to={node.link} onClick={toggle}>
+        <span className={styles.styledSpan}>{node.name}</span>
+      </Link>
+    );
+  });
+};
 
 export const Nav = ({ children }) => {
   const navLinks = [
@@ -28,7 +30,6 @@ export const Nav = ({ children }) => {
     { name: "טיפולים", link: TreatmentMenu },
     { name: "על השיטה", link: "/beautyFusion/" },
     { name: "עלינו", link: "/about/" },
-    // { name: "צרי קשר", link: "/contact/" },
   ];
 
   return (

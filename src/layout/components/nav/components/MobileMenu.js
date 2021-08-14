@@ -51,7 +51,7 @@ const Menu = ({ links }) => {
         >
           <span className={styles.styledSpan}> טיפולים</span>
           <div className={styles.mobileDropDown} data-click={showTreatmentMenu}>
-            {TreatmentMenu}
+            <TreatmentMenu toggle={toggle} />
           </div>
         </a>
       );

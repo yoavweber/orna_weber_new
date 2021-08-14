@@ -28,7 +28,9 @@ const DesktopMenu = ({ links }) => {
       return (
         <Link className={styles.dropDown}>
           {node.name}
-          <div className={styles.hiddenDropDown}>{TreatmentMenu}</div>
+          <div className={styles.hiddenDropDown}>
+            <TreatmentMenu />
+          </div>
         </Link>
       );
     }
