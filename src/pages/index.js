@@ -137,7 +137,7 @@ const query = graphql`
         ornaPicture {
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 300, quality: 100)
+              gatsbyImageData(width: 500, quality: 100)
             }
           }
         }
@@ -151,12 +151,7 @@ const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 100
-                  quality: 100
-                  placeholder: BLURRED
-                  layout: CONSTRAINED
-                )
+                gatsbyImageData(width: 500, quality: 100, placeholder: BLURRED)
               }
             }
           }
