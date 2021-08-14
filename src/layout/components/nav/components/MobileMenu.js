@@ -21,7 +21,7 @@ function useClickOutside(buttonDomElement, elRef, callback) {
     const handleClickOutside = (e) => {
       if (
         !elRef?.current?.contains(e.target) &&
-        buttonDomElement != e.target &&
+        !e.path.includes(buttonDomElement) &&
         callbackRef.current
       ) {
         callbackRef.current(e);
